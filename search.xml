@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[firstblood]]></title>
+    <title><![CDATA[first blood]]></title>
     <url>%2F2018%2F12%2F11%2Ffirstblood%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[This is my first blog!不忘初心，假装这里有很多字嗯，写完了，滚去四级备考了 ！avatar]]></content>
+      <tags>
+        <tag>哎折腾</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[测试]]></title>

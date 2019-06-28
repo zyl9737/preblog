@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo Next如何在文章摘要展示图片]]></title>
     <url>%2F2019%2F06%2F28%2FHexo-Next%E5%A6%82%E4%BD%95%E5%9C%A8%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87%2F</url>
-    <content type="text"><![CDATA[在文章的属性列表中添加photos属性编写的文章属性中photos默认为文章的配图，这是我目前最喜欢的配图方式，但是有一个缺点，它不能自定义裁剪和缩略比，展示的是原图，这相当于如果你的每张配图大小比例不一致将会很影响美观性，目前没有很好的解决方案，所以只好自己裁剪好再引入。如这篇文章：12345678---title: Hexo Next如何在文章摘要展示图片date: 2019-06-28 17:43:44tags: Hexocategories: Hexophotos: - "xxx"--- 在你的正文中使用&lt;!-- more --&gt;进行截断由于markdown是支持原生html的，所以我们可以在正文引用img来为我们的文章设置摘要配图,在&lt;!-- more --&gt;之前的内容都会展示到摘要中(同时与你主题文件中配置的摘要字数有关).如：123456789---title: Hexo Next如何在文章摘要展示图片date: 2019-06-28 17:43:44tags: Hexocategories: Hexo---&lt;img src="XXX" width=50% /&gt;哇，漂亮的小姐姐(❤ ω ❤)&lt;!--more--&gt;]]></content>
+    <content type="text"><![CDATA[#在文章的属性列表中添加photos属性编写的文章属性中photos默认为文章的配图，这是我目前最喜欢的配图方式，但是有一个缺点，它不能自定义裁剪和缩略比，展示的是原图，这相当于如果你的每张配图大小比例不一致将会很影响美观性，目前没有很好的解决方案，所以只好自己裁剪好再引入。如这篇文章：12345678---title: Hexo Next如何在文章摘要展示图片date: 2019-06-28 17:43:44tags: Hexocategories: Hexophotos: - "xxx"--- #在你的正文中使用&lt;!-- more --&gt;进行截断由于markdown是支持原生html的，所以我们可以在正文引用img来为我们的文章设置摘要配图,在&lt;!-- more --&gt;之前的内容都会展示到摘要中(同时与你主题文件中配置的摘要字数有关).如：123456789---title: Hexo Next如何在文章摘要展示图片date: 2019-06-28 17:43:44tags: Hexocategories: Hexo---&lt;img src="XXX" width=50% /&gt;哇，漂亮的小姐姐(❤ ω ❤)&lt;!--more--&gt;]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[使用hexo+github搭建个人博客]]></title>
     <url>%2F2019%2F03%2F18%2F%E6%9D%A5%E8%87%AAwd%E5%AD%A6%E9%95%BF%E7%9A%84%E5%8F%8B%E9%93%BE%2F</url>
-    <content type="text"><![CDATA[看学长写的加各种百度就能建站了（很容易的，我也就熬了几个夜；]]></content>
+    <content type="text"><![CDATA[友链看学长写的加各种百度就能建站了（很容易的，我也就熬了几个夜]]></content>
       <tags>
         <tag>博客搭建</tag>
       </tags>
@@ -53,9 +53,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1055 集体照]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
-    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt; #include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;struct node&#123; string name; int high;&#125;;int cmp(struct node a,struct node b )&#123; return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name;&#125;int main()&#123; int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) &#123; if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;" "&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; &#125; return 0;&#125;]]></content>
+    <title><![CDATA[PAT 1057 数壹零]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1057-%E6%95%B0%E5%A3%B9%E9%9B%B6%2F</url>
+    <content type="text"><![CDATA[1057 数零壹 （20 分) 给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。输入格式：输入在一行中给出长度不超过 10^5,以回车结束的字符串。输出格式：在一行中先后输出 0 的个数和 1 的个数，其间以空格分隔。输入样例：PAT (Basic)输出样例：3 4 分析：用getline接收一行字符串，对于字符串的每一位，如果是字母(isalpha)，则将字母转化为大写(toupper)，并累加(s[i] – ‘A’ + 1)算出n，然后将n转化为二进制，对每一位处理，如果是0则cnt0++，如果是1则cnt1++，最后输出cnt0和cnt1的值～～题解：12345678910111213141516171819202122232425262728293031#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cctype&gt;using namespace std;int main()&#123; string s; getline(cin,s); int n=0; for(int i=0;i&lt;s.length();i++) &#123; if(isalpha(s[i])) &#123; s[i]=toupper(s[i]); n+=(s[i]-'A'+1); &#125; &#125; int cnt0=0,cnt1=0; while(n!=0) &#123; if(n%2==0) &#123; cnt0++; &#125; else cnt1++; n=n/2; &#125; cout&lt;&lt;cnt0&lt;&lt;" "&lt;&lt;cnt1; return 0;&#125;]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -64,9 +64,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1057 数壹零]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1057-%E6%95%B0%E5%A3%B9%E9%9B%B6%2F</url>
-    <content type="text"><![CDATA[1057 数零壹 （20 分) 给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。输入格式：输入在一行中给出长度不超过 10^5,以回车结束的字符串。输出格式：在一行中先后输出 0 的个数和 1 的个数，其间以空格分隔。输入样例：PAT (Basic)输出样例：3 4 分析：用getline接收一行字符串，对于字符串的每一位，如果是字母(isalpha)，则将字母转化为大写(toupper)，并累加(s[i] – ‘A’ + 1)算出n，然后将n转化为二进制，对每一位处理，如果是0则cnt0++，如果是1则cnt1++，最后输出cnt0和cnt1的值～～题解：12345678910111213141516171819202122232425262728293031#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cctype&gt;using namespace std;int main()&#123; string s; getline(cin,s); int n=0; for(int i=0;i&lt;s.length();i++) &#123; if(isalpha(s[i])) &#123; s[i]=toupper(s[i]); n+=(s[i]-'A'+1); &#125; &#125; int cnt0=0,cnt1=0; while(n!=0) &#123; if(n%2==0) &#123; cnt0++; &#125; else cnt1++; n=n/2; &#125; cout&lt;&lt;cnt0&lt;&lt;" "&lt;&lt;cnt1; return 0;&#125;]]></content>
+    <title><![CDATA[PAT 1055 集体照]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
+    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;iostream&gt; #include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;struct node&#123; string name; int high;&#125;;int cmp(struct node a,struct node b )&#123; return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name;&#125;int main()&#123; int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) &#123; if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;" "&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; &#125; return 0;&#125;]]></content>
       <categories>
         <category>编程</category>
       </categories>

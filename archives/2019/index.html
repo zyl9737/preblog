@@ -178,7 +178,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">我不管我最酷</p>
+        <p class="site-subtitle">IT套路深，必须瞎折腾</p>
       
   </div>
 
@@ -337,14 +337,14 @@
         
             <a class="post-title-link" href="/2019/06/20/读书笔记及一些杂谈/" itemprop="url">
               
-                <span itemprop="name">未命名</span>
+                <span itemprop="name">读书笔记及一些</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T22:09:34+08:00" content="2019-06-20">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T22:13:56+08:00" content="2019-06-20">
           06-20
         </time>
       </div>
@@ -405,9 +405,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/03/18/PAT-1035-插入与归并/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/18/PAT-1055-集体照/" itemprop="url">
               
-                <span itemprop="name">PAT 1035 插入与归并</span>
+                <span itemprop="name">PAT 1055 集体照</span>
               
             </a>
         
@@ -440,9 +440,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/03/18/PAT-1055-集体照/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/18/PAT-1035-插入与归并/" itemprop="url">
               
-                <span itemprop="name">PAT 1055 集体照</span>
+                <span itemprop="name">PAT 1035 插入与归并</span>
               
             </a>
         
@@ -738,8 +738,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -747,8 +746,6 @@
 
   
 </div>
-
-
 
 
 
@@ -924,6 +921,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'D0gVka74NHNVx0yTsGq4OHvG-gzGzoHsz',
+        appKey: 'TkF2b4MTlN5FDbxmBnMVzabr',
+        placeholder: '风过留痕，雁过留声，君过留言。（建议在上方留下昵称和邮箱信息以便收到回复通知）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -1266,6 +1285,13 @@
   
 
 <script src="/live2d-widget/autoload.js"></script>
-<script type="text/javascript" src="/js/src/love.js"></script>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 </html>

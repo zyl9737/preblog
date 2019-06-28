@@ -180,7 +180,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">我不管我最酷</p>
+        <p class="site-subtitle">IT套路深，必须瞎折腾</p>
       
   </div>
 
@@ -379,6 +379,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/18/PAT-1055-集体照/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/PAT-1055-集体照/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -500,8 +510,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/18/PAT-1054-求平均值/" rel="next" title="PAT 1054 求平均值">
-                <i class="fa fa-chevron-left"></i> PAT 1054 求平均值
+              <a href="/2019/03/18/PAT-1035-插入与归并/" rel="next" title="PAT 1035 插入与归并">
+                <i class="fa fa-chevron-left"></i> PAT 1035 插入与归并
               </a>
             
           </div>
@@ -510,8 +520,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/18/PAT-1035-插入与归并/" rel="prev" title="PAT 1035 插入与归并">
-                PAT 1035 插入与归并 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/18/来自wd学长的友链/" rel="prev" title="【转载】使用hexo+github搭建个人博客（白嫖）">
+                【转载】使用hexo+github搭建个人博客（白嫖） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -541,6 +551,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -666,8 +679,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -675,8 +687,6 @@
 
   
 </div>
-
-
 
 
 
@@ -856,6 +866,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'D0gVka74NHNVx0yTsGq4OHvG-gzGzoHsz',
+        appKey: 'TkF2b4MTlN5FDbxmBnMVzabr',
+        placeholder: '风过留痕，雁过留声，君过留言。（建议在上方留下昵称和邮箱信息以便收到回复通知）',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -1198,6 +1230,13 @@
   
 
 <script src="/live2d-widget/autoload.js"></script>
-<script type="text/javascript" src="/js/src/love.js"></script>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/src/clipboard-use.js"></script>
 </body>
 </html>

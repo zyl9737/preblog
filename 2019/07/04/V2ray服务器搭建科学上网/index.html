@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/21-V2ray-SS%E7%AB%AF%E5%8F%A3.jpg">
 <meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/23-V2ray-SS%E5%8D%8F%E8%AE%AE.jpg">
 <meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/24-V2ray-%E5%AE%8C%E6%88%90.jpg">
-<meta property="og:updated_time" content="2019-07-03T17:26:33.314Z">
+<meta property="og:updated_time" content="2019-07-03T17:40:06.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="V2Ray服务器搭建科学上网">
 <meta name="twitter:description" content="昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。">
@@ -415,7 +415,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T01:26:33+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T01:40:06+08:00">
                 2019-07-04
               </time>
             
@@ -496,7 +496,7 @@
 
       
         <p><blockquote class="blockquote-center"><br>昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。<br>本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。<br></blockquote><br><a id="more"></a></p>
-<h1 id="一、购买境外VPS服务器"><a href="#一、购买境外VPS服务器" class="headerlink" title="一、购买境外VPS服务器"></a>一、购买境外VPS服务器</h1><ol>
+<h1 id="一-购买境外VPS服务器"><a href="#一-购买境外VPS服务器" class="headerlink" title="一. 购买境外VPS服务器"></a>一. 购买境外VPS服务器</h1><ol>
 <li>首先进入Vultr官网注册：<a href="https://www.vultr.com" target="_blank" rel="noopener">https://www.vultr.com</a> （通过此链接注册充值10美元送50美元）<br><em>注意：密码首字母需要大写，且长度需要超过10个字符！！！</em><br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/1-V2ray-vultr%E6%B3%A8%E5%86%8C.jpg" alt=""></li>
 <li>再次确认一遍注册邮箱和密码<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/2-V2ray-%E6%B3%A8%E5%86%8C%E7%A1%AE%E8%AE%A4.jpg" alt=""></li>
 <li>登录并进入充值界面进行充值</li>
@@ -533,9 +533,9 @@
 <ul>
 <li>使用端口扫描工具扫描我们创建的服务器IP，查看22端口是否开放，如果是关闭的话按照上面教程重新创建服务器，直到“22”端口为开放状态。</li>
 <li>然后再删除之前被墙的服务器，Vultr服务器是按小时收费的，所以我们刚刚创建的服务器删除的话是不收费的。</li>
-<li>端口扫描工具我使用的是 <a href="http://coolaf.com/tool/port" target="_blank" rel="noopener">http://coolaf.com/tool/port</a> 你也可以上百度搜索端口扫描工具即可。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/9-V2ray-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.jpg" alt=""><h1 id="二、使用Xshell终端连接服务器"><a href="#二、使用Xshell终端连接服务器" class="headerlink" title="二、使用Xshell终端连接服务器"></a>二、使用Xshell终端连接服务器</h1></li>
+<li>端口扫描工具我使用的是 <a href="http://coolaf.com/tool/port" target="_blank" rel="noopener">http://coolaf.com/tool/port</a> 你也可以上百度搜索端口扫描工具即可。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/9-V2ray-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.jpg" alt=""></li>
 </ul>
-<ol>
+<h1 id="二、使用Xshell终端连接服务器"><a href="#二、使用Xshell终端连接服务器" class="headerlink" title="二、使用Xshell终端连接服务器"></a>二、使用Xshell终端连接服务器</h1><ol>
 <li>安装Xshell</li>
 </ol>
 <ul>
@@ -563,9 +563,9 @@
 <li>SSH安全警告</li>
 </ol>
 <ul>
-<li>首次连接服务器会出现SSH安全警告，点击“接受并保持”即可<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/14-V2ray-SSH%E5%AE%89%E5%85%A8%E8%AD%A6%E5%91%8A.jpg" alt=""><br>三、搭建V2ray</li>
+<li>首次连接服务器会出现SSH安全警告，点击“接受并保持”即可<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/14-V2ray-SSH%E5%AE%89%E5%85%A8%E8%AD%A6%E5%91%8A.jpg" alt=""></li>
 </ul>
-<ol>
+<h1 id="三-搭建V2ray"><a href="#三-搭建V2ray" class="headerlink" title="三. 搭建V2ray"></a>三. 搭建V2ray</h1><ol>
 <li>使用一键安装脚本安装V2ray</li>
 </ol>
 <ul>
@@ -615,9 +615,15 @@
 </ol>
 <ul>
 <li>接下来就是回车，回车。</li>
-<li>然后喝杯咖啡，等待几分钟，出现下面这个界面就表示服务器搭建完成了<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/24-V2ray-%E5%AE%8C%E6%88%90.jpg" alt=""><h1 id="四、开启BBR"><a href="#四、开启BBR" class="headerlink" title="四、开启BBR"></a>四、开启BBR</h1><h2 id="如果使用的是Debian9-系统，BBR是自动开启的。"><a href="#如果使用的是Debian9-系统，BBR是自动开启的。" class="headerlink" title="如果使用的是Debian9 系统，BBR是自动开启的。"></a>如果使用的是Debian9 系统，BBR是自动开启的。</h2></li>
+<li>然后喝杯咖啡，等待几分钟，出现下面这个界面就表示服务器搭建完成了<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/24-V2ray-%E5%AE%8C%E6%88%90.jpg" alt=""></li>
 </ul>
-<h2 id="Ubuntu-18-04-18-10开启BBR加速"><a href="#Ubuntu-18-04-18-10开启BBR加速" class="headerlink" title="Ubuntu 18.04/18.10开启BBR加速:"></a>Ubuntu 18.04/18.10开启BBR加速:</h2><ul>
+<h1 id="四-开启BBR"><a href="#四-开启BBR" class="headerlink" title="四. 开启BBR"></a>四. 开启BBR</h1><ul>
+<li><p>如果使用的是Debian9 系统，BBR是自动开启的。</p>
+</li>
+<li><p><strong>Ubuntu 18.04/18.10开启BBR加速:</strong></p>
+</li>
+</ul>
+<ul>
 <li><p>Step 1：修改系统变量</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"net.core.default_qdisc=fq"</span> <span class="meta">&gt;&gt; </span>/etc/sysctl.conf</span><br><span class="line">echo <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> <span class="meta">&gt;&gt; </span>/etc/sysctl.conf</span><br></pre></td></tr></table></figure>
 </li>
@@ -626,10 +632,11 @@
 <li>Step 3：检查BBR是否开启<br><code>sysctl net.ipv4.tcp_available_congestion_control</code><br>如果 返回<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>则 开启 成功！</li>
 <li>Step 4：检查BBR是否启动成功<br><code>lsmod | grep bbr</code><br>如果 返回<br><code>tcp_bbr                20480  14</code><br>则 启动 成功</li>
 </ul>
-<h2 id="CentOS-7-开启BBR加速"><a href="#CentOS-7-开启BBR加速" class="headerlink" title="CentOS 7 开启BBR加速"></a><a href="https://www.noobyy.com/863.html" target="_blank" rel="noopener">CentOS 7 开启BBR加速</a></h2><h1 id="五、客户端使用"><a href="#五、客户端使用" class="headerlink" title="五、客户端使用"></a>五、客户端使用</h1><ul>
+<p><a href="https://www.noobyy.com/863.html" target="_blank" rel="noopener">CentOS 7 开启BBR加速</a></p>
+<h1 id="五-客户端使用"><a href="#五-客户端使用" class="headerlink" title="五. 客户端使用"></a>五. 客户端使用</h1><ul>
 <li><a href="https://www.noobyy.com/126.html" target="_blank" rel="noopener">V2ray和SS客户端使用教程</a></li>
 </ul>
-<h1 id="六、物尽其用"><a href="#六、物尽其用" class="headerlink" title="六、物尽其用"></a>六、物尽其用</h1><p>这么高配置的服务器只用来搭建梯子服务器？未免也太浪费了吧，接下来教你在梯子服务器的基础上再搭建一个 个人网盘服务器。</p>
+<h1 id="六-物尽其用"><a href="#六-物尽其用" class="headerlink" title="六. 物尽其用"></a>六. 物尽其用</h1><p>这么高配置的服务器只用来搭建梯子服务器？未免也太浪费了吧，接下来教你在梯子服务器的基础上再搭建一个 个人网盘服务器。</p>
 <p><a href="https://www.noobyy.com/173.html" target="_blank" rel="noopener">使用NextCloud搭建个人网盘服务器</a></p>
 
       
@@ -892,7 +899,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、购买境外VPS服务器"><span class="nav-number">1.</span> <span class="nav-text">一、购买境外VPS服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、使用Xshell终端连接服务器"><span class="nav-number">2.</span> <span class="nav-text">二、使用Xshell终端连接服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、开启BBR"><span class="nav-number">3.</span> <span class="nav-text">四、开启BBR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果使用的是Debian9-系统，BBR是自动开启的。"><span class="nav-number">3.1.</span> <span class="nav-text">如果使用的是Debian9 系统，BBR是自动开启的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-04-18-10开启BBR加速"><span class="nav-number">3.2.</span> <span class="nav-text">Ubuntu 18.04/18.10开启BBR加速:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CentOS-7-开启BBR加速"><span class="nav-number">3.3.</span> <span class="nav-text">CentOS 7 开启BBR加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、客户端使用"><span class="nav-number">4.</span> <span class="nav-text">五、客户端使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、物尽其用"><span class="nav-number">5.</span> <span class="nav-text">六、物尽其用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-购买境外VPS服务器"><span class="nav-number">1.</span> <span class="nav-text">一. 购买境外VPS服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、使用Xshell终端连接服务器"><span class="nav-number">2.</span> <span class="nav-text">二、使用Xshell终端连接服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-搭建V2ray"><span class="nav-number">3.</span> <span class="nav-text">三. 搭建V2ray</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-开启BBR"><span class="nav-number">4.</span> <span class="nav-text">四. 开启BBR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-客户端使用"><span class="nav-number">5.</span> <span class="nav-text">五. 客户端使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六-物尽其用"><span class="nav-number">6.</span> <span class="nav-text">六. 物尽其用</span></a></li></ol></div>
             
 
           </div>

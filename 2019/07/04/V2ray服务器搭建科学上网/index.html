@@ -107,7 +107,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="v2ray,科学上网,vultr,">
 
 
 
@@ -120,16 +120,41 @@
 
 
 
-<meta name="description" content="WE ALL STEAL.BUT IF WE&apos;RE  SMART WE STEAL FROM GREAT DIRECTORS.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="֣郑玉龙の博客">
-<meta property="og:url" content="http://yoursite.com/categories/读书/index.html">
+<meta name="description" content="昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。">
+<meta name="keywords" content="v2ray,科学上网,vultr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="V2Ray服务器搭建科学上网">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/index.html">
 <meta property="og:site_name" content="֣郑玉龙の博客">
-<meta property="og:description" content="WE ALL STEAL.BUT IF WE&apos;RE  SMART WE STEAL FROM GREAT DIRECTORS.">
+<meta property="og:description" content="昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/1-V2ray-vultr%E6%B3%A8%E5%86%8C.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/2-V2ray-%E6%B3%A8%E5%86%8C%E7%A1%AE%E8%AE%A4.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/3-V2ray-Vultr-%E5%85%85%E5%80%BC%E5%8F%8A%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/4-V2ray-%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/5-V2ray-%E9%80%89%E6%8B%A9%E5%9B%BD%E5%AE%B6.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/6-V2ray-%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%B3%BB%E7%BB%9F.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/7-V2ray-%E9%80%89%E4%B8%AD%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/8-V2ray-%E5%A4%8D%E5%88%B6%E6%9C%8D%E5%8A%A1%E5%99%A8IP.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/9-V2ray-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/10-V2ray-Xshell-%E5%88%9B%E5%BB%BA%E4%BC%9A%E8%AF%9D.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/11-V2ray-Xshell-%E6%9C%8D%E5%8A%A1%E5%99%A8IP.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/12-V2ray-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AF%86%E7%A0%81.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/13-V2ray-%E8%BF%9E%E6%8E%A5.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/14-V2ray-SSH%E5%AE%89%E5%85%A8%E8%AD%A6%E5%91%8A.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/15-V2ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E4%BB%A3%E7%A0%81.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/16-V2ray%E5%AE%89%E8%A3%85.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/17-V2ray%E5%8D%8F%E8%AE%AE.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/18-V2ray%E7%AB%AF%E5%8F%A3.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/20-V2ray-SS%E5%AE%89%E8%A3%85.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/21-V2ray-SS%E7%AB%AF%E5%8F%A3.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/23-V2ray-SS%E5%8D%8F%E8%AE%AE.jpg">
+<meta property="og:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/24-V2ray-%E5%AE%8C%E6%88%90.jpg">
+<meta property="og:updated_time" content="2019-07-03T17:26:33.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="֣郑玉龙の博客">
-<meta name="twitter:description" content="WE ALL STEAL.BUT IF WE&apos;RE  SMART WE STEAL FROM GREAT DIRECTORS.">
+<meta name="twitter:title" content="V2Ray服务器搭建科学上网">
+<meta name="twitter:description" content="昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。">
+<meta name="twitter:image" content="https://img.noobyy.com/wp-content/uploads/2019/04/1-V2ray-vultr%E6%B3%A8%E5%86%8C.jpg">
 
 
 
@@ -159,13 +184,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/读书/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/">
 
 
 
 
 
-  <title>分类: 读书 | ֣郑玉龙の博客</title>
+  <title>V2Ray服务器搭建科学上网 | ֣郑玉龙の博客</title>
   
 
 
@@ -194,7 +219,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zyl9737"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -330,79 +355,402 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>读书<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+ 
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/20/读书笔记及一些杂谈/" itemprop="url">
-              
-                <span itemprop="name">读书笔记及一些杂谈</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">V2Ray服务器搭建科学上网</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T22:13:56+08:00" content="2019-06-20">
-          06-20
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T00:32:43+08:00">
+                2019-07-04
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T01:26:33+08:00">
+                2019-07-04
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/04/V2ray服务器搭建科学上网/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/04/V2ray服务器搭建科学上网/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/12/18/读书笔记/" itemprop="url">
-              
-                <span itemprop="name">《慢慢来，一切都来得及》读书笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-18T21:54:56+08:00" content="2018-12-18">
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p><blockquote class="blockquote-center"><br>昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。<br>本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。<br></blockquote><br><a id="more"></a></p>
+<h1 id="一、购买境外VPS服务器"><a href="#一、购买境外VPS服务器" class="headerlink" title="一、购买境外VPS服务器"></a>一、购买境外VPS服务器</h1><ol>
+<li>首先进入Vultr官网注册：<a href="https://www.vultr.com" target="_blank" rel="noopener">https://www.vultr.com</a> （通过此链接注册充值10美元送50美元）<br><em>注意：密码首字母需要大写，且长度需要超过10个字符！！！</em><br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/1-V2ray-vultr%E6%B3%A8%E5%86%8C.jpg" alt=""></li>
+<li>再次确认一遍注册邮箱和密码<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/2-V2ray-%E6%B3%A8%E5%86%8C%E7%A1%AE%E8%AE%A4.jpg" alt=""></li>
+<li>登录并进入充值界面进行充值</li>
+</ol>
+<ul>
+<li>支持信用卡，支付宝，微信支付。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/3-V2ray-Vultr-%E5%85%85%E5%80%BC%E5%8F%8A%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF.jpg" alt=""></li>
+</ul>
+<ol start="4">
+<li>创建服务器<br>点击右上方 “+” 号来创建服务器。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/4-V2ray-%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg" alt=""></li>
+<li>选择服务器机房</li>
+</ol>
+<ul>
+<li>推荐使用东京和新加坡服务器，物理距离近，延迟要低不少。</li>
+<li>选择东京服务器可能需要点耐心，因为使用的人比较多，好多IP被墙，没有耐心的可以选择新加坡服务器。 查询服务器是否被墙下面会有讲到。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/5-V2ray-%E9%80%89%E6%8B%A9%E5%9B%BD%E5%AE%B6.jpg" alt=""></li>
+</ul>
+<ol start="6">
+<li>选择服务器操作系统及配置</li>
+</ol>
+<ul>
+<li>选择服务器系统，仅推荐使用Debian9 ，使用其他操作系统可能会有一些列问题。</li>
+<li>选择完毕点击创建。</li>
+<li>服务器规格选择3.5美元的足矣<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/6-V2ray-%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%B3%BB%E7%BB%9F.jpg" alt=""></li>
+</ul>
+<ol start="7">
+<li>点击我们刚刚创建的服务器</li>
+</ol>
+<ul>
+<li>进入查看服务器配置参数<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/7-V2ray-%E9%80%89%E4%B8%AD%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg" alt=""></li>
+</ul>
+<ol start="8">
+<li>复制服务器IP地址<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/8-V2ray-%E5%A4%8D%E5%88%B6%E6%9C%8D%E5%8A%A1%E5%99%A8IP.jpg" alt=""></li>
+<li>服务器端口扫描</li>
+</ol>
+<ul>
+<li>使用端口扫描工具扫描我们创建的服务器IP，查看22端口是否开放，如果是关闭的话按照上面教程重新创建服务器，直到“22”端口为开放状态。</li>
+<li>然后再删除之前被墙的服务器，Vultr服务器是按小时收费的，所以我们刚刚创建的服务器删除的话是不收费的。</li>
+<li>端口扫描工具我使用的是 <a href="http://coolaf.com/tool/port" target="_blank" rel="noopener">http://coolaf.com/tool/port</a> 你也可以上百度搜索端口扫描工具即可。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/9-V2ray-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F.jpg" alt=""><h1 id="二、使用Xshell终端连接服务器"><a href="#二、使用Xshell终端连接服务器" class="headerlink" title="二、使用Xshell终端连接服务器"></a>二、使用Xshell终端连接服务器</h1></li>
+</ul>
+<ol>
+<li>安装Xshell</li>
+</ol>
+<ul>
+<li><a href="https://www.netsarang.com/zh/free-for-home-school/" target="_blank" rel="noopener">Xshell 官网下载</a></li>
+<li>安装完成后打开软件，新建会话。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/10-V2ray-Xshell-%E5%88%9B%E5%BB%BA%E4%BC%9A%E8%AF%9D.jpg" alt=""></li>
+</ul>
+<ol start="2">
+<li>填入服务器IP地址</li>
+</ol>
+<ul>
+<li>输入一个名称，方便自己以后管理。</li>
+<li>填入服务器IP地址。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/11-V2ray-Xshell-%E6%9C%8D%E5%8A%A1%E5%99%A8IP.jpg" alt=""></li>
+</ul>
+<ol start="3">
+<li>回到Vultr，复制服务器密码<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/12-V2ray-%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AF%86%E7%A0%81.jpg" alt=""></li>
+<li>填入服务器用户名及密码</li>
+</ol>
+<ul>
+<li>点击用户身份验证</li>
+<li>填入服务器用户名root（Vultr用户名默认都是root）</li>
+<li>粘贴刚才复制的密码</li>
+<li>点击“连接”<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/13-V2ray-%E8%BF%9E%E6%8E%A5.jpg" alt=""></li>
+</ul>
+<ol start="6">
+<li>SSH安全警告</li>
+</ol>
+<ul>
+<li>首次连接服务器会出现SSH安全警告，点击“接受并保持”即可<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/14-V2ray-SSH%E5%AE%89%E5%85%A8%E8%AD%A6%E5%91%8A.jpg" alt=""><br>三、搭建V2ray</li>
+</ul>
+<ol>
+<li>使用一键安装脚本安装V2ray</li>
+</ol>
+<ul>
+<li>推荐使用一键安装脚本，一行代码解决所有问题。</li>
+<li>复制下面的代码，然后在Xshell 黑色处点击右键粘贴，然后回车安装。（这里不能使用Ctrl+V粘贴）<br><code>bash &lt;(curl -s -L https://git.io/v2ray.sh)</code></li>
+</ul>
+<p><img src="https://img.noobyy.com/wp-content/uploads/2019/04/15-V2ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E4%BB%A3%E7%A0%81.jpg" alt=""></p>
+<ul>
+<li>也可以通过谷歌云安装官方脚本(据说上面的脚本有后门，对安全性要求高的可以选这个)<br><a href="https://www.v2ray.com/" target="_blank" rel="noopener">v2ray官网</a><br><a href="https://www.youtube.com/redirect?q=https%3A%2F%2Fintmainreturn0.com%2Fv2ray-config-gen%2F%23&amp;v=-z06k0654Wg&amp;redir_token=wneXr1BFcIYpNC-ulgDD1uq9tH18MTU2MjI1NzM2OEAxNTYyMTcwOTY4&amp;event=video_description" target="_blank" rel="noopener">v2ray配置文件生成器</a></li>
+</ul>
+<ol start="2">
+<li>输入 “1” 进行安装<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/16-V2ray%E5%AE%89%E8%A3%85.jpg" alt=""></li>
+<li>选择传输协议</li>
+</ol>
+<ul>
+<li>没有特殊需要就直接回车，使用默认的TCP协议。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/17-V2ray%E5%8D%8F%E8%AE%AE.jpg" alt=""></li>
+</ul>
+<ol start="4">
+<li>选择端口号</li>
+</ol>
+<ul>
+<li>输入端口号，这个自己随意，但是未了避免和以后折腾其他的东西冲突，推荐使用1000以上的端口号但是不能超过65535</li>
+<li>建议直接输入“10086” （没有特殊意义，单纯为了好记，PS：中国移动记得给我广告费）<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/18-V2ray%E7%AB%AF%E5%8F%A3.jpg" alt=""></li>
+</ul>
+<ol start="5">
+<li>广告拦截<br>是否开启广告拦截，看自己需要吧，推荐不要开启，开启广告拦截会消耗服务器资源，国外环境要比国内好得多。</li>
+<li>开启SS</li>
+</ol>
+<ul>
+<li>最好是开启，后面使用游戏加速器会用得上。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/20-V2ray-SS%E5%AE%89%E8%A3%85.jpg" alt=""></li>
+</ul>
+<ol start="7">
+<li>选择SS端口号</li>
+</ol>
+<ul>
+<li>SS端口号，还是随意。但是千万不要和上面V2ray的端口号冲突。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/21-V2ray-SS%E7%AB%AF%E5%8F%A3.jpg" alt=""></li>
+</ul>
+<ol start="8">
+<li>输入SS连接密码<br>这个没有要求，只要你自己能记得住就行，越简单越好。</li>
+<li>选择SS加密协议</li>
+</ol>
+<ul>
+<li>不多说，推荐使用默认的。<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/23-V2ray-SS%E5%8D%8F%E8%AE%AE.jpg" alt=""></li>
+</ul>
+<ol start="10">
+<li>搭建完成</li>
+</ol>
+<ul>
+<li>接下来就是回车，回车。</li>
+<li>然后喝杯咖啡，等待几分钟，出现下面这个界面就表示服务器搭建完成了<br><img src="https://img.noobyy.com/wp-content/uploads/2019/04/24-V2ray-%E5%AE%8C%E6%88%90.jpg" alt=""><h1 id="四、开启BBR"><a href="#四、开启BBR" class="headerlink" title="四、开启BBR"></a>四、开启BBR</h1><h2 id="如果使用的是Debian9-系统，BBR是自动开启的。"><a href="#如果使用的是Debian9-系统，BBR是自动开启的。" class="headerlink" title="如果使用的是Debian9 系统，BBR是自动开启的。"></a>如果使用的是Debian9 系统，BBR是自动开启的。</h2></li>
+</ul>
+<h2 id="Ubuntu-18-04-18-10开启BBR加速"><a href="#Ubuntu-18-04-18-10开启BBR加速" class="headerlink" title="Ubuntu 18.04/18.10开启BBR加速:"></a>Ubuntu 18.04/18.10开启BBR加速:</h2><ul>
+<li><p>Step 1：修改系统变量</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"net.core.default_qdisc=fq"</span> <span class="meta">&gt;&gt; </span>/etc/sysctl.conf</span><br><span class="line">echo <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> <span class="meta">&gt;&gt; </span>/etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Step 2:保存生效<br><code>sysctl -p</code></p>
+</li>
+<li>Step 3：检查BBR是否开启<br><code>sysctl net.ipv4.tcp_available_congestion_control</code><br>如果 返回<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>则 开启 成功！</li>
+<li>Step 4：检查BBR是否启动成功<br><code>lsmod | grep bbr</code><br>如果 返回<br><code>tcp_bbr                20480  14</code><br>则 启动 成功</li>
+</ul>
+<h2 id="CentOS-7-开启BBR加速"><a href="#CentOS-7-开启BBR加速" class="headerlink" title="CentOS 7 开启BBR加速"></a><a href="https://www.noobyy.com/863.html" target="_blank" rel="noopener">CentOS 7 开启BBR加速</a></h2><h1 id="五、客户端使用"><a href="#五、客户端使用" class="headerlink" title="五、客户端使用"></a>五、客户端使用</h1><ul>
+<li><a href="https://www.noobyy.com/126.html" target="_blank" rel="noopener">V2ray和SS客户端使用教程</a></li>
+</ul>
+<h1 id="六、物尽其用"><a href="#六、物尽其用" class="headerlink" title="六、物尽其用"></a>六、物尽其用</h1><p>这么高配置的服务器只用来搭建梯子服务器？未免也太浪费了吧，接下来教你在梯子服务器的基础上再搭建一个 个人网盘服务器。</p>
+<p><a href="https://www.noobyy.com/173.html" target="_blank" rel="noopener">使用NextCloud搭建个人网盘服务器</a></p>
 
       
     </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+              -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+       </div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>此处弱弱的求打赏qwq</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Emanon 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Emanon 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Emanon
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/" title="V2Ray服务器搭建科学上网">http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/v2ray/" rel="tag"># v2ray</a>
+          
+            <a href="/tags/科学上网/" rel="tag"># 科学上网</a>
+          
+            <a href="/tags/vultr/" rel="tag"># vultr</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/30/比特币与区块链入门/" rel="next" title="比特币与区块链入门">
+                <i class="fa fa-chevron-left"></i> 比特币与区块链入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -410,6 +758,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -430,8 +785,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -518,6 +882,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、购买境外VPS服务器"><span class="nav-number">1.</span> <span class="nav-text">一、购买境外VPS服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、使用Xshell终端连接服务器"><span class="nav-number">2.</span> <span class="nav-text">二、使用Xshell终端连接服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、开启BBR"><span class="nav-number">3.</span> <span class="nav-text">四、开启BBR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果使用的是Debian9-系统，BBR是自动开启的。"><span class="nav-number">3.1.</span> <span class="nav-text">如果使用的是Debian9 系统，BBR是自动开启的。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-04-18-10开启BBR加速"><span class="nav-number">3.2.</span> <span class="nav-text">Ubuntu 18.04/18.10开启BBR加速:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CentOS-7-开启BBR加速"><span class="nav-number">3.3.</span> <span class="nav-text">CentOS 7 开启BBR加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、客户端使用"><span class="nav-number">4.</span> <span class="nav-text">五、客户端使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、物尽其用"><span class="nav-number">5.</span> <span class="nav-text">六、物尽其用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -684,6 +1064,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

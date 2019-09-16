@@ -346,6 +346,423 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/16/攻防世界web新手区题解/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/16/攻防世界web新手区题解/" itemprop="url">攻防世界web新手区题解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T22:02:40+08:00">
+                2019-09-16
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-16T23:28:40+08:00">
+                2019-09-16
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/16/攻防世界web新手区题解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/16/攻防世界web新手区题解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  946 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目：view-source"><a href="#题目：view-source" class="headerlink" title="题目：view_source"></a>题目：view_source</h2><p>这道题没啥好说的，f12即可<br>flag：cyberpeace{e07dcafaeeb31df23b4d661dd4da56f9}</p>
+<h2 id="题目：get-post"><a href="#题目：get-post" class="headerlink" title="题目：get_post"></a>题目：get_post</h2><p>这道题我使用的方法是：旧版本火狐+旧版本的hackbar</p>
+<p>hackbar勾选Post，load URL内容为：<a href="http://111.198.29.45:33495/?a=1，post" target="_blank" rel="noopener">http://111.198.29.45:33495/?a=1，post</a> data内容为：b=2，然后点击Execute即可看到flag了</p>
+<p>flag：cyberpeace{c4e43c9c9d0f729358dd9417219a9da0}</p>
+<h2 id="题目-robots"><a href="#题目-robots" class="headerlink" title="题目:robots"></a>题目:robots</h2><p>这个题考到了Robots协议，也就是爬虫排除标准，于是肯定有个robots.txt文件，直接构造url访问这个文件，看到了禁止爬取：f1ag_1s_h3re.php这个页面，我们直接访问这个页面于是便得到了flag了</p>
+<p>flag：cyberpeace{1b59446bc8e566382e01b0c209b899bd}</p>
+<h2 id="题目：backup"><a href="#题目：backup" class="headerlink" title="题目：backup"></a>题目：backup</h2><p>这道题考察的是备份文件漏洞，产生该类漏洞的方式一般又三个：</p>
+<ol>
+<li><p>编辑器自动备份</p>
+</li>
+<li><p>版本控制系统备份</p>
+</li>
+<li><p>开发者主动备份</p>
+</li>
+</ol>
+<p>于是我们知道了备份文件：index.php.bak</p>
+<p>下载后便得到flag了</p>
+<p>flag：cyberpeace{4376485b1a095581d7fb57b8ab3bb924}</p>
+<h2 id="题目：cookie"><a href="#题目：cookie" class="headerlink" title="题目：cookie"></a>题目：cookie</h2><p> Cookie是当主机访问Web服务器时，由 Web 服务器创建的，将信息存储在用户计算机上的文件。一般网络用户习惯用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 Session 跟踪而存储在用户本地终端上的数据，而这些数据通常会经过加密处理。</p>
+<ol>
+<li>浏览器按下F12键打开开发者工具，刷新后，在存储一栏，可看到名为look-here的cookie的值为cookie.php</li>
+<li>访问<a href="http://111.198.29.45:47911/cookie.php，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包" target="_blank" rel="noopener">http://111.198.29.45:47911/cookie.php，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包</a></li>
+<li>点击查看数据包，在消息头内可发现flag</li>
+</ol>
+<p>flag：cyberpeace{e865c062128d651191621df4662b3573}</p>
+<h2 id="题目：disabled-button"><a href="#题目：disabled-button" class="headerlink" title="题目：disabled_button"></a>题目：disabled_button</h2><p>这个题对于前端工作者来说绝对的简单的不能再简单了，直接删除掉disabled属性，就可以点击了</p>
+<p>flag：cyberpeace{2e978e2dde5d8acdd7ff76f1c426bb29}</p>
+<h2 id="题目-simple-js"><a href="#题目-simple-js" class="headerlink" title="题目:simple_js"></a>题目:simple_js</h2><p>这个题真正的密码部分因该是：\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x2c\x31\x31\x36\x2c\x31\x30\x37\x2c\x34\x39\x2c\x35\x30</p>
+<p>先要把这段16进制转换成10进制得到：55,56,54,79,115,69,114,116,107,49,50</p>
+<p>然后直接一段python脚本解得flag</p>
+<p>s=[55,56,54,79,115,69,114,116,107,49,50]<br>for i in s:<br>print(chr(i),end=’’)<br>flag：Cyberpeace{786OsErtk12}</p>
+<h2 id="题目：xff-referer"><a href="#题目：xff-referer" class="headerlink" title="题目：xff_referer"></a>题目：xff_referer</h2><p>直接刷新一下burp截包，然后添加如下两行内容：</p>
+<p>X-Forwarded-For:123.123.123.123</p>
+<p>Referer:<a href="https://www.google.com" target="_blank" rel="noopener">https://www.google.com</a></p>
+<p>然后就看到flag了</p>
+<p>flag：cyberpeace{63657c0c7f88a39a475f0de726ef109a}</p>
+<h2 id="题目：weak-auth"><a href="#题目：weak-auth" class="headerlink" title="题目：weak_auth"></a>题目：weak_auth</h2><p>打开网页看到标题提示weak auth弱验证，这就没啥好说的了，没看到验证码，burp直接来爆破吧！</p>
+<ol>
+<li>随便输入下用户名和密码,提示要用admin用户登入,然后跳转到了check.php,查看下源代码提示要用字典。</li>
+<li>用burpsuite截下登录的数据包,把数据包发送到intruder爆破</li>
+<li>设置爆破点为password</li>
+<li>加载字典</li>
+<li>开始攻击，查看响应包列表，发现密码为123456时，响应包的长度和别的不一样.   </li>
+</ol>
+<p>于是便得到了flag</p>
+<p>flag：cyberpeace{04415bd2dac05f0e2cd712bb43c447b2}</p>
+<h2 id="题目：webshell"><a href="#题目：webshell" class="headerlink" title="题目：webshell"></a>题目：webshell</h2><p>这个没啥好说的，菜刀连接上后发现目录下有个flag.txt，打开就看到了flag了</p>
+<p>flag：cyberpeace{74fea3cfddba6bfdc6bfba5b38300b08}</p>
+<h2 id="题目：command-execution"><a href="#题目：command-execution" class="headerlink" title="题目：command_execution"></a>题目：command_execution</h2><p>打开网页在标题看到command execution 命令执行，那就没啥好说的了，看看目录下有些啥吧!</p>
+<p>ping -c 3 3 127.0.0.1 | ls /<br>bin<br>boot<br>dev<br>etc<br>home<br>lib<br>lib64<br>media<br>mnt<br>opt<br>proc<br>root<br>run<br>run.sh<br>sbin<br>srv<br>sys<br>tmp<br>usr<br>var<br>习惯性的看看home里有什么</p>
+<p>ping -c 3 127.0.0.1 | ls /home<br>flag.txt<br>ping -c 3 3 127.0.0.1 | cat /home/flag.txt<br>cyberpeace{39190fc825ce46b116b6829f0c13d625}<br>于是便得到了flag！</p>
+<p>flag：cyberpeace{39190fc825ce46b116b6829f0c13d625}</p>
+<h2 id="题目：simple-php"><a href="#题目：simple-php" class="headerlink" title="题目：simple_php"></a>题目：simple_php</h2><p>这道题在阅读了PHP代码后，发现，要a==0，但a的值又不能为0，因此让a=0+任意非数字字符，而 b=数字就退出， 于是构造：?a=0a&amp;b=12345A便得到完整的flag</p>
+<p>flag：Cyberpeace{647E37C7627CC3E4019EC69324F66C7C}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+       </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+ 
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/计算机漏洞安全相关的概念/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/08/计算机漏洞安全相关的概念/" itemprop="url">计算机漏洞安全相关的概念</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T22:39:58+08:00">
+                2019-08-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-09T23:18:07+08:00">
+                2019-08-09
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/08/计算机漏洞安全相关的概念/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/08/计算机漏洞安全相关的概念/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  614 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote class="blockquote-center"><br>最近在学校的网安协会招新群里做了几个CTF题，发现还是挺有意思的（其实我大一上就加入了，不过是潜水怪，纯混子）<br>算是重拾对网安的兴趣吧。<br></blockquote>
+
+<ol>
+<li>POC<br>POC，Proof ofConcept，中文意思是“观点证明”。这个短语会在漏洞报告中使用，漏洞报告中的POC则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的。</li>
+<li>EXP<br>Exploit，中文意思是“漏洞利用”。意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法。</li>
+<li>VUL<br>VUL，Vulnerability的缩写，泛指漏洞。</li>
+<li>CVE<br>CVE 的英文全称是“Common Vulnerabilities &amp; Exposures”公共漏洞和暴露，例如CVE-2015-0057、CVE-1999-0001等等。CVE就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。如果在一个漏洞报告中指明的一个漏洞，如果有CVE名称，你就可以快速地在任何其它CVE兼容的数据库中找到相应修补的信息，解决安全问题。</li>
+</ol>
+<p>可以在<a href="https://cve.mitre.org/" target="_blank" rel="noopener">https://cve.mitre.org/</a> 网站根据漏洞的CVE编号搜索该漏洞的介绍。</p>
+<p>也可以在中文社区<a href="http://www.scap.org.cn/" target="_blank" rel="noopener">http://www.scap.org.cn/</a> 上搜索关于漏洞的介绍</p>
+<ol start="5">
+<li>0DAY漏洞和0DAY攻击<br>在计算机领域中，零日漏洞或零时差漏洞（英语：Zero-dayexploit）通常是指还没有补丁的安全漏洞，而零日攻击或零时差攻击（英语：Zero-dayattack）则是指利用这种漏洞进行的攻击。提供该漏洞细节或者利用程序的人通常是该漏洞的发现者。零日漏洞的利用程序对网络安全具有巨大威胁，因此零日漏洞不但是黑客的最爱，掌握多少零日漏洞也成为评价黑客技术水平的一个重要参数。<br>零日漏洞及其利用代码不仅对犯罪黑客而言，具有极高的利用价值，一些国家间谍和网军部队，例如美国国家安全局和美国网战司令部也非常重视这些信息。据路透社报告称美国政府是零日漏洞黑市的最大买家。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+       </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+ 
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/V2ray服务器搭建科学上网/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -393,7 +810,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T01:40:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T01:50:22+08:00">
                 2019-07-04
               </time>
             
@@ -431,7 +848,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k 字
+                  1.4k 字
                 </span>
               
 
@@ -466,10 +883,24 @@
 
       
       
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck0mkdtnh000be0tiat284d4h" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
-          <p><blockquote class="blockquote-center"><br>昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件),从此通往自由不求人。<br>本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。<br></blockquote><br></p>
+          <p><blockquote class="blockquote-center"><br>昨天下午一时兴起，丢下高数题弄了v2ray(其实我有好用的代理软件,就是想搭着玩),从此通往自由不求人。<br>本文从零开始，手把手教你搭建自己的V2ray和SS服务器实现全球互联。史上最详细的小白搭建V2ray和ss教程。内容包括VPS购买，连接VPS，一键搭建V2ray和SS，开启bbr加速，客户端配置。<br></blockquote><br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/04/V2ray服务器搭建科学上网/#more" rel="contents">
@@ -852,7 +1283,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" rel="gallery_cjxnj3y480000rwti8a9a1zrk" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" rel="gallery_ck0mkdtm10002e0ti6h6dgsho" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" itemprop="contentUrl">
               </a>
             
@@ -1296,6 +1727,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/PAT-1035-插入与归并/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanon">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/18/PAT-1035-插入与归并/" itemprop="url">PAT 1035 插入与归并</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T20:26:23+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-28T18:11:01+08:00">
+                2019-06-28
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/18/PAT-1035-插入与归并/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/PAT-1035-插入与归并/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  941 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><font color="#008000"><br>1035 插入与归并（25 分）<br>根据维基百科的定义：</font></p>
+<p><strong>插入排序</strong>是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。<br><strong>归并排序</strong>进行如下迭代操作：首先将原始序列看成 N 个只包含 1 个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下 1 个有序的序列。<br>现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？<br>输入格式：<br>输入在第一行给出正整数 N (≤100)；随后一行给出原始序列的 N 个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。<br>输出格式：<br>首先在第 1 行中输出Insertion Sort表示插入排序、或Merge Sort表示归并排序；然后在第 2 行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行首尾不得有多余空格。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/18/PAT-1035-插入与归并/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+       </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+ 
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/PAT-1055-集体照/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1445,209 +2079,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/18/PAT-1055-集体照/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-       </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
- 
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/PAT-1057-数壹零/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Emanon">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="֣郑玉龙の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/PAT-1057-数壹零/" itemprop="url">PAT 1057 数壹零</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T20:26:23+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-28T19:38:40+08:00">
-                2019-06-28
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/18/PAT-1057-数壹零/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/PAT-1057-数壹零/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  362 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><font color="Blue"><br>1057 数零壹 （20 分)</font></p>
-<p>给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/PAT-1057-数壹零/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1890,411 +2321,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
- 
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/PAT-1035-插入与归并/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Emanon">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="֣郑玉龙の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/PAT-1035-插入与归并/" itemprop="url">PAT 1035 插入与归并</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T20:26:23+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-28T18:11:01+08:00">
-                2019-06-28
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/18/PAT-1035-插入与归并/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/PAT-1035-插入与归并/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  941 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><font color="#008000"><br>1035 插入与归并（25 分）<br>根据维基百科的定义：</font></p>
-<p><strong>插入排序</strong>是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。<br><strong>归并排序</strong>进行如下迭代操作：首先将原始序列看成 N 个只包含 1 个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下 1 个有序的序列。<br>现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？<br>输入格式：<br>输入在第一行给出正整数 N (≤100)；随后一行给出原始序列的 N 个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。<br>输出格式：<br>首先在第 1 行中输出Insertion Sort表示插入排序、或Merge Sort表示归并排序；然后在第 2 行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行首尾不得有多余空格。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/PAT-1035-插入与归并/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-       </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
- 
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/Markdown语法说明/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Emanon">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="֣郑玉龙の博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/18/Markdown语法说明/" itemprop="url">Markdowm语法说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T19:37:36+08:00">
-                2019-03-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-06-28T20:26:52+08:00">
-                2019-06-28
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/18/Markdown语法说明/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/Markdown语法说明/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  569 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/2019/03/18/Markdown语法说明/01.png" alt=""><br>写博客什么的超级好用<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/18/Markdown语法说明/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-       </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2347,7 +2373,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2369,7 +2395,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

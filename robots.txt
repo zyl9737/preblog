@@ -11,5 +11,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://zyl9737.github.io/sitemap.xml
-Sitemap: https://zyl9737.github.io/baidusitemap.xml
+Sitemap: https://zhengyulong.top/sitemap.xml
+Sitemap: https://zhengyulong.top/baidusitemap.xml

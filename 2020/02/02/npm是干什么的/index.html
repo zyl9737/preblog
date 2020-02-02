@@ -123,17 +123,17 @@
 <meta name="description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
 <meta name="keywords" content="npm,社区文化,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nnpm是干什么的">
+<meta property="og:title" content="npm是干什么的">
 <meta property="og:url" content="http://zhengyulong.top/2020/02/02/npm是干什么的/index.html">
 <meta property="og:site_name" content="֣郑玉龙の博客">
 <meta property="og:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202154457.png">
-<meta property="og:updated_time" content="2020-02-02T09:44:15.014Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png">
+<meta property="og:updated_time" content="2020-02-02T10:10:06.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nnpm是干什么的">
+<meta name="twitter:title" content="npm是干什么的">
 <meta name="twitter:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202154457.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png">
 
 
 
@@ -169,7 +169,7 @@
 
 
 
-  <title>nnpm是干什么的 | ֣郑玉龙の博客</title>
+  <title>npm是干什么的 | ֣郑玉龙の博客</title>
   
 
 
@@ -366,7 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">nnpm是干什么的</h1>
+          <h1 class="post-title" itemprop="name headline">npm是干什么的</h1>
         
 
         <div class="post-meta">
@@ -394,7 +394,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-02T17:44:15+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-02T18:10:06+08:00">
                 2020-02-02
               </time>
             
@@ -494,9 +494,25 @@
 
       
       
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck64v7crf002ad0ti7m8ic2nz" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <p><blockquote class="blockquote-center"><br>最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。<br></blockquote><br><a id="more"></a></p>
+        <blockquote class="blockquote-center"><br>最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。<br></blockquote>
+
+<a id="more"></a>
 <h2 id="社区"><a href="#社区" class="headerlink" title="社区"></a>社区</h2><p>程序员自古以来就有社区文化：</p>
 <blockquote>
 <p>社区的意思是：拥有共同职业或兴趣的人们，自发组织在一起，通过分享信息和资源进行合作。虚拟社区的参与者经常会在线讨论相关话题，或访问某些网站。</p>
@@ -629,8 +645,7 @@
 <h3 id="包的发布"><a href="#包的发布" class="headerlink" title="包的发布"></a>包的发布</h3><p>通过使用<code>npm init</code>可以根据交互式回答产生一个符合标准的 package.json。创建一个 index.js 作为包的接口,一个简单的包就制作完成了。<br>在发布前,我们还需要获得一个账号用于今后维护自己的包,使用<code>npm adduser</code> 根据提示完成账号的创建。</p>
 <p>完成后可以使用 <code>npm whoami</code> 检测是否已经取得了账号。</p>
 <p>接下来，在 package.json 所在目录下运行 npm publish，稍等片刻就可以完成发布了，打开浏览器，访问 <a href="http://search.npmjs.org/" target="_blank" rel="noopener">http://search.npmjs.org/</a> 就可以找到自己刚刚发布的包了。现在我们可以在世界的任意一台计算机上使用 npm install neveryumodule 命令来安装它。</p>
-<p>如果你的包将来有更新,只需要在 package.json 文件中修改 version 字段，然后重新使用 <code>npm publish</code> 命令就行了。<br>如果你对已发布的包不满意，可以使用 <code>npm unpublish</code> 命令来取消发布。</p>
-<p><strong>需要说明的是：json 文件不能有注释</strong></p>
+<p>如果你的包将来有更新,只需要在 package.json 文件中修改 version 字段，然后重新使用 <code>npm publish</code> 命令就行了。<br>如果你对已发布的包不满意，可以使用 <code>npm unpublish</code> 命令来取消发布。<br><strong>需要说明的是：json 文件不能有注释</strong></p>
 <h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><ul>
 <li><a href="https://blog.csdn.net/csdn_yudong/article/details/78946708" target="_blank" rel="noopener">https://blog.csdn.net/csdn_yudong/article/details/78946708</a></li>
 <li><a href="http://javascript.ruanyifeng.com/nodejs/npm.html" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/nodejs/npm.html</a></li>
@@ -695,7 +710,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://zhengyulong.top/2020/02/02/npm是干什么的/" title="nnpm是干什么的">http://zhengyulong.top/2020/02/02/npm是干什么的/</a>
+    <a href="http://zhengyulong.top/2020/02/02/npm是干什么的/" title="npm是干什么的">http://zhengyulong.top/2020/02/02/npm是干什么的/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>

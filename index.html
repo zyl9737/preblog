@@ -390,7 +390,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-05T11:51:54+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-05T11:58:40+08:00">
                 2020-02-05
               </time>
             
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.5k 字
+                  3.8k 字
                 </span>
               
 
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -489,7 +489,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck68s0f9k001ofctiix2q6yjg" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck68s92yk0026f4tiheh0l64g" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" itemprop="contentUrl">
               </a>
             
@@ -502,65 +502,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="什么是边缘计算"><a href="#什么是边缘计算" class="headerlink" title="什么是边缘计算"></a>什么是边缘计算</h2><p>首先，我们仔细观察Edge Computing这个词，其中的edge是和Cloud Computing中的cloud相对应的概念。目前云计算几乎是所有应用程序的主流解决方案，我们的移动端在大多数场景中仅负责发送请求、接收返回数据、渲染画面等操作。在云计算中，庞大的、来自地理位置各异的移动用户终端的服务请求首先通过有线或无线的方式传入接入网(access network)，再经过主干网传播(backbone)传送给服务所在的数据中心进行处理。在这个过程中，位于云端的数据中心才是真正负责处理用户服务请求的地方，而主干网的传播是相对耗时的，这对于那些对延迟极其敏感的应用程序来说是非常不友好的。例如，超高清视频的下载、在线的超高清视频游戏、在线的AR\VR应用程序、自动驾驶等。</p>
-<p>我们想办法降低延迟，有两种途径。第一种，也是最常见的一种，怼硬件怼带宽就完事了。显然，这种方式必然是奢侈的。第二种方法则直接改变了计算方式，也就是：<strong>尽可能取消请求和数据在主干网的路由。</strong>如何做到这一点呢？<strong>直接把计算和处理能力从远在天边的云数据中心下沉到距离用户非常近的接入网不就可以了吗！</strong>这正是边缘计算的思路。随着5G的到来，这种计算范式上的转变势在必行。我们知道，5G使用了更高的频带，因此无线信号的覆盖范围将会大大受限，为了做到全面覆盖，需要部署很多的微基站。我们有十足的理由赋予这些微基站一定的计算能力，甚至可以在周围建立小型数据中心，直接处理来自微基站转发来的服务请求。这样就完全杜绝了在主干网上极其耗时的路由开销。</p>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204115914.png" alt=""></p>
-<p>当然，以上仅仅是最理想的情况，目前更多的研究人员推崇的是<code>device-edge-cloud synergy</code>，也就是“云-边-端协同处理”。至于怎么个协同法，具体问题具体分析。但是，至少要依据以下特征来定：<strong>端</strong>通常是计算受限、电池受限的，<strong>边</strong>和端相比计算能力更强，但是和<strong>云</strong>相比则是小巫见大巫。但是用户体验的延迟则是正好相反。举个栗子，如果要在移动端完成一个DNN分类的任务，我们可以将已经训练好的DNN模型进行切分，前一半网络层（假设是计算不密集的）放在边缘服务器上，后一半计算密集型的网络层放到云数据中心。用户作为<strong>端</strong>将待分类的图片发送给<strong>边</strong>，<strong>边</strong>将前半部分返回的结果发送给<strong>云</strong>，由<strong>云</strong>来完成后半部分，最后的结果再回传给端。这个过程需要在计算开销和通信开销之间做权衡。（注：该案例来自论文<a href="http://hliangzhao.me/slides/synergy.pdf" target="_blank" rel="noopener">Edge Intelligence: On-demand Deep Learning Model Co-inference with Device-edge Synergy</a>）</p>
-<p>我们不能将边缘计算剥离出来单独看待。边缘计算更多的是针对物理场景下的考虑，也不是所有的应用程序都需要边缘计算。但是，<strong>计算下沉、边端赋能</strong>一定是必然会发生的未来。最后，关于边缘计算、雾计算、Cloudlet之间的关系可以参考下面这一页slide:<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203214638.png" alt=""></p>
-<h2 id="边缘计算和雾计算的区别"><a href="#边缘计算和雾计算的区别" class="headerlink" title="边缘计算和雾计算的区别"></a>边缘计算和雾计算的区别</h2><p>随着边缘计算的兴起，理解边缘设备所涉及的另一项技术也很重要，它就是雾计算。</p>
-<p>边缘计算具体是指在网络的”边缘”处或附近进行的计算过程，而雾计算则是指边缘设备和云端之间的网络连接。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204120342.png" alt=""></p>
-<p>虽然边缘计算给云计算带来补充，并且与雾计算一起非常紧密地运作，但它绝不是二者的替代者。</p>
-<h2 id="如何开展边缘计算的研究"><a href="#如何开展边缘计算的研究" class="headerlink" title="如何开展边缘计算的研究"></a>如何开展边缘计算的研究</h2><h3 id="优化与设计"><a href="#优化与设计" class="headerlink" title="优化与设计"></a>优化与设计</h3><p>自底向上可以划分为：<code>Topology</code>、<code>Content</code>、<code>Service</code>。顾名思义，<code>Topology</code>研究的就是边缘计算的架构，这涉及边缘站点的放置及部署(edge site orchestration)、无线网络规划和路由(network planning)等。此处的研究工作与radio access network方向有很大重叠(灌水的快乐源泉:-D)。<code>Content</code>是建立在Topology基础上的：既然我们已经搭建好了边缘网络，接下来要做的就是内容(数据+服务)的部署和放置。这就会涉及到许多问题。例如，要采用哪一种服务架构？以微服务器架构为例，我们需要为各类服务选择合适的边缘站点部署实例，这就得面临服务器选择(server selectioin)、服务放置/部署(service placement/deployment)等问题。如果待部署的服务有复杂的组合结构，那么也会涉及到服务组合的问题(service selection for compositin)等。<code>Content</code>与服务计算关联密切。<code>Service</code>是建立在物理架构和内容放置的基础上的，研究的是如何合理调度资源以提供更加优秀的服务质量何用户体验。包括计算卸载方案的设计(coputing offloading)、用户数据在不同边缘站点之间的同步与迁移(synchronization &amp; migration)、移动性管理(mobility management)等。</p>
-<p>以上内容并非是割裂开来的。实际上，许多工作针对以上目标组合式地建模，求解。以上述感兴趣的名词+edge computing作为关键词在谷歌上检索就可以找到许多工作，从模仿开始。对于一个子方向而言，所需要的研究基础差异不大，多读几篇就可以大致建立基本的框架和观念。这类工作其实是非常容易灌水的，因而催生了一大批褒贬不一的、同质的论文。</p>
-<p>边缘计算与人工智能结合，也即是边缘智能(Edge Itelligence)，是目前学术界的热点研究方向。这部分的工作自定向下可分类为模型适配(model adaptation)、框架设计(framework design)和硬件加速(processor acceleration)。边缘智能主要研究如何将人工智能模型(统计学习、深度学习及强化学习均有包含)放在网络边缘端执行。以深度神经网络为例，联邦学习就是一个极佳的训练框架，可以尝试性地放置在资源受限地终端及边缘设备上执行。基于联邦学习这一分布式训练框架，许多工作研究如何通过模型压缩等手段降低DNN模型的资源占用，让其适配计算资源相对受限的网络边缘。</p>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204140014.png" alt="来自论文Edge Itelligence:the Confluence of Edge Coputing and Artificial Intelligence"></p>
-<h3 id="系统与工程"><a href="#系统与工程" class="headerlink" title="系统与工程"></a>系统与工程</h3><p>这一部分的研究通常与实际问题紧密结合。例如视频监控的实时处理（目标检测、嫌疑行为识别等）、车联网和自动驾驶中的数据实时感知与处理、无人机的实时路径规划与农业灌溉等。即使是研究资源调度和优化的工作，也与从优化角度入手的论文完全不同。这些工作通常借助一些单片机作为边缘设备，借助Docket和Kubernetes搭建benchmarks，并开发相应的中间件来解决这些实际问题。和优化类的工作相比，这类工作研究周期长、设计到要解决的问题所在领域的专业知识，不容易灌水。但是，在理论和模型上难有创新。因此，该问题中的<strong>研究基础</strong>不好界定。目前SEC（ACM/IEEE Symposium on Edge Computing）这几年的论文偏系统的居多，感兴趣的可以从这个会议上找文献。</p>
-<h2 id="做研究的步骤"><a href="#做研究的步骤" class="headerlink" title="做研究的步骤"></a>做研究的步骤</h2><p>分析问题、建立模型、设计算法求解并做实验验证。从模仿起步是很重要的，当自己没有思路的时候，就可以去顶会顶刊上看看别人是怎么做的，有哪些可以学习的技巧。撰写英文学术论文最主要的是要克服自己的恐惧心理，大大方方去面对这件事情。</p>
-<p>这里引用袁老师的几句建议：</p>
-<blockquote>
-<p>我们现在要做的就是找问题找方法，一篇论文要看的是针对哪个领域或者方向的什么问题，目前有哪些挑战，有什么解决方案和方法，创新点是什么，能达到什么效果，还有什么待改进和值得研究的方面。</p>
-</blockquote>
-<h2 id="目前正在看的几篇论文"><a href="#目前正在看的几篇论文" class="headerlink" title="目前正在看的几篇论文"></a>目前正在看的几篇论文</h2><h3 id="资源约束边缘计算系统中的自适应联邦学习（Adaptive-Federated-Leaning-in-Resource-Constrainen-Edge-Computing-Systems）"><a href="#资源约束边缘计算系统中的自适应联邦学习（Adaptive-Federated-Leaning-in-Resource-Constrainen-Edge-Computing-Systems）" class="headerlink" title="资源约束边缘计算系统中的自适应联邦学习（Adaptive Federated Leaning in Resource Constrainen Edge Computing Systems）"></a>资源约束边缘计算系统中的自适应联邦学习（Adaptive Federated Leaning in Resource Constrainen Edge Computing Systems）</h3><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204145459.png" alt=""></p>
-<p><strong>摘要</strong>：新兴的技术和应用，包括物联网、社交网络、和众包，在网络边缘产生了大量的数据。机器学习模式往往从收集的数据处建立起来，使检测，分类和预测未来的事件。由于带宽、存储和隐私问题，将所有数据发送到一个集中的地点通常是不切实际的。在本文中，我们考虑了从分布在多个边缘节点上的数据中学习模型参数的问题，而不将原始数据发送到集中的地方。我们的重点是在一类通用的机器学习模型上，使用基于梯度的方法进行训练。从理论角度分析了分布式梯度下降的收敛性。在此基础上，我们提出了一种控制算法，该算法确定了局部更新和全局参数聚合之间的最佳权衡，以最小化给定资源预算下的损失函数。通过对真实数据集的广泛实验，在网络原型系统和更大规模的模拟环境中，对所提出的算法的性能进行了评估。实验结果表明，我们提出的方法在不同的机器学习模型和不同的数据分布下，性能接近最优。</p>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204150424.png" alt=""></p>
-<ul>
-<li><p>这篇文章得到了一个基于梯度下降的联合学习的新的收敛界，它包含了非独立的和识别的两个界(非i.i.d)节点之间的数据分布和两个全局聚合之间的任意数量的本地更新。</p>
-</li>
-<li><p>利用上述理论收敛边界，提出了一种学习数据分布、系统力学和模型特征的控制算法，并在此基础上对全局聚合频率和实时性进行了动态适应，研究了全局聚合频率对具有资源约束的联邦学习的适应性，以尽量减少固定资源预算下的学习损失。</p>
-</li>
-<li><p>今后的研究可以集中在如何充分利用分布式学习的异构资源，以及代表深层神经网络某种形式的的非凸损失函数的理论收敛分析。</p>
-</li>
-</ul>
-<h3 id="边缘AI：通过联合学习对移动边缘计算，缓存和通信进行智能化"><a href="#边缘AI：通过联合学习对移动边缘计算，缓存和通信进行智能化" class="headerlink" title="边缘AI：通过联合学习对移动边缘计算，缓存和通信进行智能化"></a>边缘AI：通过联合学习对移动边缘计算，缓存和通信进行智能化</h3><p>（In-Edge AI: Intelligentizing Mobile Edge Computing, Caching and Communication by Federated Learning）</p>
-<p><strong>摘要</strong>： 近年来，随着移动通信技术的飞速发展，边缘计算理论和技术受到了全球研究人员和工程师的越来越多的关注，它们可以通过网络边缘显着地弥合云的容量和对设备的需求，并且因此可以加速内容交付并提高移动服务的质量。与传统的优化方法相比，在当前的深度学习技术的驱动下，为了给边缘系统带来更多的智能，我们建议将深度强化学习技术和联合学习框架与移动边缘系统相集成，以优化移动边缘计算，缓存和通讯。因此，我们设计了“ In-Edge AI”框架，以便智能地利用设备和边缘节点之间的协作来交换学习参数，以更好地训练和推断模型，从而进行动态系统级优化和应用程序级增强，同时减少不必要的系统通信负载。对“ In-Edge AI”进行了评估，并证明其具有近乎最佳的性能，但学习开销相对较低，而该系统具有认知性并且适用于移动通信系统。最后，我们讨论了一些相关的挑战和机遇，以揭示有前途的“ In-Edge AI”的未来。</p>
-<p>相关工作中考虑的不多的问题：</p>
-<ul>
-<li><p>应该以何种形式收集训练数据（无论是分布式还是集中式）</p>
-</li>
-<li><p>应该在哪里放置和训练强化学习智能体（无论是在UE，边缘节点还是远程云基础架构中）</p>
-</li>
-<li><p>强化学习智能体的更新过程应如何进行、协作。</p>
-</li>
-<li><p>训练数据的隐私保护</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200205111947.png" alt=""></p>
-<p>这篇文章的创新点：</p>
-<ul>
-<li><p>将DRL与联合学习相结合用于MEC系统中通信和计算的智能联合资源管理，讨论利用DRL的方法（特别是深度Q学习）和分布式DRL，以优化边缘缓存和计算。</p>
-</li>
-<li><p>提出了”边缘AI”框架，以进一步利用”联合学习”在MEC系统中更好地部署智能资源管理</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200205112100.png" alt=""></p>
-<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><ul>
-<li><a href="https://www.zhihu.com/question/35792003" target="_blank" rel="noopener">https://www.zhihu.com/question/35792003</a></li>
-<li><a href="https://www.zhihu.com/question/319330609" target="_blank" rel="noopener">https://www.zhihu.com/question/319330609</a></li>
-</ul>
-
-          
+          <p>边缘计算(Edge computing)指的是接近于事物，数据和行动源头处的计算。用更通用的术语来表示即：邻近计算或者接近计算(Proximity Computing)。如果云计算是集中式大数据处理，边缘计算则可以理解为边缘式大数据处理。边缘计算已经逐步在物联网、AR/VR场景以及大数据和人工智能行业有所应用。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/03/关于边缘智能的几篇论文/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -756,7 +705,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck68s0fgu002efctiwloxav1z" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck68s9345002hf4tic0k2vetf" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
               </a>
             
@@ -1527,7 +1476,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck68s0emg0004fctituxw7pbo" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck68s92gh0006f4ti2ud85d02" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" itemprop="contentUrl">
               </a>
             
@@ -2083,7 +2032,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck68s0epc000tfcticlsuwst4" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck68s92hk000if4ti5imal05d" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" itemprop="contentUrl">
               </a>
             

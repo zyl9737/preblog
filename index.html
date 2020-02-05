@@ -390,7 +390,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-05T11:49:00+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-05T11:51:54+08:00">
                 2020-02-05
               </time>
             
@@ -489,7 +489,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck68rwr6v00283wtibmqn5n8v" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck68s0f9k001ofctiix2q6yjg" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" itemprop="contentUrl">
               </a>
             
@@ -505,7 +505,7 @@
           
             <a id="more"></a>
 <h2 id="什么是边缘计算"><a href="#什么是边缘计算" class="headerlink" title="什么是边缘计算"></a>什么是边缘计算</h2><p>首先，我们仔细观察Edge Computing这个词，其中的edge是和Cloud Computing中的cloud相对应的概念。目前云计算几乎是所有应用程序的主流解决方案，我们的移动端在大多数场景中仅负责发送请求、接收返回数据、渲染画面等操作。在云计算中，庞大的、来自地理位置各异的移动用户终端的服务请求首先通过有线或无线的方式传入接入网(access network)，再经过主干网传播(backbone)传送给服务所在的数据中心进行处理。在这个过程中，位于云端的数据中心才是真正负责处理用户服务请求的地方，而主干网的传播是相对耗时的，这对于那些对延迟极其敏感的应用程序来说是非常不友好的。例如，超高清视频的下载、在线的超高清视频游戏、在线的AR\VR应用程序、自动驾驶等。</p>
-<p>我们想办法降低延迟，有两种途径。第一种，也是最常见的一种，怼硬件怼带宽就完事了。显然，这种方式必然是奢侈的。第二种方法则直接改变了计算方式，也就是：<strong>尽可能取消请求和诗句在主干网的路由。</strong>如何做到这一点呢？<strong>直接把计算和处理能力从远在天边的云数据中心下沉到距离用户非常近的接入网不就可以了吗！</strong>这正是边缘计算的思路。随着5G的到来，这种计算范式上的转变势在必行。我们知道，5G使用了更高的频带，因此无线信号的覆盖范围将会大大受限，为了做到全面覆盖，需要部署很多的微基站。我们有十足的理由赋予这些微基站一定的计算能力，甚至可以在周围建立小型数据中心，直接处理来自微基站转发来的服务请求。这样就完全杜绝了在主干网上极其耗时的路由开销。</p>
+<p>我们想办法降低延迟，有两种途径。第一种，也是最常见的一种，怼硬件怼带宽就完事了。显然，这种方式必然是奢侈的。第二种方法则直接改变了计算方式，也就是：<strong>尽可能取消请求和数据在主干网的路由。</strong>如何做到这一点呢？<strong>直接把计算和处理能力从远在天边的云数据中心下沉到距离用户非常近的接入网不就可以了吗！</strong>这正是边缘计算的思路。随着5G的到来，这种计算范式上的转变势在必行。我们知道，5G使用了更高的频带，因此无线信号的覆盖范围将会大大受限，为了做到全面覆盖，需要部署很多的微基站。我们有十足的理由赋予这些微基站一定的计算能力，甚至可以在周围建立小型数据中心，直接处理来自微基站转发来的服务请求。这样就完全杜绝了在主干网上极其耗时的路由开销。</p>
 <p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204115914.png" alt=""></p>
 <p>当然，以上仅仅是最理想的情况，目前更多的研究人员推崇的是<code>device-edge-cloud synergy</code>，也就是“云-边-端协同处理”。至于怎么个协同法，具体问题具体分析。但是，至少要依据以下特征来定：<strong>端</strong>通常是计算受限、电池受限的，<strong>边</strong>和端相比计算能力更强，但是和<strong>云</strong>相比则是小巫见大巫。但是用户体验的延迟则是正好相反。举个栗子，如果要在移动端完成一个DNN分类的任务，我们可以将已经训练好的DNN模型进行切分，前一半网络层（假设是计算不密集的）放在边缘服务器上，后一半计算密集型的网络层放到云数据中心。用户作为<strong>端</strong>将待分类的图片发送给<strong>边</strong>，<strong>边</strong>将前半部分返回的结果发送给<strong>云</strong>，由<strong>云</strong>来完成后半部分，最后的结果再回传给端。这个过程需要在计算开销和通信开销之间做权衡。（注：该案例来自论文<a href="http://hliangzhao.me/slides/synergy.pdf" target="_blank" rel="noopener">Edge Intelligence: On-demand Deep Learning Model Co-inference with Device-edge Synergy</a>）</p>
 <p>我们不能将边缘计算剥离出来单独看待。边缘计算更多的是针对物理场景下的考虑，也不是所有的应用程序都需要边缘计算。但是，<strong>计算下沉、边端赋能</strong>一定是必然会发生的未来。最后，关于边缘计算、雾计算、Cloudlet之间的关系可以参考下面这一页slide:<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203214638.png" alt=""></p>
@@ -756,7 +756,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck68rwrcr002i3wtiwxfl7ah9" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck68s0fgu002efctiwloxav1z" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
               </a>
             
@@ -1527,7 +1527,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck68rwqtj00063wti12tc704y" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck68s0emg0004fctituxw7pbo" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" itemprop="contentUrl">
               </a>
             
@@ -2083,7 +2083,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck68rwqvi000p3wtiqokritzo" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck68s0epc000tfcticlsuwst4" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" itemprop="contentUrl">
               </a>
             

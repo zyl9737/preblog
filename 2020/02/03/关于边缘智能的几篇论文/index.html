@@ -129,7 +129,7 @@
 <meta property="og:description" content="边缘计算(Edge computing)指的是接近于事物，数据和行动源头处的计算。用更通用的术语来表示即：邻近计算或者接近计算(Proximity Computing)。如果云计算是集中式大数据处理，边缘计算则可以理解为边缘式大数据处理。边缘计算已经逐步在物联网、AR/VR场景以及大数据和人工智能行业有所应用。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png">
-<meta property="og:updated_time" content="2020-02-05T04:06:25.406Z">
+<meta property="og:updated_time" content="2020-02-11T14:52:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于边缘智能的几篇论文的学习笔记">
 <meta name="twitter:description" content="边缘计算(Edge computing)指的是接近于事物，数据和行动源头处的计算。用更通用的术语来表示即：邻近计算或者接近计算(Proximity Computing)。如果云计算是集中式大数据处理，边缘计算则可以理解为边缘式大数据处理。边缘计算已经逐步在物联网、AR/VR场景以及大数据和人工智能行业有所应用。">
@@ -168,6 +168,7 @@
 
 
 
+<link rel="stylesheet" href="/js/prism/prism.css">
 
   <title>关于边缘智能的几篇论文的学习笔记 | ֣郑玉龙の博客</title>
   
@@ -394,8 +395,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-05T12:06:25+08:00">
-                2020-02-05
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-11T22:52:27+08:00">
+                2020-02-11
               </time>
             
           </span>
@@ -498,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck6hz7hih001twwti82mvuv01" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck6i09xs90026rktic7gw1pgs" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" itemprop="contentUrl">
               </a>
             
@@ -521,7 +522,7 @@
 <p>虽然边缘计算给云计算带来补充，并且与雾计算一起非常紧密地运作，但它绝不是二者的替代者。</p>
 <h2 id="如何开展边缘计算的研究"><a href="#如何开展边缘计算的研究" class="headerlink" title="如何开展边缘计算的研究"></a>如何开展边缘计算的研究</h2><h3 id="优化与设计"><a href="#优化与设计" class="headerlink" title="优化与设计"></a>优化与设计</h3><p>自底向上可以划分为：<code>Topology</code>、<code>Content</code>、<code>Service</code>。顾名思义，<code>Topology</code>研究的就是边缘计算的架构，这涉及边缘站点的放置及部署(edge site orchestration)、无线网络规划和路由(network planning)等。此处的研究工作与radio access network方向有很大重叠(灌水的快乐源泉:-D)。<code>Content</code>是建立在Topology基础上的：既然我们已经搭建好了边缘网络，接下来要做的就是内容(数据+服务)的部署和放置。这就会涉及到许多问题。例如，要采用哪一种服务架构？以微服务器架构为例，我们需要为各类服务选择合适的边缘站点部署实例，这就得面临服务器选择(server selectioin)、服务放置/部署(service placement/deployment)等问题。如果待部署的服务有复杂的组合结构，那么也会涉及到服务组合的问题(service selection for compositin)等。<code>Content</code>与服务计算关联密切。<code>Service</code>是建立在物理架构和内容放置的基础上的，研究的是如何合理调度资源以提供更加优秀的服务质量何用户体验。包括计算卸载方案的设计(coputing offloading)、用户数据在不同边缘站点之间的同步与迁移(synchronization &amp; migration)、移动性管理(mobility management)等。</p>
 <p>以上内容并非是割裂开来的。实际上，许多工作针对以上目标组合式地建模，求解。以上述感兴趣的名词+edge computing作为关键词在谷歌上检索就可以找到许多工作，从模仿开始。对于一个子方向而言，所需要的研究基础差异不大，多读几篇就可以大致建立基本的框架和观念。这类工作其实是非常容易灌水的，因而催生了一大批褒贬不一的、同质的论文。</p>
-<p>边缘计算与人工智能结合，也即是边缘智能(Edge Itelligence)，是目前学术界的热点研究方向。这部分的工作自定向下可分类为模型适配(model adaptation)、框架设计(framework design)和硬件加速(processor acceleration)。边缘智能主要研究如何将人工智能模型(统计学习、深度学习及强化学习均有包含)放在网络边缘端执行。以深度神经网络为例，联邦学习就是一个极佳的训练框架，可以尝试性地放置在资源受限地终端及边缘设备上执行。基于联邦学习这一分布式训练框架，许多工作研究如何通过模型压缩等手段降低DNN模型的资源占用，让其适配计算资源相对受限的网络边缘。</p>
+<p>边缘计算与人工智能结合，也即是边缘智能(Edge Itelligence)，是目前学术界的热点研究方向。这部分的工作自顶向下可分类为模型适配(model adaptation)、框架设计(framework design)和硬件加速(processor acceleration)。边缘智能主要研究如何将人工智能模型(统计学习、深度学习及强化学习均有包含)放在网络边缘端执行。以深度神经网络为例，联邦学习就是一个极佳的训练框架，可以尝试性地放置在资源受限地终端及边缘设备上执行。基于联邦学习这一分布式训练框架，许多工作研究如何通过模型压缩等手段降低DNN模型的资源占用，让其适配计算资源相对受限的网络边缘。</p>
 <p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200204140014.png" alt="来自论文Edge Itelligence:the Confluence of Edge Coputing and Artificial Intelligence"></p>
 <h3 id="系统与工程"><a href="#系统与工程" class="headerlink" title="系统与工程"></a>系统与工程</h3><p>这一部分的研究通常与实际问题紧密结合。例如视频监控的实时处理（目标检测、嫌疑行为识别等）、车联网和自动驾驶中的数据实时感知与处理、无人机的实时路径规划与农业灌溉等。即使是研究资源调度和优化的工作，也与从优化角度入手的论文完全不同。这些工作通常借助一些单片机作为边缘设备，借助Docket和Kubernetes搭建benchmarks，并开发相应的中间件来解决这些实际问题。和优化类的工作相比，这类工作研究周期长、设计到要解决的问题所在领域的专业知识，不容易灌水。但是，在理论和模型上难有创新。因此，该问题中的<strong>研究基础</strong>不好界定。目前SEC（ACM/IEEE Symposium on Edge Computing）这几年的论文偏系统的居多，感兴趣的可以从这个会议上找文献。</p>
 <h2 id="做研究的步骤"><a href="#做研究的步骤" class="headerlink" title="做研究的步骤"></a>做研究的步骤</h2><p>分析问题、建立模型、设计算法求解并做实验验证。从模仿起步是很重要的，当自己没有思路的时候，就可以去顶会顶刊上看看别人是怎么做的，有哪些可以学习的技巧。撰写英文学术论文最主要的是要克服自己的恐惧心理，大大方方去面对这件事情。</p>
@@ -1137,6 +1138,7 @@ if(canvas.getContext){
 
 
 
+<script src="/js/prism/prism.js" async></script>
 
         
 <div class="busuanzi-count">

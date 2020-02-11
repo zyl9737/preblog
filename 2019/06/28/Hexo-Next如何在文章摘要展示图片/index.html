@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  284 字
+                  289 字
                 </span>
               
 
@@ -498,7 +498,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" rel="gallery_ck690aqz10006iwtird7axicx" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" rel="gallery_ck6hz7h1t0005wwtih0p74yu1" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://faithlove.github.io/pic/2018/HexoThumb/topPicPre.png" itemprop="contentUrl">
               </a>
             
@@ -511,9 +511,26 @@
 
       
         <p>一般有两种方法<br><a id="more"></a></p>
-<h1 id="在文章的属性列表中添加photos属性"><a href="#在文章的属性列表中添加photos属性" class="headerlink" title="在文章的属性列表中添加photos属性"></a>在文章的属性列表中添加photos属性</h1><p>编写的文章属性中photos默认为文章的配图，这是我目前最喜欢的配图方式，但是有一个缺点，它不能自定义裁剪和缩略比，展示的是原图，这相当于如果你的每张配图大小比例不一致将会很影响美观性，目前没有很好的解决方案，所以只好自己裁剪好再引入。<br> 如这篇文章：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo Next如何在文章摘要展示图片</span><br><span class="line">date: 2019-06-28 17:43:44</span><br><span class="line">tags: Hexo</span><br><span class="line">categories: Hexo</span><br><span class="line">photos:</span><br><span class="line">    - &quot;xxx&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<h1 id="在你的正文中使用-lt-more-gt-进行截断"><a href="#在你的正文中使用-lt-more-gt-进行截断" class="headerlink" title="在你的正文中使用&lt;!-- more --&gt;进行截断"></a>在你的正文中使用<code>&lt;!-- more --&gt;</code>进行截断</h1><p>由于markdown是支持原生html的，所以我们可以在正文引用img来为我们的文章设置摘要配图,在<code>&lt;!-- more --&gt;</code>之前的内容都会展示到摘要中(同时与你主题文件中配置的摘要字数有关).<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo Next如何在文章摘要展示图片</span><br><span class="line">date: 2019-06-28 17:43:44</span><br><span class="line">tags: Hexo</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br><span class="line">&lt;img src=&quot;XXX&quot; width=50% /&gt;</span><br><span class="line">哇，漂亮的小姐姐(❤ ω ❤)</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure></p>
-
+<h1 id="在文章的属性列表中添加photos属性"><a href="#在文章的属性列表中添加photos属性" class="headerlink" title="在文章的属性列表中添加photos属性"></a>在文章的属性列表中添加photos属性</h1><p>编写的文章属性中photos默认为文章的配图，这是我目前最喜欢的配图方式，但是有一个缺点，它不能自定义裁剪和缩略比，展示的是原图，这相当于如果你的每张配图大小比例不一致将会很影响美观性，目前没有很好的解决方案，所以只好自己裁剪好再引入。<br> 如这篇文章：</p>
+<pre><code>---
+title: Hexo Next如何在文章摘要展示图片
+date: 2019-06-28 17:43:44
+tags: Hexo
+categories: Hexo
+photos:
+    - &quot;xxx&quot;
+---
+</code></pre><h1 id="在你的正文中使用-lt-more-gt-进行截断"><a href="#在你的正文中使用-lt-more-gt-进行截断" class="headerlink" title="在你的正文中使用&lt;!-- more --&gt;进行截断"></a>在你的正文中使用<code>&lt;!-- more --&gt;</code>进行截断</h1><p>由于markdown是支持原生html的，所以我们可以在正文引用img来为我们的文章设置摘要配图,在<code>&lt;!-- more --&gt;</code>之前的内容都会展示到摘要中(同时与你主题文件中配置的摘要字数有关).<br>如：</p>
+<pre><code>---
+title: Hexo Next如何在文章摘要展示图片
+date: 2019-06-28 17:43:44
+tags: Hexo
+categories: Hexo
+---
+&lt;img src=&quot;XXX&quot; width=50% /&gt;
+哇，漂亮的小姐姐(❤ ω ❤)
+&lt;!--more--&gt;
+</code></pre>
       
     </div>
     

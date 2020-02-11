@@ -476,7 +476,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck690ar13000qiwtif89a5bzw" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck6hz7h3s000twwtiwg5t7ya2" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" itemprop="contentUrl">
               </a>
             
@@ -537,11 +537,10 @@
 </li>
 </ul>
 <ul>
-<li><p>Step 1：修改系统变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Step 2:保存生效<br><code>sysctl -p</code></p>
-</li>
+<li>Step 1：修改系统变量<pre><code>echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+</code></pre></li>
+<li>Step 2:保存生效<br><code>sysctl -p</code></li>
 <li>Step 3：检查BBR是否开启<br><code>sysctl net.ipv4.tcp_available_congestion_control</code><br>如果 返回<br><code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code><br>则 开启 成功！</li>
 <li>Step 4：检查BBR是否启动成功<br><code>lsmod | grep bbr</code><br>如果 返回<br><code>tcp_bbr                20480  14</code><br>则 启动 成功</li>
 </ul>

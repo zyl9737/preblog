@@ -129,7 +129,7 @@
 <meta property="og:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png">
-<meta property="og:updated_time" content="2020-02-11T14:59:09.629Z">
+<meta property="og:updated_time" content="2020-02-11T15:25:32.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm学习笔记">
 <meta name="twitter:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
@@ -395,7 +395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-11T22:59:09+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-11T23:25:32+08:00">
                 2020-02-11
               </time>
             
@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6i1ck0t002ftstilnmnj4v2" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6i22mri002ilgtidg4lx2l0" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
               </a>
             
@@ -691,7 +691,7 @@ $ NODE_ENV=production npm install
 <pre><code>var backbone = require(&#39;backbone&#39;)
 console.log(backbone.VERSION)
 </code></pre><h4 id="npm-run"><a href="#npm-run" class="headerlink" title="npm run"></a>npm run</h4><p>npm 不仅可以用于模块管理，还可以用于执行脚本。package.json 文件有一个 scripts 字段，可以用于指定脚本命令，供 npm 直接调用。<br>package.json</p>
-<pre><code class="language-javascript">{
+<pre><code class="language-html">{
   &quot;name&quot;: &quot;myproject&quot;,
   &quot;devDependencies&quot;: {
     &quot;jshint&quot;: &quot;latest&quot;,
@@ -705,7 +705,7 @@ console.log(backbone.VERSION)
 }
 </code></pre>
 <h4 id="scripts-脚本"><a href="#scripts-脚本" class="headerlink" title="scripts 脚本"></a>scripts 脚本</h4><p>顾名思义，就是一些脚本代码，可以通过<code>npm run script-key</code>来调用，例如在这个 package.json 的文件夹下使用<code>npm run dev</code>就相当于运行了 node build/dev-server.js 这一段代码。使用 scripts 的目的就是为了把一些要执行的代码合并到一起，使用 npm run 来快速的运行，方便省事。<br>npm run 是 npm run-script 的缩写，一般都使用前者，但是后者可以更好的反应这个命令的本质。</p>
-<pre><code class="language-javascript">// 脚本
+<pre><code class="language-jhtml">// 脚本
 &quot;scripts&quot;: {
     &quot;dev&quot;: &quot;node build/dev-server.js&quot;,
     &quot;build&quot;: &quot;node build/build.js&quot;,
@@ -1339,6 +1339,7 @@ if(canvas.getContext){
 
   
 </div>
+
 
 
 

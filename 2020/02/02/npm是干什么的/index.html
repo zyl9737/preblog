@@ -129,7 +129,7 @@
 <meta property="og:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png">
-<meta property="og:updated_time" content="2020-02-11T16:12:23.568Z">
+<meta property="og:updated_time" content="2020-02-11T16:20:33.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm学习笔记">
 <meta name="twitter:description" content="最近学习前端碰到很多使用npm的情况，却不知道为什么要使用npm，用这篇博客来详细介绍一下npm。">
@@ -395,7 +395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-12T00:12:23+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-12T00:20:33+08:00">
                 2020-02-12
               </time>
             
@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6i33tw3002hv0tifv4u8ee1" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6i3mt4c002f08tim21pva7c" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
               </a>
             
@@ -601,12 +601,13 @@ $ npm info underscore version
 </code></pre>
 <h4 id="npm-search"><a href="#npm-search" class="headerlink" title="npm search"></a>npm search</h4><p>npm search 命令用于搜索 npm 仓库，它后面可以跟字符串，也可以跟正则表达式。<br><code>$ npm search &lt;搜索词&gt;</code></p>
 <h4 id="npm-list"><a href="#npm-list" class="headerlink" title="npm list"></a>npm list</h4><p>npm list 命令以树形结构列出当前项目安装的所有模块，以及它们依赖的模块。</p>
-<pre><code>$ npm list
+<pre><code class="line-numbers language-none">$ npm list
 # 加上 global 参数，会列出全局安装的模块
 $ npm list -global
 # npm list 命令也可以列出单个模块
 $ npm list underscore
-</code></pre><h4 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h4><p>使用 npm 安装包的命令格式为：<br><code>npm install/i &lt;package_name&gt;</code></p>
+</code></pre>
+<h4 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h4><p>使用 npm 安装包的命令格式为：<br><code>npm install/i &lt;package_name&gt;</code></p>
 <h4 id="本地模式和全局模式"><a href="#本地模式和全局模式" class="headerlink" title="本地模式和全局模式"></a>本地模式和全局模式</h4><p>npm 在默认情况下会从 <a href="http://npmjs.org" target="_blank" rel="noopener">http://npmjs.org</a> 搜索或下载包，将包安装到当前目录的 node_modules 子目录下。</p>
 <p>如果你熟悉 Ruby 的 gem 或者 Python 的 pip，你会发现 npm 与它们的行为不同，gem 或 pip 总是以全局模式安装，使包可以供所有的程序使用，而 npm 默认会把包安装到当前目录下。这反映了 npm 不同的设计哲学。如果把包安装到全局，可以提供程序的重复利用程度，避免同样的内容的多分副本，但坏处是难以处理不同的版本依赖。如果把包安装到当前目录，或者说本地，则不会有不同程序依赖不同版本的包的冲突问题，同时还减轻了包作者的 API 兼容性压力，但缺陷则是同一个包可能会被安装许多次。</p>
 <p>我们在使用 supervisor 的时候使用了<code>npm install -g supervisor</code>命令，就是以全局模式安装 supervisor 。</p>
@@ -684,12 +685,12 @@ $ npm install node-tap -D
 </code></pre>
 <p>当你有了一个完整的 package.json 文件的时候，就可以让人一眼看出来，这个模块的基本信息，和这个模块所需要依赖的包。我们可以通过 npm install 就可以很方便的下载好这个模块所需要的包。</p>
 <p>npm install 默认会安装 dependencies 字段和 devDependencies 字段中的所有模块，如果使用 –production 参数，可以只安装 dependencies 字段的模块。</p>
-<pre><code class="line-numbers language-none">$ npm install --production
+<pre><code class="line-numbers language-html">$ npm install --production
 # 或者
 $ NODE_ENV=production npm install
 </code></pre>
 <p>一旦安装了某个模块，就可以在代码中用 require 命令加载这个模块。</p>
-<pre><code class="line-numbers language-none">var backbone = require(&#39;backbone&#39;)
+<pre><code class="line-numbers language-html">var backbone = require(&#39;backbone&#39;)
 console.log(backbone.VERSION)
 </code></pre>
 <h4 id="npm-run"><a href="#npm-run" class="headerlink" title="npm run"></a>npm run</h4><p>npm 不仅可以用于模块管理，还可以用于执行脚本。package.json 文件有一个 scripts 字段，可以用于指定脚本命令，供 npm 直接调用。<br>package.json</p>

@@ -391,7 +391,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-12T16:33:32+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-12T16:40:12+08:00">
                 2020-02-12
               </time>
             
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  972 字
+                  977 字
                 </span>
               
 
@@ -486,197 +486,31 @@
 
       
       
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6j2e1sv000mxwtibe1q8d05" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
         
-          
-            <h2 id="线性回归模型从零开始的实现"><a href="#线性回归模型从零开始的实现" class="headerlink" title="线性回归模型从零开始的实现"></a>线性回归模型从零开始的实现</h2><pre><code class="line-numbers language-python"># import packages and modules
-%matplotlib inline
-import torch
-from IPython import display
-from matplotlib import pyplot as plt
-import numpy as np
-import random
-# 生成数据集
-# set input feature number 
-num_inputs = 2
-# set example number
-num_examples = 1000
-
-# set true weight and bias in order to generate corresponded label
-true_w = [2, -3.4]
-true_b = 4.2
-
-features = torch.randn(num_examples, num_inputs,
-                      dtype=torch.float32)
-labels = true_w[0] * features[:, 0] + true_w[1] * features[:, 1] + true_b
-labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()),
-                       dtype=torch.float32)
-# 使用图像来展示生成数据
-plt.scatter(features[:, 1].numpy(), labels.numpy(), 1);
-def data_iter(batch_size, features, labels):
-    num_examples = len(features)
-    indices = list(range(num_examples))
-    random.shuffle(indices)  # random read 10 samples
-    for i in range(0, num_examples, batch_size):
-        j = torch.LongTensor(indices[i: min(i + batch_size, num_examples)]) # the last time may be not enough for a whole batch
-        yield  features.index_select(0, j), labels.index_select(0, j)
-batch_size = 10
-
-for X, y in data_iter(batch_size, features, labels):
-    print(X, &#39;\n&#39;, y)
-    break
-# 初始化模型参数
-w = torch.tensor(np.random.normal(0, 0.01, (num_inputs, 1)), dtype=torch.float32)
-b = torch.zeros(1, dtype=torch.float32)
-
-w.requires_grad_(requires_grad=True)
-b.requires_grad_(requires_grad=True)
-# 定义模型
-def linreg(X, w, b):
-    return torch.mm(X, w) + b
-# 定义损失函数
-def squared_loss(y_hat, y): 
-    return (y_hat - y.view(y_hat.size())) ** 2 / 2
-# 定义优化函数
-def sgd(params, lr, batch_size): 
-    for param in params:
-        param.data -= lr * param.grad / batch_size # ues .data to operate param without gradient track
-# 训练
-# super parameters init
-lr = 0.03
-num_epochs = 5
-
-net = linreg
-loss = squared_loss
-
-# training
-for epoch in range(num_epochs):  # training repeats num_epochs times
-    # in each epoch, all the samples in dataset will be used once
-
-    # X is the feature and y is the label of a batch sample
-    for X, y in data_iter(batch_size, features, labels):
-        l = loss(net(X, w, b), y).sum()  
-        # calculate the gradient of batch sample loss 
-        l.backward()  
-        # using small batch random gradient descent to iter model parameters
-        sgd([w, b], lr, batch_size)  
-        # reset parameter gradient
-        w.grad.data.zero_()
-        b.grad.data.zero_()
-    train_l = loss(net(features, w, b), labels)
-    print(&#39;epoch %d, loss %f&#39; % (epoch + 1, train_l.mean().item()))
-</code></pre>
-<h2 id="使用pytorch的简洁实现"><a href="#使用pytorch的简洁实现" class="headerlink" title="使用pytorch的简洁实现"></a>使用pytorch的简洁实现</h2><pre><code class="line-numbers language-python">import torch
-from torch import nn
-import numpy as np
-torch.manual_seed(1)
-
-print(torch.__version__)
-torch.set_default_tensor_type(&#39;torch.FloatTensor&#39;)
-# 生成数据集
-num_inputs = 2
-num_examples = 1000
-
-true_w = [2, -3.4]
-true_b = 4.2
-
-features = torch.tensor(np.random.normal(0, 1, (num_examples, num_inputs)), dtype=torch.float)
-labels = true_w[0] * features[:, 0] + true_w[1] * features[:, 1] + true_b
-labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()), dtype=torch.float)
-# 读取数据集
-import torch.utils.data as Data
-
-batch_size = 10
-
-# combine featues and labels of dataset
-dataset = Data.TensorDataset(features, labels)
-
-# put dataset into DataLoader
-data_iter = Data.DataLoader(
-    dataset=dataset,            # torch TensorDataset format
-    batch_size=batch_size,      # mini batch size
-    shuffle=True,               # whether shuffle the data or not
-    num_workers=2,              # read data in multithreading
-)
-for X, y in data_iter:
-    print(X, &#39;\n&#39;, y)
-    break
-# 定义模型
-class LinearNet(nn.Module):
-    def __init__(self, n_feature):
-        super(LinearNet, self).__init__()      # call father function to init 
-        self.linear = nn.Linear(n_feature, 1)  # function prototype: `torch.nn.Linear(in_features, out_features, bias=True)`
-
-    def forward(self, x):
-        y = self.linear(x)
-        return y
-
-net = LinearNet(num_inputs)
-print(net)
-# ways to init a multilayer network
-# method one
-net = nn.Sequential(
-    nn.Linear(num_inputs, 1)
-    # other layers can be added here
-    )
-
-# method two
-net = nn.Sequential()
-net.add_module(&#39;linear&#39;, nn.Linear(num_inputs, 1))
-# net.add_module ......
-
-# method three
-from collections import OrderedDict
-net = nn.Sequential(OrderedDict([
-          (&#39;linear&#39;, nn.Linear(num_inputs, 1))
-          # ......
-        ]))
-
-print(net)
-print(net[0])
-# 初始化模型参数
-from torch.nn import init
-
-init.normal_(net[0].weight, mean=0.0, std=0.01)
-init.constant_(net[0].bias, val=0.0)  # or you can use `net[0].bias.data.fill_(0)` to modify it directly
-for param in net.parameters():
-    print(param)
-# 定义损失函数
-loss = nn.MSELoss()    # nn built-in squared loss function
-                       # function prototype: `torch.nn.MSELoss(size_average=None, reduce=None, reduction=&#39;mean&#39;)`
-# 定义优化函数
-import torch.optim as optim
-
-optimizer = optim.SGD(net.parameters(), lr=0.03)   # built-in random gradient descent function
-print(optimizer)  # function prototype: `torch.optim.SGD(params, lr=, momentum=0, dampening=0, weight_decay=0, nesterov=False)`
-# 训练
-num_epochs = 3
-for epoch in range(1, num_epochs + 1):
-    for X, y in data_iter:
-        output = net(X)
-        l = loss(output, y.view(-1, 1))
-        optimizer.zero_grad() # reset gradient, equal to net.zero_grad()
-        l.backward()
-        optimizer.step()
-    print(&#39;epoch %d, loss: %f&#39; % (epoch, l.item()))
-# result comparision
-dense = net[0]
-print(true_w, dense.weight.data)
-print(true_b, dense.bias.data)
-</code></pre>
-<h2 id="做错的两个题"><a href="#做错的两个题" class="headerlink" title="做错的两个题"></a>做错的两个题</h2><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212141722.png" alt="第一题"></p>
-<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212142406.png" alt="第二题"></p>
-<p>两题都涉及到广播机制，即当对两个形状不同的Tensor按元素运算时，可能会触发广播（broadcasting）机制：先适当复制元素使这两个Tensor形状相同后再按元素运算。<br>具体可参考以下两个链接：</p>
-<ol>
-<li><p><a href="https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter02_prerequisite/2.2_tensor" target="_blank" rel="noopener">https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter02_prerequisite/2.2_tensor</a></p>
-</li>
-<li><p><a href="https://pytorch.org/docs/stable/notes/broadcasting.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/notes/broadcasting.html</a></p>
-</li>
-</ol>
-<h2 id="关于公式的推导"><a href="#关于公式的推导" class="headerlink" title="关于公式的推导"></a>关于公式的推导</h2><p>参见以下文章<br><a href="https://mp.weixin.qq.com/s/axFly1Zmw8baifYQF_RnTA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/axFly1Zmw8baifYQF_RnTA</a></p>
-
-          
+          <p>Pytorch学习Day01打卡<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/12/Pytorch线性回归/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -872,7 +706,7 @@ print(true_b, dense.bias.data)
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck6j25swg002ez8ti2hn95te3" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" rel="gallery_ck6j2e2iu002hxwtiz31ihkvi" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200203210726.png" itemprop="contentUrl">
               </a>
             
@@ -1088,7 +922,7 @@ print(true_b, dense.bias.data)
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6j25t24002oz8tig5t8ow4m" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" rel="gallery_ck6j2e2iz002ixwti81233m4u" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202175559.png" itemprop="contentUrl">
               </a>
             
@@ -1859,7 +1693,7 @@ print(true_b, dense.bias.data)
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck6j25sif0009z8tistylefgk" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" rel="gallery_ck6j2e1q70001xwtivrz2rpxn" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200202180833.png" itemprop="contentUrl">
               </a>
             
@@ -2415,7 +2249,7 @@ print(true_b, dense.bias.data)
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck6j25sku000xz8tirb1cxiwy" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" rel="gallery_ck6j2e1te000txwtixvpag96b" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://img.noobyy.com/wp-content/uploads/2019/04/V2ray.jpg" itemprop="contentUrl">
               </a>
             

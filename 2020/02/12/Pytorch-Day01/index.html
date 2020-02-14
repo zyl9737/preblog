@@ -129,7 +129,7 @@
 <meta property="og:description" content="《动手学深度学习》Pytorch学习:线性回归、Softmax与分类模型、多层感知机">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png">
-<meta property="og:updated_time" content="2020-02-14T05:14:50.792Z">
+<meta property="og:updated_time" content="2020-02-14T05:19:23.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch-Day01">
 <meta name="twitter:description" content="《动手学深度学习》Pytorch学习:线性回归、Softmax与分类模型、多层感知机">
@@ -395,7 +395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-14T13:14:50+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-14T13:19:23+08:00">
                 2020-02-14
               </time>
             
@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6lpyapp002q6cti966dgn64" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6lq8ozv002iy0tie66f1se2" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" itemprop="contentUrl">
               </a>
             
@@ -902,7 +902,7 @@ optimizer = torch.optim.SGD(net.parameters(), lr=0.1) # 下面是函数原型
 num_epochs = 5
 d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
 </code></pre>
-<h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3><p>无论添加多少隐藏层，都等价于单层神经网络。解决方法是引入非线性变换，这个非线性函数就叫做激活函数。<br>激活函数主要有以下三种：</p>
+<h2 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h2><p>无论添加多少隐藏层，都等价于单层神经网络。解决方法是引入非线性变换，这个非线性函数就叫做激活函数。<br>激活函数主要有以下三种：</p>
 <ul>
 <li>ReLU函数</li>
 <li>Sigmoid函数，(0,1)<br><img src="https://cdn.mathpix.com/snip/images/xHRlnXgAs_Xw7iRC1J3cq05Ma6K0wzVXRZvJLM2Np5I.original.fullsize.png" alt="sigmoid"></li>
@@ -1029,8 +1029,8 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/12/Pytorch线性回归/" rel="next" title="Pytorch-线性回归、Softmax与分类模型">
-                <i class="fa fa-chevron-left"></i> Pytorch-线性回归、Softmax与分类模型
+              <a href="/2020/02/03/关于边缘智能的几篇论文/" rel="next" title="关于边缘智能的几篇论文的学习笔记">
+                <i class="fa fa-chevron-left"></i> 关于边缘智能的几篇论文的学习笔记
               </a>
             
           </div>
@@ -1123,7 +1123,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1203,7 +1203,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归模型从零开始的实现"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归模型从零开始的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用pytorch的简洁实现"><span class="nav-number">1.2.</span> <span class="nav-text">使用pytorch的简洁实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做错的两个题"><span class="nav-number">1.3.</span> <span class="nav-text">做错的两个题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于公式的推导"><span class="nav-number">1.4.</span> <span class="nav-text">关于公式的推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax与分类模型"><span class="nav-number">2.</span> <span class="nav-text">Softmax与分类模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的基本形式"><span class="nav-number">2.1.</span> <span class="nav-text">Softmax的基本形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">2.2.</span> <span class="nav-text">交叉熵损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取Fashion-MNIST训练集和读取数据"><span class="nav-number">2.3.</span> <span class="nav-text">获取Fashion-MNIST训练集和读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax从零开始实现"><span class="nav-number">2.4.</span> <span class="nav-text">Softmax从零开始实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的简洁实现"><span class="nav-number">2.5.</span> <span class="nav-text">Softmax的简洁实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机"><span class="nav-number">2.6.</span> <span class="nav-text">多层感知机</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归模型从零开始的实现"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归模型从零开始的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用pytorch的简洁实现"><span class="nav-number">1.2.</span> <span class="nav-text">使用pytorch的简洁实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做错的两个题"><span class="nav-number">1.3.</span> <span class="nav-text">做错的两个题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于公式的推导"><span class="nav-number">1.4.</span> <span class="nav-text">关于公式的推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax与分类模型"><span class="nav-number">2.</span> <span class="nav-text">Softmax与分类模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的基本形式"><span class="nav-number">2.1.</span> <span class="nav-text">Softmax的基本形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">2.2.</span> <span class="nav-text">交叉熵损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取Fashion-MNIST训练集和读取数据"><span class="nav-number">2.3.</span> <span class="nav-text">获取Fashion-MNIST训练集和读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax从零开始实现"><span class="nav-number">2.4.</span> <span class="nav-text">Softmax从零开始实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的简洁实现"><span class="nav-number">2.5.</span> <span class="nav-text">Softmax的简洁实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多层感知机"><span class="nav-number">3.</span> <span class="nav-text">多层感知机</span></a></li></ol></div>
             
 
           </div>
@@ -1219,7 +1219,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Federated-Learning/">Federated Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEC/">MEC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/">Pytorch</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/">v2ray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vultr/">vultr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一首小诗/">一首小诗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哎折腾/">哎折腾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/成长/">成长</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入与归并/">插入与归并</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新年/">新年</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记语言/">标记语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/漏洞安全/">漏洞安全</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社区文化/">社区文化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性回归/">线性回归</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网安/">网安</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/试验/">试验</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Federated-Learning/">Federated Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEC/">MEC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/">Pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/">v2ray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vultr/">vultr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一首小诗/">一首小诗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哎折腾/">哎折腾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/成长/">成长</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入与归并/">插入与归并</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新年/">新年</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记语言/">标记语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/漏洞安全/">漏洞安全</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社区文化/">社区文化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性回归/">线性回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网安/">网安</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/试验/">试验</a><span class="tag-list-count">1</span></li></ul>
         </canvas>
     </div>
 </div>
@@ -1510,8 +1510,11 @@ if(canvas.getContext){
 </div>
 
 
-<img src="https://static.dy208.cn/o_1dfilp8ruo521thr1hvf18ji17soa.png">
-<a href="http://www.beian.miit.gov.cn/" style="color:#f72b07" target="_blank">20002739</a>
+<div class="BbeiAn-info"">
+  冀ICP备 -
+  <a href="http://www.miit.beian.gov.cn/">20002739号</a>
+  
+</div>
 
 
 

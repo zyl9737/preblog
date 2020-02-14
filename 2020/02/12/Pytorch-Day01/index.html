@@ -107,7 +107,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Pytorch,线性回归,">
 
 
 
@@ -120,13 +120,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="֣郑玉龙の博客">
-<meta property="og:url" content="http://zhengyulong.top/categories/研究/index.html">
+<meta name="description" content="《动手学深度学习》Pytorch学习:线性回归、Softmax与分类模型、多层感知机">
+<meta name="keywords" content="Pytorch,线性回归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pytorch-Day01">
+<meta property="og:url" content="http://zhengyulong.top/2020/02/12/Pytorch-Day01/index.html">
 <meta property="og:site_name" content="֣郑玉龙の博客">
+<meta property="og:description" content="《动手学深度学习》Pytorch学习:线性回归、Softmax与分类模型、多层感知机">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png">
+<meta property="og:updated_time" content="2020-02-14T05:14:50.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="֣郑玉龙の博客">
+<meta name="twitter:title" content="Pytorch-Day01">
+<meta name="twitter:description" content="《动手学深度学习》Pytorch学习:线性回归、Softmax与分类模型、多层感知机">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png">
 
 
 
@@ -156,14 +163,14 @@
 
 
 
-  <link rel="canonical" href="http://zhengyulong.top/categories/研究/">
+  <link rel="canonical" href="http://zhengyulong.top/2020/02/12/Pytorch-Day01/">
 
 
 
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <title>分类: 研究 | ֣郑玉龙の博客</title>
+  <title>Pytorch-Day01 | ֣郑玉龙の博客</title>
   
 
 
@@ -192,7 +199,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zyl9737"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -328,53 +335,733 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>研究<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+ 
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhengyulong.top/2020/02/12/Pytorch-Day01/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanono">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/02/03/关于边缘智能的几篇论文/" itemprop="url">
-              
-                <span itemprop="name">关于边缘智能的几篇论文的学习笔记</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Pytorch-Day01</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-03T20:50:37+08:00" content="2020-02-03">
-          02-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-12T14:37:11+08:00">
+                2020-02-12
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-14T13:14:50+08:00">
+                2020-02-14
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/12/Pytorch-Day01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/12/Pytorch-Day01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.8k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6lpyapp002q6cti966dgn64" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>《动手学深度学习》<br>Pytorch学习:线性回归、Softmax与分类模型、多层感知机<br><a id="more"></a></p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="线性回归模型从零开始的实现"><a href="#线性回归模型从零开始的实现" class="headerlink" title="线性回归模型从零开始的实现"></a>线性回归模型从零开始的实现</h3><pre><code class="line-numbers language-python"># import packages and modules
+%matplotlib inline
+import torch
+from IPython import display
+from matplotlib import pyplot as plt
+import numpy as np
+import random
+# 生成数据集
+# set input feature number 
+num_inputs = 2
+# set example number
+num_examples = 1000
+
+# set true weight and bias in order to generate corresponded label
+true_w = [2, -3.4]
+true_b = 4.2
+
+features = torch.randn(num_examples, num_inputs,
+                      dtype=torch.float32)
+labels = true_w[0] * features[:, 0] + true_w[1] * features[:, 1] + true_b
+labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()),
+                       dtype=torch.float32)
+# 使用图像来展示生成数据
+plt.scatter(features[:, 1].numpy(), labels.numpy(), 1);
+def data_iter(batch_size, features, labels):
+    num_examples = len(features)
+    indices = list(range(num_examples))
+    random.shuffle(indices)  # random read 10 samples
+    for i in range(0, num_examples, batch_size):
+        j = torch.LongTensor(indices[i: min(i + batch_size, num_examples)]) # the last time may be not enough for a whole batch
+        yield  features.index_select(0, j), labels.index_select(0, j)
+batch_size = 10
+
+for X, y in data_iter(batch_size, features, labels):
+    print(X, &#39;\n&#39;, y)
+    break
+# 初始化模型参数
+w = torch.tensor(np.random.normal(0, 0.01, (num_inputs, 1)), dtype=torch.float32)
+b = torch.zeros(1, dtype=torch.float32)
+
+w.requires_grad_(requires_grad=True)
+b.requires_grad_(requires_grad=True)
+# 定义模型
+def linreg(X, w, b):
+    return torch.mm(X, w) + b
+# 定义损失函数
+def squared_loss(y_hat, y): 
+    return (y_hat - y.view(y_hat.size())) ** 2 / 2
+# 定义优化函数
+def sgd(params, lr, batch_size): 
+    for param in params:
+        param.data -= lr * param.grad / batch_size # ues .data to operate param without gradient track
+# 训练
+# super parameters init
+lr = 0.03
+num_epochs = 5
+
+net = linreg
+loss = squared_loss
+
+# training
+for epoch in range(num_epochs):  # training repeats num_epochs times
+    # in each epoch, all the samples in dataset will be used once
+
+    # X is the feature and y is the label of a batch sample
+    for X, y in data_iter(batch_size, features, labels):
+        l = loss(net(X, w, b), y).sum()  
+        # calculate the gradient of batch sample loss 
+        l.backward()  
+        # using small batch random gradient descent to iter model parameters
+        sgd([w, b], lr, batch_size)  
+        # reset parameter gradient
+        w.grad.data.zero_()
+        b.grad.data.zero_()
+    train_l = loss(net(features, w, b), labels)
+    print(&#39;epoch %d, loss %f&#39; % (epoch + 1, train_l.mean().item()))
+</code></pre>
+<h3 id="使用pytorch的简洁实现"><a href="#使用pytorch的简洁实现" class="headerlink" title="使用pytorch的简洁实现"></a>使用pytorch的简洁实现</h3><pre><code class="line-numbers language-python">import torch
+from torch import nn
+import numpy as np
+torch.manual_seed(1)
+
+print(torch.__version__)
+torch.set_default_tensor_type(&#39;torch.FloatTensor&#39;)
+# 生成数据集
+num_inputs = 2
+num_examples = 1000
+
+true_w = [2, -3.4]
+true_b = 4.2
+
+features = torch.tensor(np.random.normal(0, 1, (num_examples, num_inputs)), dtype=torch.float)
+labels = true_w[0] * features[:, 0] + true_w[1] * features[:, 1] + true_b
+labels += torch.tensor(np.random.normal(0, 0.01, size=labels.size()), dtype=torch.float)
+# 读取数据集
+import torch.utils.data as Data
+
+batch_size = 10
+
+# combine featues and labels of dataset
+dataset = Data.TensorDataset(features, labels)
+
+# put dataset into DataLoader
+data_iter = Data.DataLoader(
+    dataset=dataset,            # torch TensorDataset format
+    batch_size=batch_size,      # mini batch size
+    shuffle=True,               # whether shuffle the data or not
+    num_workers=2,              # read data in multithreading
+)
+for X, y in data_iter:
+    print(X, &#39;\n&#39;, y)
+    break
+# 定义模型
+class LinearNet(nn.Module):
+    def __init__(self, n_feature):
+        super(LinearNet, self).__init__()      # call father function to init 
+        self.linear = nn.Linear(n_feature, 1)  # function prototype: `torch.nn.Linear(in_features, out_features, bias=True)`
+
+    def forward(self, x):
+        y = self.linear(x)
+        return y
+
+net = LinearNet(num_inputs)
+print(net)
+# ways to init a multilayer network
+# method one
+net = nn.Sequential(
+    nn.Linear(num_inputs, 1)
+    # other layers can be added here
+    )
+
+# method two
+net = nn.Sequential()
+net.add_module(&#39;linear&#39;, nn.Linear(num_inputs, 1))
+# net.add_module ......
+
+# method three
+from collections import OrderedDict
+net = nn.Sequential(OrderedDict([
+          (&#39;linear&#39;, nn.Linear(num_inputs, 1))
+          # ......
+        ]))
+
+print(net)
+print(net[0])
+# 初始化模型参数
+from torch.nn import init
+
+init.normal_(net[0].weight, mean=0.0, std=0.01)
+init.constant_(net[0].bias, val=0.0)  # or you can use `net[0].bias.data.fill_(0)` to modify it directly
+for param in net.parameters():
+    print(param)
+# 定义损失函数
+loss = nn.MSELoss()    # nn built-in squared loss function
+                       # function prototype: `torch.nn.MSELoss(size_average=None, reduce=None, reduction=&#39;mean&#39;)`
+# 定义优化函数
+import torch.optim as optim
+
+optimizer = optim.SGD(net.parameters(), lr=0.03)   # built-in random gradient descent function
+print(optimizer)  # function prototype: `torch.optim.SGD(params, lr=, momentum=0, dampening=0, weight_decay=0, nesterov=False)`
+# 训练
+num_epochs = 3
+for epoch in range(1, num_epochs + 1):
+    for X, y in data_iter:
+        output = net(X)
+        l = loss(output, y.view(-1, 1))
+        optimizer.zero_grad() # reset gradient, equal to net.zero_grad()
+        l.backward()
+        optimizer.step()
+    print(&#39;epoch %d, loss: %f&#39; % (epoch, l.item()))
+# result comparision
+dense = net[0]
+print(true_w, dense.weight.data)
+print(true_b, dense.bias.data)
+</code></pre>
+<h3 id="做错的两个题"><a href="#做错的两个题" class="headerlink" title="做错的两个题"></a>做错的两个题</h3><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212141722.png" alt="第一题"></p>
+<p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212142406.png" alt="第二题"></p>
+<p>两题都涉及到广播机制，即当对两个形状不同的Tensor按元素运算时，可能会触发广播（broadcasting）机制：先适当复制元素使这两个Tensor形状相同后再按元素运算。<br>具体可参考以下两个链接：</p>
+<ol>
+<li><p><a href="https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter02_prerequisite/2.2_tensor" target="_blank" rel="noopener">https://tangshusen.me/Dive-into-DL-PyTorch/#/chapter02_prerequisite/2.2_tensor</a></p>
+</li>
+<li><p><a href="https://pytorch.org/docs/stable/notes/broadcasting.html" target="_blank" rel="noopener">https://pytorch.org/docs/stable/notes/broadcasting.html</a></p>
+</li>
+</ol>
+<h3 id="关于公式的推导"><a href="#关于公式的推导" class="headerlink" title="关于公式的推导"></a>关于公式的推导</h3><p>参见以下文章<br><a href="https://mp.weixin.qq.com/s/axFly1Zmw8baifYQF_RnTA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/axFly1Zmw8baifYQF_RnTA</a></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>和大多数深度学习模型一样，对于线性回归这样一种单层神经网络，它的基本要素包括模型、训练数据、损失函数和优化算法。</li>
+<li>既可以用神经网络图表示线性回归，又可以用矢量计算表示该模型。</li>
+<li>应该尽可能采用矢量计算，以提升计算效率。</li>
+</ul>
+<h2 id="Softmax与分类模型"><a href="#Softmax与分类模型" class="headerlink" title="Softmax与分类模型"></a>Softmax与分类模型</h2><h3 id="Softmax的基本形式"><a href="#Softmax的基本形式" class="headerlink" title="Softmax的基本形式"></a>Softmax的基本形式</h3><p>Softmax通过下式将输出值变换成值为正且和为1的概率分布：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200214112539.png" alt=""></p>
+<h3 id="交叉熵损失函数"><a href="#交叉熵损失函数" class="headerlink" title="交叉熵损失函数"></a>交叉熵损失函数</h3><p>我们并不需要预测概率完全等于标签概率，而平方损失过于严格。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200214113258.png" alt=""></p>
+<h3 id="获取Fashion-MNIST训练集和读取数据"><a href="#获取Fashion-MNIST训练集和读取数据" class="headerlink" title="获取Fashion-MNIST训练集和读取数据"></a>获取Fashion-MNIST训练集和读取数据</h3><p>这里用到了torchvision包：</p>
+<ol>
+<li>torchvision.datasets: 一些加载数据的函数及常用的数据集接口；</li>
+<li>torchvision.models: 包含常用的模型结构（含预训练模型），例如AlexNet、VGG、ResNet等；</li>
+<li>torchvision.transforms: 常用的图片变换，例如裁剪、旋转等；</li>
+<li>torchvision.utils: 其他的一些有用的方法。</li>
+</ol>
+<p>以下代码在kesci平台运行</p>
+<pre><code class="line-numbers language-python"># import needed package
+%matplotlib inline
+from IPython import display
+import matplotlib.pyplot as plt
+
+import torch
+import torchvision
+import torchvision.transforms as transforms
+import time
+
+import sys
+sys.path.append(&quot;/home/kesci/input&quot;)
+import d2lzh1981 as d2l
+# get datasheet
+mnist_train = torchvision.datasets.FashionMNIST(root=&#39;/home/kesci/input/FashionMNIST2065&#39;, train=True, download=True, transform=transforms.ToTensor())
+mnist_test = torchvision.datasets.FashionMNIST(root=&#39;/home/kesci/input/FashionMNIST2065&#39;, train=False, download=True, transform=transforms.ToTensor())
+# show result 
+print(type(mnist_train))
+print(len(mnist_train), len(mnist_test))
+feature, label = mnist_train[0]
+print(feature.shape, label)  # Channel x Height x Width
+# 如果不做变换输入的数据是图像，我们可以看一下图片的类型参数：
+mnist_PIL = torchvision.datasets.FashionMNIST(root=&#39;/home/kesci/input/FashionMNIST2065&#39;, train=True, download=True)
+PIL_feature, label = mnist_PIL[0]
+print(PIL_feature)
+mnist_PIL = torchvision.datasets.FashionMNIST(root=&#39;/home/kesci/input/FashionMNIST2065&#39;, train=True, download=True)
+PIL_feature, label = mnist_PIL[0]
+print(PIL_feature)
+def show_fashion_mnist(images, labels):
+    d2l.use_svg_display()
+    # 这里的_表示我们忽略（不使用）的变量
+    _, figs = plt.subplots(1, len(images), figsize=(12, 12))
+    for f, img, lbl in zip(figs, images, labels):
+        f.imshow(img.view((28, 28)).numpy())
+        f.set_title(lbl)
+        f.axes.get_xaxis().set_visible(False)
+        f.axes.get_yaxis().set_visible(False)
+    plt.show()
+X, y = [], []
+for i in range(10):
+    X.append(mnist_train[i][0]) # 将第i个feature加到X中
+    y.append(mnist_train[i][1]) # 将第i个label加到y中
+show_fashion_mnist(X, get_fashion_mnist_labels(y))
+X, y = [], []
+for i in range(10):
+    X.append(mnist_train[i][0]) # 将第i个feature加到X中
+    y.append(mnist_train[i][1]) # 将第i个label加到y中
+show_fashion_mnist(X, get_fashion_mnist_labels(y))
+start = time.time()
+for X, y in train_iter:
+    continue
+print(&#39;%.2f sec&#39; % (time.time() - start))
+</code></pre>
+<h3 id="Softmax从零开始实现"><a href="#Softmax从零开始实现" class="headerlink" title="Softmax从零开始实现"></a>Softmax从零开始实现</h3><pre><code class="line-numbers language-python">import torch
+import torchvision
+import numpy as np
+import sys
+sys.path.append(&quot;/home/kesci/input&quot;)
+import d2lzh1981 as d2l
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size, root=&#39;/home/kesci/input/FashionMNIST2065&#39;)
+num_inputs = 784
+print(28*28)
+num_outputs = 10
+
+W = torch.tensor(np.random.normal(0, 0.01, (num_inputs, num_outputs)), dtype=torch.float)
+b = torch.zeros(num_outputs, dtype=torch.float)
+# 对多维Tensor按维度操作
+X = torch.tensor([[1, 2, 3], [4, 5, 6]])
+print(X.sum(dim=0, keepdim=True))  # dim为0，按照相同的列求和，并在结果中保留列特征
+print(X.sum(dim=1, keepdim=True))  # dim为1，按照相同的行求和，并在结果中保留行特征
+print(X.sum(dim=0, keepdim=False)) # dim为0，按照相同的列求和，不在结果中保留列特征
+print(X.sum(dim=1, keepdim=False)) # dim为1，按照相同的行求和，不在结果中保留行特征
+def softmax(X):
+    X_exp = X.exp()
+    partition = X_exp.sum(dim=1, keepdim=True)
+    # print(&quot;X size is &quot;, X_exp.size())
+    # print(&quot;partition size is &quot;, partition, partition.size())
+    return X_exp / partition  # 这里应用了广播机制
+X = torch.rand((2, 5))
+X_prob = softmax(X)
+print(X_prob, &#39;\n&#39;, X_prob.sum(dim=1))
+# Softmax回归模型
+def net(X):
+    return softmax(torch.mm(X.view((-1, num_inputs)), W) + b)
+# 定义损失函数
+y_hat = torch.tensor([[0.1, 0.3, 0.6], [0.3, 0.2, 0.5]])
+y = torch.LongTensor([0, 2])
+y_hat.gather(1, y.view(-1, 1))
+def cross_entropy(y_hat, y):
+    return - torch.log(y_hat.gather(1, y.view(-1, 1)))
+# 定义准确率
+def accuracy(y_hat, y):
+    return (y_hat.argmax(dim=1) == y).float().mean().item()
+print(accuracy(y_hat, y))
+# 训练模型
+num_epochs, lr = 5, 0.1
+
+# 本函数已保存在d2lzh_pytorch包中方便以后使用
+def train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size,
+              params=None, lr=None, optimizer=None):
+    for epoch in range(num_epochs):
+        train_l_sum, train_acc_sum, n = 0.0, 0.0, 0
+        for X, y in train_iter:
+            y_hat = net(X)
+            l = loss(y_hat, y).sum()
+
+            # 梯度清零
+            if optimizer is not None:
+                optimizer.zero_grad()
+            elif params is not None and params[0].grad is not None:
+                for param in params:
+                    param.grad.data.zero_()
+
+            l.backward()
+            if optimizer is None:
+                d2l.sgd(params, lr, batch_size)
+            else:
+                optimizer.step() 
+
+
+            train_l_sum += l.item()
+            train_acc_sum += (y_hat.argmax(dim=1) == y).sum().item()
+            n += y.shape[0]
+        test_acc = evaluate_accuracy(test_iter, net)
+        print(&#39;epoch %d, loss %.4f, train acc %.3f, test acc %.3f&#39;
+              % (epoch + 1, train_l_sum / n, train_acc_sum / n, test_acc))
+
+train_ch3(net, train_iter, test_iter, cross_entropy, num_epochs, batch_size, [W, b], lr)
+# 模型预测
+X, y = iter(test_iter).next()
+
+true_labels = d2l.get_fashion_mnist_labels(y.numpy())
+pred_labels = d2l.get_fashion_mnist_labels(net(X).argmax(dim=1).numpy())
+titles = [true + &#39;\n&#39; + pred for true, pred in zip(true_labels, pred_labels)]
+
+d2l.show_fashion_mnist(X[0:9], titles[0:9])
+</code></pre>
+<h3 id="Softmax的简洁实现"><a href="#Softmax的简洁实现" class="headerlink" title="Softmax的简洁实现"></a>Softmax的简洁实现</h3><pre><code class="line-numbers language-python"># 加载各种包或者模块
+import torch
+from torch import nn
+from torch.nn import init
+import numpy as np
+import sys
+sys.path.append(&quot;/home/kesci/input&quot;)
+import d2lzh1981 as d2l
+#初始化参数和获取数据
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size, root=&#39;/home/kesci/input/FashionMNIST2065&#39;)
+#定义网络模型
+num_inputs = 784
+num_outputs = 10
+
+class LinearNet(nn.Module):
+    def __init__(self, num_inputs, num_outputs):
+        super(LinearNet, self).__init__()
+        self.linear = nn.Linear(num_inputs, num_outputs)
+    def forward(self, x): # x 的形状: (batch, 1, 28, 28)
+        y = self.linear(x.view(x.shape[0], -1))
+        return y
+
+# net = LinearNet(num_inputs, num_outputs)
+
+class FlattenLayer(nn.Module):
+    def __init__(self):
+        super(FlattenLayer, self).__init__()
+    def forward(self, x): # x 的形状: (batch, *, *, ...)
+        return x.view(x.shape[0], -1)
+
+from collections import OrderedDict
+net = nn.Sequential(
+        # FlattenLayer(),
+        # LinearNet(num_inputs, num_outputs) 
+        OrderedDict([
+           (&#39;flatten&#39;, FlattenLayer()),
+           (&#39;linear&#39;, nn.Linear(num_inputs, num_outputs))]) # 或者写成我们自己定义的 LinearNet(num_inputs, num_outputs) 也可以
+        )
+# 初始化模型参数
+init.normal_(net.linear.weight, mean=0, std=0.01)
+init.constant_(net.linear.bias, val=0)
+#定义损失函数
+loss = nn.CrossEntropyLoss() # 下面是他的函数原型
+# class torch.nn.CrossEntropyLoss(weight=None, size_average=None, ignore_index=-100, reduce=None, reduction=&#39;mean&#39;)
+#定义优化函数
+optimizer = torch.optim.SGD(net.parameters(), lr=0.1) # 下面是函数原型
+# class torch.optim.SGD(params, lr=, momentum=0, dampening=0, weight_decay=0, nesterov=False)
+#训练
+num_epochs = 5
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
+</code></pre>
+<h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3><p>无论添加多少隐藏层，都等价于单层神经网络。解决方法是引入非线性变换，这个非线性函数就叫做激活函数。<br>激活函数主要有以下三种：</p>
+<ul>
+<li>ReLU函数</li>
+<li>Sigmoid函数，(0,1)<br><img src="https://cdn.mathpix.com/snip/images/xHRlnXgAs_Xw7iRC1J3cq05Ma6K0wzVXRZvJLM2Np5I.original.fullsize.png" alt="sigmoid"></li>
+<li>tanh函数，(-1,1)<br><img src="https://cdn.mathpix.com/snip/images/gftWSGcVbeY4Gt-9qUC-xY-pAhLSLOqRtH09n53hrBY.original.fullsize.png" alt="tanh"><br>关于激活函数的选择：<br>ReLu函数是一个通用的激活函数，目前在大多数情况下使用。但是，ReLU函数只能在隐藏层中使用。</li>
+</ul>
+<p>用于分类器时，sigmoid函数及其组合通常效果更好。由于梯度消失问题，有时要避免使用sigmoid和tanh函数。</p>
+<p>在神经网络层数较多的时候，最好使用ReLu函数，ReLu函数比较简单计算量少，而sigmoid和tanh函数计算量大很多。</p>
+<p>在选择激活函数的时候可以先选用ReLu函数如果效果不理想可以尝试其他激活函数。<br>pytorch实现：</p>
+<pre><code class="line-numbers language-python">import torch
+from torch import nn
+from torch.nn import init
+import numpy as np
+import sys
+sys.path.append(&quot;/home/kesci/input&quot;)
+import d2lzh1981 as d2l
+# 初始化模型和各个参数
+num_inputs, num_outputs, num_hiddens = 784, 10, 256
+
+net = nn.Sequential(
+        d2l.FlattenLayer(),
+        nn.Linear(num_inputs, num_hiddens),
+        nn.ReLU(),
+        nn.Linear(num_hiddens, num_outputs), 
+        )
+
+for params in net.parameters():
+    init.normal_(params, mean=0, std=0.01)
+# 训练
+batch_size = 256
+train_iter, test_iter = d2l.load_data_fashion_mnist(batch_size,root=&#39;/home/kesci/input/FashionMNIST2065&#39;)
+loss = torch.nn.CrossEntropyLoss()
+
+optimizer = torch.optim.SGD(net.parameters(), lr=0.5)
+
+num_epochs = 5
+d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, None, optimizer)
+</code></pre>
 
       
     </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+              -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+       </div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>此处弱弱的求打赏qwq</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Emanono 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Emanono 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Emanono
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhengyulong.top/2020/02/12/Pytorch-Day01/" title="Pytorch-Day01">http://zhengyulong.top/2020/02/12/Pytorch-Day01/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+          
+            <a href="/tags/线性回归/" rel="tag"># 线性回归</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/12/Pytorch线性回归/" rel="next" title="Pytorch-线性回归、Softmax与分类模型">
+                <i class="fa fa-chevron-left"></i> Pytorch-线性回归、Softmax与分类模型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/13/Pytorch-Day02/" rel="prev" title="Pytorch-Softmax与分类模型">
+                Pytorch-Softmax与分类模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -382,6 +1069,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -402,8 +1096,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -490,6 +1193,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归"><span class="nav-number">1.</span> <span class="nav-text">线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归模型从零开始的实现"><span class="nav-number">1.1.</span> <span class="nav-text">线性回归模型从零开始的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用pytorch的简洁实现"><span class="nav-number">1.2.</span> <span class="nav-text">使用pytorch的简洁实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#做错的两个题"><span class="nav-number">1.3.</span> <span class="nav-text">做错的两个题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于公式的推导"><span class="nav-number">1.4.</span> <span class="nav-text">关于公式的推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax与分类模型"><span class="nav-number">2.</span> <span class="nav-text">Softmax与分类模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的基本形式"><span class="nav-number">2.1.</span> <span class="nav-text">Softmax的基本形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉熵损失函数"><span class="nav-number">2.2.</span> <span class="nav-text">交叉熵损失函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取Fashion-MNIST训练集和读取数据"><span class="nav-number">2.3.</span> <span class="nav-text">获取Fashion-MNIST训练集和读取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax从零开始实现"><span class="nav-number">2.4.</span> <span class="nav-text">Softmax从零开始实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax的简洁实现"><span class="nav-number">2.5.</span> <span class="nav-text">Softmax的简洁实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机"><span class="nav-number">2.6.</span> <span class="nav-text">多层感知机</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -939,6 +1658,10 @@ if(canvas.getContext){
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

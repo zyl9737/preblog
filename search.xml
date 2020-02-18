@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Pytorch-Day03]]></title>
+    <url>%2F2020%2F02%2F18%2FPytorch-Day03%2F</url>
+    <content type="text"><![CDATA[过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸；循环神经网络进阶 过拟合、欠拟合及其解决方案几个概念 训练误差（training error）：指在训练集上表现出来的误差 泛化误差（generalizetion error）：指在任意一个测试数据样本上表现出来的误差的期望，并常常通过测试数据集上的误差来近似 验证数据集：预留的在训练数据集和测试数据集以外的数据，用来进行模型选择 K折交叉验证：在K折交叉验证中，我们把原始训练数据集分割成K个不重合的子数据集，然后我们做K次模型训练和验证。每一次，我们使用一个子数据集验证模型，并使用其他K-1个子数据集来训练模型。最后，我们对这K次训练误差和验证误差分别求平均。 欠拟合：指训练误差和泛化误差都不能达到一个较低的水平。 过拟合：指训练误差达到一个较低的水平，而泛化误差依然较大。 产生欠拟合、过拟合的原因主要有两个因素：模型复杂度和序训练数据集大小 当训练数据集中样本数过少，特别是比模型参数数量（按元素计）更少时，过拟合更容易发生。 解决方案过拟合： L2范数正则化（regularization）即权重衰减：L2范数正则化在模型原损失函数基础上添加L2范数惩罚项，从而得到训练所需要最小化的函数。范数惩罚项指的是模型权重参数每个元素的平方和与一个正的常数的乘积。 丢弃法 解决欠拟合可以考虑增加模型复杂度 错题总结测试数据集不可用来调整模型参数，如果使用测试数据集调整模型参数，可能在测试数集上发生一定程度的过拟合现象，此时将不能用测试误差来近似泛化误差。 梯度消失、梯度爆炸模型训练实战步骤顺序： 获取数据集 数据预处理 模型设计 模型验证和模型调整（调参） 模型预测及提交 题目总结梯度消失会导致模型训练困难，对参数的优化步长过小，收效甚微，模型收敛十分缓慢梯度爆炸会导致模型训练困难，对参数的优化步长过大，难以收敛 循环神经网络进阶RNN： GRU RNN存在的问题：梯度较容易出现衰减或爆炸（BPTT） ⻔控循环神经⽹络：捕捉时间序列中时间步距离较⼤的依赖关系 重置⻔有助于捕捉时间序列⾥短期的依赖关系； 更新⻔有助于捕捉时间序列⾥⻓期的依赖关系。9个权重和偏置参数，外加2个输出层参数和状态初始化（-1）参数初始化参数代码： num_inputs, num_hiddens, num_outputs = vocab_size, 256, vocab_size print(&#39;will use&#39;, device) def get_params(): def _one(shape): ts = torch.tensor(np.random.normal(0, 0.01, size=shape), device=device, dtype=torch.float32) #正态分布 return torch.nn.Parameter(ts, requires_grad=True) def _three(): return (_one((num_inputs, num_hiddens)), _one((num_hiddens, num_hiddens)), torch.nn.Parameter(torch.zeros(num_hiddens, device=device, dtype=torch.float32), requires_grad=True)) W_xz, W_hz, b_z = _three() # 更新门参数 W_xr, W_hr, b_r = _three() # 重置门参数 W_xh, W_hh, b_h = _three() # 候选隐藏状态参数 # 输出层参数 W_hq = _one((num_hiddens, num_outputs)) b_q = torch.nn.Parameter(torch.zeros(num_outputs, device=device, dtype=torch.float32), requires_grad=True) return nn.ParameterList([W_xz, W_hz, b_z, W_xr, W_hr, b_r, W_xh, W_hh, b_h, W_hq, b_q]) def init_gru_state(batch_size, num_hiddens, device): #隐藏状态初始化 return (torch.zeros((batch_size, num_hiddens), device=device), ) LSTM长短期记忆long short-term memory 遗忘门:控制上一时间步的记忆细胞 输入门:控制当前时间步的输入 输出门:控制从记忆细胞到隐藏状态 记忆细胞：⼀种特殊的隐藏状态的信息的流动 深层RNN实现时只需在传统RNN基础上改num_layers参数深层神经网络并非越深越好，层数的加深会导致模型的收敛变得困难，具体选用什么模型还是要看实践效果 双向RNN实现时在传统RNN基础上使bidirectional=True双向循环神经网络在文本任务里能做到同时考虑上下文和当前词之间的依赖前向和后向RNN连结的方式使前面的Ht和后面的Ht用contact进行连结]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>拟合</tag>
+        <tag>梯度</tag>
+        <tag>循环神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pytorch-Day02]]></title>
     <url>%2F2020%2F02%2F13%2FPytorch-Day02%2F</url>
     <content type="text"><![CDATA[《动手学深度学习》Pytorch学习:文本预处理、语言模型、循环神经网络基础 文本预处理包括四个步骤： 读入文本 分词（将一个句子转换为若干个词（token）） 建立字典，将每个词映射到一个唯一的索引 将文本从词的序列转换为索引的序列，方便输入模型 可用现有工具进行分词，spaCy,NLTK 语言模型n元语法n元语法具有以下缺陷： 参数空间过大 数据稀疏 读取数据集with open(&#39;/home/kesci/input/jaychou_lyrics4703/jaychou_lyrics.txt&#39;) as f: corpus_chars = f.read() print(len(corpus_chars)) print(corpus_chars[: 40]) corpus_chars = corpus_chars.replace(&#39;\n&#39;, &#39; &#39;).replace(&#39;\r&#39;, &#39; &#39;) corpus_chars = corpus_chars[: 10000] 建立字符索引idx_to_char = list(set(corpus_chars)) # 去重，得到索引到字符的映射 char_to_idx = {char: i for i, char in enumerate(idx_to_char)} # 字符到索引的映射 vocab_size = len(char_to_idx) print(vocab_size) corpus_indices = [char_to_idx[char] for char in corpus_chars] # 将每个字符转化为索引，得到一个索引的序列 sample = corpus_indices[: 20] print(&#39;chars:&#39;, &#39;&#39;.join([idx_to_char[idx] for idx in sample])) print(&#39;indices:&#39;, sample) #定义load_data_jay_lyrices函数 def load_data_jay_lyrics(): with open(&#39;/home/kesci/input/jaychou_lyrics4703/jaychou_lyrics.txt&#39;) as f: corpus_chars = f.read() corpus_chars = corpus_chars.replace(&#39;\n&#39;, &#39; &#39;).replace(&#39;\r&#39;, &#39; &#39;) corpus_chars = corpus_chars[0:10000] idx_to_char = list(set(corpus_chars)) char_to_idx = dict([(char, i) for i, char in enumerate(idx_to_char)]) vocab_size = len(char_to_idx) corpus_indices = [char_to_idx[char] for char in corpus_chars] return corpus_indices, char_to_idx, idx_to_char, vocab_size 时序数据的采样有以下两种方法： 随机采样每个样本是原始序列上任意截取的一段序列，相邻的两个随机小批量在原始序列上的位置不一定相毗邻。 相邻采样相邻的两个随机小批量在原始序列上的位置相毗邻。 语言模型做错的题 循环神经网络基础做错的题]]></content>
@@ -158,14 +172,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1054 求平均值]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1054-%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
-    <content type="text"><![CDATA[1054 求平均值 （20 分) 本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。输入格式：输入第一行给出正整数 N（≤100）。随后一行给出 N 个实数，数字间以一个空格分隔。输出格式：对每个非法输入，在一行中输出 ERROR: X is not a legal number，其中 X 是输入。最后在一行中输出结果：The average of K numbers is Y，其中 K 是合法输入的个数，Y 是它们的平均值，精确到小数点后 2 位。如果平均值无法计算，则用 Undefined 替换 Y。如果 K 为 1，则输出 The average of 1 number is Y。输入样例 1：75 -3.2 aaa 9999 2.3.4 7.123 2.35输出样例 1：ERROR: aaa is not a legal numberERROR: 9999 is not a legal numberERROR: 2.3.4 is not a legal numberERROR: 7.123 is not a legal numberThe average of 3 numbers is 1.38输入样例 2：2aaa -9999输出样例 2：ERROR: aaa is not a legal numberERROR: -9999 is not a legal numberThe average of 0 numbers is Undefined 分析：使用sscanf和sprintf函数～sscanf() – 从一个字符串中读进与指定格式相符的数据sprintf() – 字符串格式化命令，主要功能是把格式化的数据写入某个字符串中 题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cstdio&gt; using namespace std; int main() { int n,cnt=0; char a[50],b[50]; cin&gt;&gt;n; double temp,sum=0.0; for(int i=0;i&lt;n;i++) { scanf(&quot;%s&quot;,a); sscanf(a,&quot;%lf&quot;,&amp;temp);//从7.123中读入7.123道temp中 sprintf(b,&quot;%.2f&quot;,temp);//把temp变为7.12写入b中 int flag=0; for(int j=0;j&lt;strlen(a);j++) if(a[j]!=b[j])flag=1; if(flag||temp&lt;-1000||temp&gt;1000) { printf(&quot;ERROR: %s is not a legal number\n&quot;,a); continue; } else { sum+=temp; cnt++; } } if(cnt==1) printf(&quot;The average of 1 number is %.2f&quot;,sum); else if(cnt&gt;1) printf(&quot;The average of %d numbers is %.2f&quot;,cnt,sum/cnt); else printf(&quot;The average of 0 numbers is Undefined&quot;); return 0; }]]></content>
+    <title><![CDATA[PAT 1057 数壹零]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1057-%E6%95%B0%E5%A3%B9%E9%9B%B6%2F</url>
+    <content type="text"><![CDATA[1057 数零壹 （20 分) 给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。输入格式：输入在一行中给出长度不超过 10^5,以回车结束的字符串。输出格式：在一行中先后输出 0 的个数和 1 的个数，其间以空格分隔。输入样例：PAT (Basic)输出样例：3 4 分析：用getline接收一行字符串，对于字符串的每一位，如果是字母(isalpha)，则将字母转化为大写(toupper)，并累加(s[i] – ‘A’ + 1)算出n，然后将n转化为二进制，对每一位处理，如果是0则cnt0++，如果是1则cnt1++，最后输出cnt0和cnt1的值～～题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cctype&gt; using namespace std; int main() { string s; getline(cin,s); int n=0; for(int i=0;i&lt;s.length();i++) { if(isalpha(s[i])) { s[i]=toupper(s[i]); n+=(s[i]-&#39;A&#39;+1); } } int cnt0=0,cnt1=0; while(n!=0) { if(n%2==0) { cnt0++; } else cnt1++; n=n/2; } cout&lt;&lt;cnt0&lt;&lt;&quot; &quot;&lt;&lt;cnt1; return 0; }]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>字符串处理</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>
@@ -180,14 +194,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1057 数壹零]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1057-%E6%95%B0%E5%A3%B9%E9%9B%B6%2F</url>
-    <content type="text"><![CDATA[1057 数零壹 （20 分) 给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。输入格式：输入在一行中给出长度不超过 10^5,以回车结束的字符串。输出格式：在一行中先后输出 0 的个数和 1 的个数，其间以空格分隔。输入样例：PAT (Basic)输出样例：3 4 分析：用getline接收一行字符串，对于字符串的每一位，如果是字母(isalpha)，则将字母转化为大写(toupper)，并累加(s[i] – ‘A’ + 1)算出n，然后将n转化为二进制，对每一位处理，如果是0则cnt0++，如果是1则cnt1++，最后输出cnt0和cnt1的值～～题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cctype&gt; using namespace std; int main() { string s; getline(cin,s); int n=0; for(int i=0;i&lt;s.length();i++) { if(isalpha(s[i])) { s[i]=toupper(s[i]); n+=(s[i]-&#39;A&#39;+1); } } int cnt0=0,cnt1=0; while(n!=0) { if(n%2==0) { cnt0++; } else cnt1++; n=n/2; } cout&lt;&lt;cnt0&lt;&lt;&quot; &quot;&lt;&lt;cnt1; return 0; }]]></content>
+    <title><![CDATA[PAT 1054 求平均值]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1054-%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[1054 求平均值 （20 分) 本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。输入格式：输入第一行给出正整数 N（≤100）。随后一行给出 N 个实数，数字间以一个空格分隔。输出格式：对每个非法输入，在一行中输出 ERROR: X is not a legal number，其中 X 是输入。最后在一行中输出结果：The average of K numbers is Y，其中 K 是合法输入的个数，Y 是它们的平均值，精确到小数点后 2 位。如果平均值无法计算，则用 Undefined 替换 Y。如果 K 为 1，则输出 The average of 1 number is Y。输入样例 1：75 -3.2 aaa 9999 2.3.4 7.123 2.35输出样例 1：ERROR: aaa is not a legal numberERROR: 9999 is not a legal numberERROR: 2.3.4 is not a legal numberERROR: 7.123 is not a legal numberThe average of 3 numbers is 1.38输入样例 2：2aaa -9999输出样例 2：ERROR: aaa is not a legal numberERROR: -9999 is not a legal numberThe average of 0 numbers is Undefined 分析：使用sscanf和sprintf函数～sscanf() – 从一个字符串中读进与指定格式相符的数据sprintf() – 字符串格式化命令，主要功能是把格式化的数据写入某个字符串中 题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cstdio&gt; using namespace std; int main() { int n,cnt=0; char a[50],b[50]; cin&gt;&gt;n; double temp,sum=0.0; for(int i=0;i&lt;n;i++) { scanf(&quot;%s&quot;,a); sscanf(a,&quot;%lf&quot;,&amp;temp);//从7.123中读入7.123道temp中 sprintf(b,&quot;%.2f&quot;,temp);//把temp变为7.12写入b中 int flag=0; for(int j=0;j&lt;strlen(a);j++) if(a[j]!=b[j])flag=1; if(flag||temp&lt;-1000||temp&gt;1000) { printf(&quot;ERROR: %s is not a legal number\n&quot;,a); continue; } else { sum+=temp; cnt++; } } if(cnt==1) printf(&quot;The average of 1 number is %.2f&quot;,sum); else if(cnt&gt;1) printf(&quot;The average of %d numbers is %.2f&quot;,cnt,sum/cnt); else printf(&quot;The average of 0 numbers is Undefined&quot;); return 0; }]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
+        <tag>字符串处理</tag>
       </tags>
   </entry>
   <entry>

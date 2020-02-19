@@ -107,7 +107,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="卷积神经网络,LeNet,AlexNet,VGG,NIN,GoogLeNet,">
 
 
 
@@ -121,20 +121,19 @@
 
 
 <meta name="description" content="卷积神经网络基础；leNet；卷积神经网络进阶">
+<meta name="keywords" content="卷积神经网络,LeNet,AlexNet,VGG,NIN,GoogLeNet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pytorch-Day05">
 <meta property="og:url" content="http://zhengyulong.top/2020/02/19/Pytorch-Day05/index.html">
 <meta property="og:site_name" content="֣郑玉龙の博客">
 <meta property="og:description" content="卷积神经网络基础；leNet；卷积神经网络进阶">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5nfdbhcw5.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5nfmdnwbq.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219203217.png">
-<meta property="og:updated_time" content="2020-02-19T13:15:02.296Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219225906.png">
+<meta property="og:updated_time" content="2020-02-19T15:00:48.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch-Day05">
 <meta name="twitter:description" content="卷积神经网络基础；leNet；卷积神经网络进阶">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5nfdbhcw5.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219225906.png">
 
 
 
@@ -396,12 +395,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-19T21:15:02+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-19T23:00:48+08:00">
                 2020-02-19
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -439,7 +460,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  725 字
+                  1.5k 字
                 </span>
               
 
@@ -455,7 +476,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -473,6 +494,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219225906.png" rel="gallery_ck6tg2qqy00111kti156m9uau" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219225906.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
       
 
       
@@ -493,8 +528,34 @@
 </ul>
 <h3 id="池化"><a href="#池化" class="headerlink" title="池化"></a>池化</h3><p>池化层主要用于缓解卷积层对位置的过度敏感性。池化层直接对窗口内的元素求最大值或平均值，并没有模型参数参与计算.<br>我们使用Pytorch中的<code>nn.MaxPool2d</code>实现最大池化层，使用<code>nn.AvgPool2d</code>实现平均池化层</p>
 <h2 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h2><p>LeNet分为卷积层块和全连接层块两个部分，90%以上的参数集中在全连接层，卷积层块中交替使用卷积层和池化层在连接卷积层和全连接层是，需要做一次展平操作。<br>卷积神经网络通过使用滑动窗口在输入的不同位置重复计算，减小参数数量<br>在通过卷积层或池化层后，输出的高和宽可能减小，为了尽可能保留输入的特征，我们可以增加通道数</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>卷积层通过填充、步幅、输入通道数、输出通道数等调节输出形状<br>卷积神经网络就是含卷积层的网络。 LeNet交替使用卷积层和最大池化层后接全连接层来进行图像分类。</p>
-
+<h2 id="卷积神经网络进阶"><a href="#卷积神经网络进阶" class="headerlink" title="卷积神经网络进阶"></a>卷积神经网络进阶</h2><p>LeNet: 在大的真实数据集上的表现并不尽如⼈意。</p>
+<ol>
+<li>神经网络计算复杂。</li>
+<li>还没有⼤量深⼊研究参数初始化和⾮凸优化算法等诸多领域。</li>
+</ol>
+<p>机器学习的特征提取:手工定义的特征提取函数<br>神经网络的特征提取：通过学习得到数据的多级表征，并逐级表⽰越来越抽象的概念或模式。</p>
+<p>神经网络发展的限制:数据、硬件</p>
+<h3 id="AlexNet-深度卷积神经网络"><a href="#AlexNet-深度卷积神经网络" class="headerlink" title="AlexNet(深度卷积神经网络)"></a>AlexNet(深度卷积神经网络)</h3><p>首次证明了学习到的特征可以超越手工设计的特征，从而一举打破计算机视觉研究的前状<br><em>特征</em>：</p>
+<ol>
+<li>8层变换，其中有5层卷积和2层全连接隐藏层，以及1个全连接输出层。</li>
+<li>将sigmoid激活函数改成了更加简单的ReLU激活函数。</li>
+<li>用Dropout来控制全连接层的模型复杂度。</li>
+<li>引入数据增强，如翻转、裁剪和颜色变化，从而进一步扩大数据集来缓解过拟合。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5kv4gpx88.png" alt="Alexnet"></li>
+</ol>
+<h3 id="VGG（使用重复元素的网络）"><a href="#VGG（使用重复元素的网络）" class="headerlink" title="VGG（使用重复元素的网络）"></a>VGG（使用重复元素的网络）</h3><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5l6vut7h1.png" alt="VGG"><br>（图中间有一处错误，应为接上一个步幅为2、窗口形状为2*2的最大池化层）</p>
+<h3 id="NIN（网络中的网络）"><a href="#NIN（网络中的网络）" class="headerlink" title="NIN（网络中的网络）"></a>NIN（网络中的网络）</h3><p>LeNet、AlexNet和VGG：先以由卷积层构成的模块充分抽取 空间特征，再以由全连接层构成的模块来输出分类结果。<br>NiN：串联多个由卷积层和“全连接”层构成的小⽹络来构建⼀个深层⽹络。<br>⽤了输出通道数等于标签类别数的NiN块，然后使⽤全局平均池化层对每个通道中所有元素求平均并直接⽤于分类。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5l6u1p5vy.png" alt="NIN"><br>1×1卷积核作用<br>1.放缩通道数：通过控制卷积核的数量达到通道数的放缩。<br>2.增加非线性。1×1卷积核的卷积过程相当于全连接层的计算过程，并且还加入了非线性激活函数，从而可以增加网络的非线性。<br>3.计算参数少<br>NiN重复使⽤由卷积层和代替全连接层的1×1卷积层构成的NiN块来构建深层⽹络。<br>NiN去除了容易造成过拟合的全连接输出层，而是将其替换成输出通道数等于标签类别数 的NiN块和全局平均池化层。<br>NiN的以上设计思想影响了后⾯⼀系列卷积神经⽹络的设计。</p>
+<h3 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h3><ol>
+<li>由Inception基础块组成。</li>
+<li>nception块相当于⼀个有4条线路的⼦⽹络。它通过不同窗口形状的卷积层和最⼤池化层来并⾏抽取信息，并使⽤1×1卷积层减少通道数从而降低模型复杂度。</li>
+<li>可以⾃定义的超参数是每个层的输出通道数，我们以此来控制模型复杂度。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5l6uortw.png" alt="Inception"><br>完整模型结构：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5l6x0fyyn.png" alt="GoogLeNet"></li>
+</ol>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219224943.png" alt="错题"><br>卷积层通过填充、步幅、输入通道数、输出通道数等调节输出形状<br>卷积神经网络就是含卷积层的网络。 LeNet交替使用卷积层和最大池化层后接全连接层来进行图像分类。<br>conv_2d 宽的计算公式:</p>
+<script type="math/tex; mode=display">
+H_{out} = \left\lfloor\frac{H_{in}  + 2 \times \text{padding}[0] - \text{dilation}[0]
+                        \times (\text{kernel\_size}[0] - 1) - 1}{\text{stride}[0]} + 1\right\rfloor</script><p>pool_2d 宽的计算公式:</p>
+<script type="math/tex; mode=display">
+H_{out} = \left\lfloor\frac{H_{in}  + 2 \times \text{padding}[0] -
+                \text{kernel\_size}[0]}{\text{stride}[0]} + 1\right\rfloor</script>
       
     </div>
     
@@ -565,6 +626,22 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/卷积神经网络/" rel="tag"># 卷积神经网络</a>
+          
+            <a href="/tags/LeNet/" rel="tag"># LeNet</a>
+          
+            <a href="/tags/AlexNet/" rel="tag"># AlexNet</a>
+          
+            <a href="/tags/VGG/" rel="tag"># VGG</a>
+          
+            <a href="/tags/NIN/" rel="tag"># NIN</a>
+          
+            <a href="/tags/GoogLeNet/" rel="tag"># GoogLeNet</a>
+          
+        </div>
       
 
       
@@ -687,7 +764,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -745,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络基础"><span class="nav-number">1.</span> <span class="nav-text">卷积神经网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#感受野"><span class="nav-number">1.1.</span> <span class="nav-text">感受野</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积层与全连接层的对比"><span class="nav-number">1.2.</span> <span class="nav-text">卷积层与全连接层的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积层的简洁实现："><span class="nav-number">1.3.</span> <span class="nav-text">卷积层的简洁实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#池化"><span class="nav-number">1.4.</span> <span class="nav-text">池化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeNet"><span class="nav-number">2.</span> <span class="nav-text">LeNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络基础"><span class="nav-number">1.</span> <span class="nav-text">卷积神经网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#感受野"><span class="nav-number">1.1.</span> <span class="nav-text">感受野</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积层与全连接层的对比"><span class="nav-number">1.2.</span> <span class="nav-text">卷积层与全连接层的对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积层的简洁实现："><span class="nav-number">1.3.</span> <span class="nav-text">卷积层的简洁实现：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#池化"><span class="nav-number">1.4.</span> <span class="nav-text">池化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeNet"><span class="nav-number">2.</span> <span class="nav-text">LeNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积神经网络进阶"><span class="nav-number">3.</span> <span class="nav-text">卷积神经网络进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AlexNet-深度卷积神经网络"><span class="nav-number">3.1.</span> <span class="nav-text">AlexNet(深度卷积神经网络)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VGG（使用重复元素的网络）"><span class="nav-number">3.2.</span> <span class="nav-text">VGG（使用重复元素的网络）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NIN（网络中的网络）"><span class="nav-number">3.3.</span> <span class="nav-text">NIN（网络中的网络）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GoogLeNet"><span class="nav-number">3.4.</span> <span class="nav-text">GoogLeNet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
@@ -761,7 +838,7 @@
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Federated-Learning/">Federated Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEC/">MEC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/">Pytorch</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Seq2seq/">Seq2seq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Softmax与分类模型/">Softmax与分类模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Transformer/">Transformer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nlp/">nlp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/">v2ray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vultr/">vultr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一首小诗/">一首小诗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哎折腾/">哎折腾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多层感知机/">多层感知机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/循环神经网络/">循环神经网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/成长/">成长</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拟合/">拟合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入与归并/">插入与归并</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新年/">新年</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器翻译/">机器翻译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记语言/">标记语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梯度/">梯度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/漏洞安全/">漏洞安全</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社区文化/">社区文化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性回归/">线性回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网安/">网安</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/试验/">试验</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AlexNet/">AlexNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Federated-Learning/">Federated Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GoogLeNet/">GoogLeNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeNet/">LeNet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEC/">MEC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NIN/">NIN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pytorch/">Pytorch</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Seq2seq/">Seq2seq</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Softmax与分类模型/">Softmax与分类模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Transformer/">Transformer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VGG/">VGG</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nlp/">nlp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/v2ray/">v2ray</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vultr/">vultr</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一首小诗/">一首小诗</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/卷积神经网络/">卷积神经网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哎折腾/">哎折腾</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多层感知机/">多层感知机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串处理/">字符串处理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/循环神经网络/">循环神经网络</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/成长/">成长</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拟合/">拟合</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入与归并/">插入与归并</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/新年/">新年</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器翻译/">机器翻译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标记语言/">标记语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/梯度/">梯度</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/漏洞安全/">漏洞安全</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/社区文化/">社区文化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性回归/">线性回归</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网安/">网安</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/试验/">试验</a><span class="tag-list-count">1</span></li></ul>
         </canvas>
     </div>
 </div>

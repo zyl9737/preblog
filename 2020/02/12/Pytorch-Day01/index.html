@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6t7ug0w003akkti9atrnqut" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" rel="gallery_ck6t8nfmq0038l0ti5if27bqy" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200212163848.png" itemprop="contentUrl">
               </a>
             
@@ -512,7 +512,7 @@
 
       
         <p>《动手学深度学习》<br>Pytorch学习:线性回归、Softmax与分类模型、多层感知机<br><a id="more"></a></p>
-<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="线性回归模型从零开始的实现"><a href="#线性回归模型从零开始的实现" class="headerlink" title="线性回归模型从零开始的实现"></a>线性回归模型从零开始的实现</h3><pre><code class="line-numbers language-python"># import packages and modules
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><h3 id="线性回归模型从零开始的实现"><a href="#线性回归模型从零开始的实现" class="headerlink" title="线性回归模型从零开始的实现"></a>线性回归模型从零开始的实现</h3><pre><code class="lang-python"># import packages and modules
 %matplotlib inline
 import torch
 from IPython import display
@@ -589,7 +589,7 @@ for epoch in range(num_epochs):  # training repeats num_epochs times
     train_l = loss(net(features, w, b), labels)
     print(&#39;epoch %d, loss %f&#39; % (epoch + 1, train_l.mean().item()))
 </code></pre>
-<h3 id="使用pytorch的简洁实现"><a href="#使用pytorch的简洁实现" class="headerlink" title="使用pytorch的简洁实现"></a>使用pytorch的简洁实现</h3><pre><code class="line-numbers language-python">import torch
+<h3 id="使用pytorch的简洁实现"><a href="#使用pytorch的简洁实现" class="headerlink" title="使用pytorch的简洁实现"></a>使用pytorch的简洁实现</h3><pre><code class="lang-python">import torch
 from torch import nn
 import numpy as np
 torch.manual_seed(1)
@@ -713,7 +713,7 @@ print(true_b, dense.bias.data)
 <li>torchvision.utils: 其他的一些有用的方法。</li>
 </ol>
 <p>以下代码在kesci平台运行</p>
-<pre><code class="line-numbers language-python"># import needed package
+<pre><code class="lang-python"># import needed package
 %matplotlib inline
 from IPython import display
 import matplotlib.pyplot as plt
@@ -766,7 +766,7 @@ for X, y in train_iter:
     continue
 print(&#39;%.2f sec&#39; % (time.time() - start))
 </code></pre>
-<h3 id="Softmax从零开始实现"><a href="#Softmax从零开始实现" class="headerlink" title="Softmax从零开始实现"></a>Softmax从零开始实现</h3><pre><code class="line-numbers language-python">import torch
+<h3 id="Softmax从零开始实现"><a href="#Softmax从零开始实现" class="headerlink" title="Softmax从零开始实现"></a>Softmax从零开始实现</h3><pre><code class="lang-python">import torch
 import torchvision
 import numpy as np
 import sys
@@ -851,7 +851,7 @@ titles = [true + &#39;\n&#39; + pred for true, pred in zip(true_labels, pred_lab
 
 d2l.show_fashion_mnist(X[0:9], titles[0:9])
 </code></pre>
-<h3 id="Softmax的简洁实现"><a href="#Softmax的简洁实现" class="headerlink" title="Softmax的简洁实现"></a>Softmax的简洁实现</h3><pre><code class="line-numbers language-python"># 加载各种包或者模块
+<h3 id="Softmax的简洁实现"><a href="#Softmax的简洁实现" class="headerlink" title="Softmax的简洁实现"></a>Softmax的简洁实现</h3><pre><code class="lang-python"># 加载各种包或者模块
 import torch
 from torch import nn
 from torch.nn import init
@@ -914,7 +914,7 @@ d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, batch_size, None, No
 <p>用于分类器时，sigmoid函数及其组合通常效果更好。由于梯度消失问题，有时要避免使用sigmoid和tanh函数。</p>
 <p>在神经网络层数较多的时候，最好使用ReLu函数，ReLu函数比较简单计算量少，而sigmoid和tanh函数计算量大很多。</p>
 <p>在选择激活函数的时候可以先选用ReLu函数如果效果不理想可以尝试其他激活函数。<br>pytorch实现：</p>
-<pre><code class="line-numbers language-python">import torch
+<pre><code class="lang-python">import torch
 from torch import nn
 from torch.nn import init
 import numpy as np
@@ -2083,6 +2083,8 @@ if(canvas.getContext){
   
 
   
+  
+
 
   
 

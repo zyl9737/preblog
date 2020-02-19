@@ -129,7 +129,7 @@
 <meta property="og:description" content="机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png">
-<meta property="og:updated_time" content="2020-02-19T10:56:50.904Z">
+<meta property="og:updated_time" content="2020-02-19T11:28:07.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch-Day04">
 <meta name="twitter:description" content="机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer">
@@ -395,7 +395,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-02-19T18:56:50+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-19T19:28:07+08:00">
                 2020-02-19
               </time>
             
@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png" rel="gallery_ck6t7ufhy0014kktif6xdk7in" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png" rel="gallery_ck6t8nfc60010l0tis9cjfd2d" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png" itemprop="contentUrl">
               </a>
             
@@ -512,7 +512,7 @@
 
       
         <p>机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer<br><a id="more"></a></p>
-<h2 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h2><p>用神经网络解决机器翻译问题称为神经机器翻译（NMT）<br>数据预处理：将数据集清洗、转化为神经网络的输入minbatch<br>分词：字符串—单词组成的列表<br>建立词典：单词组成的列表—单词id组成的列表<br>载入数据集，得到数据生成器</p>
+<h2 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h2><p>用神经网络解决机器翻译问题称为神经机器翻译（NMT）<br>数据预处理：将数据集清洗、转化为神经网络的输入minbatch<br>分词：字符串—-单词组成的列表<br>建立词典：单词组成的列表—-单词id组成的列表<br>载入数据集，得到数据生成器</p>
 <h3 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h3><p>输出序列的长度可能与源序列的长度不同。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcat3c8m.png" alt="Encoder-Decoder"><br><strong>Sequence to Sequence模型</strong><br>训练：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jc7a53pt.png" alt="Seq2seq训练"><br>预测：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcecxcba.png" alt="Seq2seq预测"><br>具体结构：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jccjhkii.png" alt="具体结构"></p>
 <h3 id="集束搜索-Beam-Search"><a href="#集束搜索-Beam-Search" class="headerlink" title="集束搜索(Beam Search)"></a>集束搜索(Beam Search)</h3><p>集束搜索是维特比算法（选择整体分数最高的句子，搜索空间太大）的贪心形式，不能得到全局最优解<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcia86z1.png" alt="Beam Search"></p>
 <h2 id="注意力机制和Seq2seq模型"><a href="#注意力机制和Seq2seq模型" class="headerlink" title="注意力机制和Seq2seq模型"></a>注意力机制和Seq2seq模型</h2><p>编码器和解码器本质上是两个RNN，其中编码器对输入序列进行分析编码成一个上下文向量(Context vector)，解码器利用这个编码器生成的向量根据具体任务来进行解码，得到一个新的序列。</p>
@@ -1666,6 +1666,28 @@ if(canvas.getContext){
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

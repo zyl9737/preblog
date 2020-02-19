@@ -499,7 +499,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200214203021.png" rel="gallery_ck6t7ufh6000rkktiqxufthkd" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200214203021.png" rel="gallery_ck6t8nfbg000rl0tixz9vipl6" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200214203021.png" itemprop="contentUrl">
               </a>
             
@@ -525,14 +525,14 @@
 <li>参数空间过大</li>
 <li>数据稀疏</li>
 </ol>
-<h3 id="读取数据集"><a href="#读取数据集" class="headerlink" title="读取数据集"></a>读取数据集</h3><pre><code class="line-numbers language-python">with open(&#39;/home/kesci/input/jaychou_lyrics4703/jaychou_lyrics.txt&#39;) as f:
+<h3 id="读取数据集"><a href="#读取数据集" class="headerlink" title="读取数据集"></a>读取数据集</h3><pre><code class="lang-python">with open(&#39;/home/kesci/input/jaychou_lyrics4703/jaychou_lyrics.txt&#39;) as f:
     corpus_chars = f.read()
 print(len(corpus_chars))
 print(corpus_chars[: 40])
 corpus_chars = corpus_chars.replace(&#39;\n&#39;, &#39; &#39;).replace(&#39;\r&#39;, &#39; &#39;)
 corpus_chars = corpus_chars[: 10000]
 </code></pre>
-<h3 id="建立字符索引"><a href="#建立字符索引" class="headerlink" title="建立字符索引"></a>建立字符索引</h3><pre><code class="line-numbers language-python">idx_to_char = list(set(corpus_chars)) # 去重，得到索引到字符的映射
+<h3 id="建立字符索引"><a href="#建立字符索引" class="headerlink" title="建立字符索引"></a>建立字符索引</h3><pre><code class="lang-python">idx_to_char = list(set(corpus_chars)) # 去重，得到索引到字符的映射
 char_to_idx = {char: i for i, char in enumerate(idx_to_char)} # 字符到索引的映射
 vocab_size = len(char_to_idx)
 print(vocab_size)
@@ -1696,6 +1696,8 @@ if(canvas.getContext){
   
 
   
+  
+
 
   
 

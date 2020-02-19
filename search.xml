@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Pytorch-Day04]]></title>
+    <url>%2F2020%2F02%2F19%2FPytorch-Day04%2F</url>
+    <content type="text"><![CDATA[机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer 机器翻译用神经网络解决机器翻译问题称为神经机器翻译（NMT）数据预处理：将数据集清洗、转化为神经网络的输入minbatch分词：字符串—单词组成的列表建立词典：单词组成的列表—单词id组成的列表载入数据集，得到数据生成器 Encoder-Decoder输出序列的长度可能与源序列的长度不同。Sequence to Sequence模型训练：预测：具体结构： 集束搜索(Beam Search)集束搜索是维特比算法（选择整体分数最高的句子，搜索空间太大）的贪心形式，不能得到全局最优解 注意力机制和Seq2seq模型编码器和解码器本质上是两个RNN，其中编码器对输入序列进行分析编码成一个上下文向量(Context vector)，解码器利用这个编码器生成的向量根据具体任务来进行解码，得到一个新的序列。 编码器如下图就是一个典型的编码器，最终的上下文向量c可以是最后一个时间步的隐藏状态，也可以是编码器每个 解码器下图是两种比较常见的Seq2Seq模型的结构，两个图的左半部分都是上面所说的编码器部分，而右半部分就是解码器部分了。图一是直接将编码器的输出作为解码器的初始隐藏状态，然后直接进行解码。图二是直接将编码器得到的上下文向量输入到解码器的每个时间步中，并且每个时间步的上下文向量是相同，换句话说就是解码器每个时间步都使用了相同的上下文向量。这两种情况可能带来的问题是，当需要编码的句子太长的时候，由于上下文向量能够存储信息的容量是有限的，所以可能会导致信息的丢失，此外，解码器每个时间步的上下文向量都是一个相同的对输入序列的表征，对于上面两种问题，基于注意力机制的Seq2Seq模型给了很好的解决办法。 Attention机制的Seq2Seq在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。 Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder： 每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用$a_{ij}$衡量Encoder中第j阶段的$h_j$和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息$c_i$就来自于所有$h_j$对$a_{ij}$的加权和。以机器翻译为例（将中文翻译成英文）：输入的序列是“我爱中国”，因此，Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的$a_{11}$就比较大，而相应的$a_{12}$、$a_{13}$、$a_{14}$就比较小。c2应该和“爱”最相关，因此对应的$a_{22}$就比较大。最后的c3和h3、h4最相关，因此 $a_{33}$、$a_{34}$的值就比较大。 至此，关于Attention模型，我们就只剩最后一个问题了，那就是：这些权重$a_{ij}$是怎么来的？ 事实上，$a_{ij}$同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。 同样还是拿上面的机器翻译举例，$a_{1j}$的计算（此时箭头就表示对h’和$h_j$同时做变换）： 基于注意力的Seq2Seq模型可以用下图表示： Transformer]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>Pytorch</tag>
+        <tag>机器翻译</tag>
+        <tag>Seq2seq</tag>
+        <tag>Transformer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pytorch-Day03]]></title>
     <url>%2F2020%2F02%2F18%2FPytorch-Day03%2F</url>
-    <content type="text"><![CDATA[过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸；循环神经网络进阶 过拟合、欠拟合及其解决方案几个概念 训练误差（training error）：指在训练集上表现出来的误差 泛化误差（generalizetion error）：指在任意一个测试数据样本上表现出来的误差的期望，并常常通过测试数据集上的误差来近似 验证数据集：预留的在训练数据集和测试数据集以外的数据，用来进行模型选择 K折交叉验证：在K折交叉验证中，我们把原始训练数据集分割成K个不重合的子数据集，然后我们做K次模型训练和验证。每一次，我们使用一个子数据集验证模型，并使用其他K-1个子数据集来训练模型。最后，我们对这K次训练误差和验证误差分别求平均。 欠拟合：指训练误差和泛化误差都不能达到一个较低的水平。 过拟合：指训练误差达到一个较低的水平，而泛化误差依然较大。 产生欠拟合、过拟合的原因主要有两个因素：模型复杂度和序训练数据集大小 当训练数据集中样本数过少，特别是比模型参数数量（按元素计）更少时，过拟合更容易发生。 解决方案过拟合： L2范数正则化（regularization）即权重衰减：L2范数正则化在模型原损失函数基础上添加L2范数惩罚项，从而得到训练所需要最小化的函数。范数惩罚项指的是模型权重参数每个元素的平方和与一个正的常数的乘积。 丢弃法 解决欠拟合可以考虑增加模型复杂度 错题总结测试数据集不可用来调整模型参数，如果使用测试数据集调整模型参数，可能在测试数集上发生一定程度的过拟合现象，此时将不能用测试误差来近似泛化误差。 梯度消失、梯度爆炸模型训练实战步骤顺序： 获取数据集 数据预处理 模型设计 模型验证和模型调整（调参） 模型预测及提交 题目总结梯度消失会导致模型训练困难，对参数的优化步长过小，收效甚微，模型收敛十分缓慢梯度爆炸会导致模型训练困难，对参数的优化步长过大，难以收敛 循环神经网络进阶RNN： GRU RNN存在的问题：梯度较容易出现衰减或爆炸（BPTT） ⻔控循环神经⽹络：捕捉时间序列中时间步距离较⼤的依赖关系 重置⻔有助于捕捉时间序列⾥短期的依赖关系； 更新⻔有助于捕捉时间序列⾥⻓期的依赖关系。9个权重和偏置参数，外加2个输出层参数和状态初始化（-1）参数初始化参数代码： num_inputs, num_hiddens, num_outputs = vocab_size, 256, vocab_size print(&#39;will use&#39;, device) def get_params(): def _one(shape): ts = torch.tensor(np.random.normal(0, 0.01, size=shape), device=device, dtype=torch.float32) #正态分布 return torch.nn.Parameter(ts, requires_grad=True) def _three(): return (_one((num_inputs, num_hiddens)), _one((num_hiddens, num_hiddens)), torch.nn.Parameter(torch.zeros(num_hiddens, device=device, dtype=torch.float32), requires_grad=True)) W_xz, W_hz, b_z = _three() # 更新门参数 W_xr, W_hr, b_r = _three() # 重置门参数 W_xh, W_hh, b_h = _three() # 候选隐藏状态参数 # 输出层参数 W_hq = _one((num_hiddens, num_outputs)) b_q = torch.nn.Parameter(torch.zeros(num_outputs, device=device, dtype=torch.float32), requires_grad=True) return nn.ParameterList([W_xz, W_hz, b_z, W_xr, W_hr, b_r, W_xh, W_hh, b_h, W_hq, b_q]) def init_gru_state(batch_size, num_hiddens, device): #隐藏状态初始化 return (torch.zeros((batch_size, num_hiddens), device=device), ) LSTM长短期记忆long short-term memory 遗忘门:控制上一时间步的记忆细胞 输入门:控制当前时间步的输入 输出门:控制从记忆细胞到隐藏状态 记忆细胞：⼀种特殊的隐藏状态的信息的流动 深层RNN实现时只需在传统RNN基础上改num_layers参数深层神经网络并非越深越好，层数的加深会导致模型的收敛变得困难，具体选用什么模型还是要看实践效果 双向RNN实现时在传统RNN基础上使bidirectional=True双向循环神经网络在文本任务里能做到同时考虑上下文和当前词之间的依赖前向和后向RNN连结的方式使前面的Ht和后面的Ht用contact进行连结]]></content>
+    <content type="text"><![CDATA[过拟合、欠拟合及其解决方案；梯度消失、梯度爆炸；循环神经网络进阶 过拟合、欠拟合及其解决方案几个概念 训练误差（training error）：指在训练集上表现出来的误差 泛化误差（generalizetion error）：指在任意一个测试数据样本上表现出来的误差的期望，并常常通过测试数据集上的误差来近似 验证数据集：预留的在训练数据集和测试数据集以外的数据，用来进行模型选择 K折交叉验证：在K折交叉验证中，我们把原始训练数据集分割成K个不重合的子数据集，然后我们做K次模型训练和验证。每一次，我们使用一个子数据集验证模型，并使用其他K-1个子数据集来训练模型。最后，我们对这K次训练误差和验证误差分别求平均。 欠拟合：指训练误差和泛化误差都不能达到一个较低的水平。 过拟合：指训练误差达到一个较低的水平，而泛化误差依然较大。 产生欠拟合、过拟合的原因主要有两个因素：模型复杂度和序训练数据集大小 当训练数据集中样本数过少，特别是比模型参数数量（按元素计）更少时，过拟合更容易发生。 解决方案过拟合： L2范数正则化（regularization）即权重衰减：L2范数正则化在模型原损失函数基础上添加L2范数惩罚项，从而得到训练所需要最小化的函数。范数惩罚项指的是模型权重参数每个元素的平方和与一个正的常数的乘积。 丢弃法 解决欠拟合可以考虑增加模型复杂度 错题总结测试数据集不可用来调整模型参数，如果使用测试数据集调整模型参数，可能在测试数集上发生一定程度的过拟合现象，此时将不能用测试误差来近似泛化误差。 梯度消失、梯度爆炸模型训练实战步骤顺序： 获取数据集 数据预处理 模型设计 模型验证和模型调整（调参） 模型预测及提交 题目总结梯度消失会导致模型训练困难，对参数的优化步长过小，收效甚微，模型收敛十分缓慢梯度爆炸会导致模型训练困难，对参数的优化步长过大，难以收敛 循环神经网络进阶RNN： GRU RNN存在的问题：梯度较容易出现衰减或爆炸（BPTT） ⻔控循环神经⽹络：捕捉时间序列中时间步距离较⼤的依赖关系 重置⻔有助于捕捉时间序列⾥短期的依赖关系 更新⻔有助于捕捉时间序列⾥⻓期的依赖关系 9个权重和偏置参数，外加2个输出层参数和状态初始化（-1）参数初始化参数代码： num_inputs, num_hiddens, num_outputs = vocab_size, 256, vocab_size print(&#39;will use&#39;, device) def get_params(): def _one(shape): ts = torch.tensor(np.random.normal(0, 0.01, size=shape), device=device, dtype=torch.float32) #正态分布 return torch.nn.Parameter(ts, requires_grad=True) def _three(): return (_one((num_inputs, num_hiddens)), _one((num_hiddens, num_hiddens)), torch.nn.Parameter(torch.zeros(num_hiddens, device=device, dtype=torch.float32), requires_grad=True)) W_xz, W_hz, b_z = _three() # 更新门参数 W_xr, W_hr, b_r = _three() # 重置门参数 W_xh, W_hh, b_h = _three() # 候选隐藏状态参数 # 输出层参数 W_hq = _one((num_hiddens, num_outputs)) b_q = torch.nn.Parameter(torch.zeros(num_outputs, device=device, dtype=torch.float32), requires_grad=True) return nn.ParameterList([W_xz, W_hz, b_z, W_xr, W_hr, b_r, W_xh, W_hh, b_h, W_hq, b_q]) def init_gru_state(batch_size, num_hiddens, device): #隐藏状态初始化 return (torch.zeros((batch_size, num_hiddens), device=device), ) LSTM长短期记忆long short-term memory 遗忘门:控制上一时间步的记忆细胞 输入门:控制当前时间步的输入 输出门:控制从记忆细胞到隐藏状态 记忆细胞：⼀种特殊的隐藏状态的信息的流动 深层RNN实现时只需在传统RNN基础上改num_layers参数深层神经网络并非越深越好，层数的加深会导致模型的收敛变得困难，具体选用什么模型还是要看实践效果 双向RNN实现时在传统RNN基础上使bidirectional=True双向循环神经网络在文本任务里能做到同时考虑上下文和当前词之间的依赖前向和后向RNN连结的方式使前面的Ht和后面的Ht用contact进行连结]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
@@ -161,31 +175,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1035 插入与归并]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1035-%E6%8F%92%E5%85%A5%E4%B8%8E%E5%BD%92%E5%B9%B6%2F</url>
-    <content type="text"><![CDATA[1035 插入与归并（25 分）根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。归并排序进行如下迭代操作：首先将原始序列看成 N 个只包含 1 个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下 1 个有序的序列。现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？输入格式：输入在第一行给出正整数 N (≤100)；随后一行给出原始序列的 N 个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。输出格式：首先在第 1 行中输出Insertion Sort表示插入排序、或Merge Sort表示归并排序；然后在第 2 行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行首尾不得有多余空格。输入样例 1： 10 3 1 2 8 7 5 9 4 6 0 1 2 3 7 8 5 9 4 6 0输出样例 1： Insertion Sort 1 2 3 5 7 8 9 4 6 0输入样例 2： 10 3 1 2 8 7 5 9 4 0 6 1 3 2 8 5 7 4 9 0 6输出样例 2： Merge Sort 1 2 3 8 4 5 7 9 0 6 思路：先将i指向中间序列中满足从左到右是从小到大顺序的最后一个下标，再将j指向从i+1开始，第一个不满足a[j] == b[j]的下标，如果j顺利到达了下标n，说明是插入排序，再下一次的序列是sort(a, a+i+2);否则说明是归并排序。归并排序就别考虑中间序列了，直接对原来的序列进行模拟归并时候的归并过程，i从0到n/k，每次一段段得sort(a + i k, a + (i + 1) k);最后别忘记还有最后剩余部分的sort(a + n / k * k, a + n);这样是一次归并的过程。直到有一次发现a的顺序和b的顺序相同，则再归并一次，然后退出循环～题解： #include&lt;iostream&gt; #include&lt;algorithm&gt; using namespace std; int main() { int N; int a[101], b[101]; // 原始序列a 中间序列b int i, j; cin&gt;&gt;N; for( i=0; i&lt;N; i++ ) cin&gt;&gt;A1[i]; for( i=0; i&lt;N; i++ ) cin&gt;&gt;A2[i]; for( i=0; b[i]&lt;=b[i+1] &amp;&amp; i&lt;N-1; i++ ) ; // i作为有序序列最后一个元素下标退出循环 for( j=++i; a[j]==b[j] &amp;&amp; j&lt;N; j++ ) ; // a b从第一个无序的元素开始，逐一比对 if( j==N ){// 前半部分有序而后半部分未改动可以确定是插入排序 cout&lt;&lt;&quot;Insertion Sort&quot;&lt;&lt;endl; sort( a, a+i+1 ); } else{ cout&lt;&lt;&quot;Merge Sort&quot;&lt;&lt;endl; int k = 1; int flag=1; //用来标记是否归并到 “中间序列” while( flag ) { flag = 0; for( i=0; i&lt;N; i++ ) if( a[i]!=b[i] ) flag = 1; k*=2; for( i=0; i&lt;N/k; i++ ) sort( a+i*k, a+(i+1)*k ); i=k*(N/k); // 对非偶数序列的“尾巴”进行排序 if(i&lt;N-1) sort( a+k*(N/k), a+N ); } } cout&lt;&lt;a[0]; for( i=1; i&lt;N; i++ ) cout&lt;&lt;&quot; &quot;&lt;&lt;a[i]; cout&lt;&lt;endl; return 0; }]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>插入与归并</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[PAT 1057 数壹零]]></title>
     <url>%2F2019%2F03%2F18%2FPAT-1057-%E6%95%B0%E5%A3%B9%E9%9B%B6%2F</url>
     <content type="text"><![CDATA[1057 数零壹 （20 分) 给定一串长度不超过 10^5的字符串，本题要求你将其中所有英文字母的序号（字母 a-z 对应序号 1-26，不分大小写）相加，得到整数 N，然后再分析一下 N 的二进制表示中有多少 0、多少 1。例如给定字符串 PAT (Basic)，其字母序号之和为：16+1+20+2+1+19+9+3=71，而 71 的二进制是 1000111，即有 3 个 0、4 个 1。输入格式：输入在一行中给出长度不超过 10^5,以回车结束的字符串。输出格式：在一行中先后输出 0 的个数和 1 的个数，其间以空格分隔。输入样例：PAT (Basic)输出样例：3 4 分析：用getline接收一行字符串，对于字符串的每一位，如果是字母(isalpha)，则将字母转化为大写(toupper)，并累加(s[i] – ‘A’ + 1)算出n，然后将n转化为二进制，对每一位处理，如果是0则cnt0++，如果是1则cnt1++，最后输出cnt0和cnt1的值～～题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cctype&gt; using namespace std; int main() { string s; getline(cin,s); int n=0; for(int i=0;i&lt;s.length();i++) { if(isalpha(s[i])) { s[i]=toupper(s[i]); n+=(s[i]-&#39;A&#39;+1); } } int cnt0=0,cnt1=0; while(n!=0) { if(n%2==0) { cnt0++; } else cnt1++; n=n/2; } cout&lt;&lt;cnt0&lt;&lt;&quot; &quot;&lt;&lt;cnt1; return 0; }]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[PAT 1055 集体照]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
-    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～ #include&lt;iostream&gt; #include&lt;algorithm&gt; #include&lt;vector&gt; using namespace std; struct node{ string name; int high; }; int cmp(struct node a,struct node b ) { return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name; } int main() { int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) { if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; } return 0; }]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -202,6 +194,28 @@
       </categories>
       <tags>
         <tag>字符串处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT 1035 插入与归并]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1035-%E6%8F%92%E5%85%A5%E4%B8%8E%E5%BD%92%E5%B9%B6%2F</url>
+    <content type="text"><![CDATA[1035 插入与归并（25 分）根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。归并排序进行如下迭代操作：首先将原始序列看成 N 个只包含 1 个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下 1 个有序的序列。现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？输入格式：输入在第一行给出正整数 N (≤100)；随后一行给出原始序列的 N 个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。输出格式：首先在第 1 行中输出Insertion Sort表示插入排序、或Merge Sort表示归并排序；然后在第 2 行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行首尾不得有多余空格。输入样例 1： 10 3 1 2 8 7 5 9 4 6 0 1 2 3 7 8 5 9 4 6 0输出样例 1： Insertion Sort 1 2 3 5 7 8 9 4 6 0输入样例 2： 10 3 1 2 8 7 5 9 4 0 6 1 3 2 8 5 7 4 9 0 6输出样例 2： Merge Sort 1 2 3 8 4 5 7 9 0 6 思路：先将i指向中间序列中满足从左到右是从小到大顺序的最后一个下标，再将j指向从i+1开始，第一个不满足a[j] == b[j]的下标，如果j顺利到达了下标n，说明是插入排序，再下一次的序列是sort(a, a+i+2);否则说明是归并排序。归并排序就别考虑中间序列了，直接对原来的序列进行模拟归并时候的归并过程，i从0到n/k，每次一段段得sort(a + i k, a + (i + 1) k);最后别忘记还有最后剩余部分的sort(a + n / k * k, a + n);这样是一次归并的过程。直到有一次发现a的顺序和b的顺序相同，则再归并一次，然后退出循环～题解： #include&lt;iostream&gt; #include&lt;algorithm&gt; using namespace std; int main() { int N; int a[101], b[101]; // 原始序列a 中间序列b int i, j; cin&gt;&gt;N; for( i=0; i&lt;N; i++ ) cin&gt;&gt;A1[i]; for( i=0; i&lt;N; i++ ) cin&gt;&gt;A2[i]; for( i=0; b[i]&lt;=b[i+1] &amp;&amp; i&lt;N-1; i++ ) ; // i作为有序序列最后一个元素下标退出循环 for( j=++i; a[j]==b[j] &amp;&amp; j&lt;N; j++ ) ; // a b从第一个无序的元素开始，逐一比对 if( j==N ){// 前半部分有序而后半部分未改动可以确定是插入排序 cout&lt;&lt;&quot;Insertion Sort&quot;&lt;&lt;endl; sort( a, a+i+1 ); } else{ cout&lt;&lt;&quot;Merge Sort&quot;&lt;&lt;endl; int k = 1; int flag=1; //用来标记是否归并到 “中间序列” while( flag ) { flag = 0; for( i=0; i&lt;N; i++ ) if( a[i]!=b[i] ) flag = 1; k*=2; for( i=0; i&lt;N/k; i++ ) sort( a+i*k, a+(i+1)*k ); i=k*(N/k); // 对非偶数序列的“尾巴”进行排序 if(i&lt;N-1) sort( a+k*(N/k), a+N ); } } cout&lt;&lt;a[0]; for( i=1; i&lt;N; i++ ) cout&lt;&lt;&quot; &quot;&lt;&lt;a[i]; cout&lt;&lt;endl; return 0; }]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>插入与归并</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT 1055 集体照]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
+    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～ #include&lt;iostream&gt; #include&lt;algorithm&gt; #include&lt;vector&gt; using namespace std; struct node{ string name; int high; }; int cmp(struct node a,struct node b ) { return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name; } int main() { int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) { if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; } return 0; }]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>

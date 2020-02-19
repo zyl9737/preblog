@@ -107,7 +107,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Pytorch,机器翻译,Seq2seq,Transformer,">
 
 
 
@@ -120,13 +120,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="֣郑玉龙の博客">
-<meta property="og:url" content="http://zhengyulong.top/tags/线性回归/index.html">
+<meta name="description" content="机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer">
+<meta name="keywords" content="Pytorch,机器翻译,Seq2seq,Transformer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pytorch-Day04">
+<meta property="og:url" content="http://zhengyulong.top/2020/02/19/Pytorch-Day04/index.html">
 <meta property="og:site_name" content="֣郑玉龙の博客">
+<meta property="og:description" content="机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png">
+<meta property="og:updated_time" content="2020-02-19T10:56:50.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="֣郑玉龙の博客">
+<meta name="twitter:title" content="Pytorch-Day04">
+<meta name="twitter:description" content="机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png">
 
 
 
@@ -156,14 +163,14 @@
 
 
 
-  <link rel="canonical" href="http://zhengyulong.top/tags/线性回归/">
+  <link rel="canonical" href="http://zhengyulong.top/2020/02/19/Pytorch-Day04/">
 
 
 
 
 <link rel="stylesheet" href="/js/prism/prism.css">
 
-  <title>标签: 线性回归 | ֣郑玉龙の博客</title>
+  <title>Pytorch-Day04 | ֣郑玉龙の博客</title>
   
 
 
@@ -192,7 +199,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/zyl9737"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -328,52 +335,319 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>线性回归<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+ 
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhengyulong.top/2020/02/19/Pytorch-Day04/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Emanono">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="֣郑玉龙の博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/02/12/Pytorch-Day01/" itemprop="url">
-              
-                <span itemprop="name">Pytorch-Day01</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Pytorch-Day04</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-02-12T14:37:11+08:00" content="2020-02-12">
-          02-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-19T12:58:56+08:00">
+                2020-02-19
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-19T18:56:50+08:00">
+                2020-02-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/19/Pytorch-Day04/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/19/Pytorch-Day04/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope="" itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png" rel="gallery_ck6t7d6zu000w5sti6tmvwlmt" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185605.png" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <p>机器翻译及相关技术；注意力机制与Seq2seq模型；Transformer<br><a id="more"></a></p>
+<h2 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h2><p>用神经网络解决机器翻译问题称为神经机器翻译（NMT）<br>数据预处理：将数据集清洗、转化为神经网络的输入minbatch<br>分词：字符串—单词组成的列表<br>建立词典：单词组成的列表—单词id组成的列表<br>载入数据集，得到数据生成器</p>
+<h3 id="Encoder-Decoder"><a href="#Encoder-Decoder" class="headerlink" title="Encoder-Decoder"></a>Encoder-Decoder</h3><p>输出序列的长度可能与源序列的长度不同。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcat3c8m.png" alt="Encoder-Decoder"><br><strong>Sequence to Sequence模型</strong><br>训练：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jc7a53pt.png" alt="Seq2seq训练"><br>预测：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcecxcba.png" alt="Seq2seq预测"><br>具体结构：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jccjhkii.png" alt="具体结构"></p>
+<h3 id="集束搜索-Beam-Search"><a href="#集束搜索-Beam-Search" class="headerlink" title="集束搜索(Beam Search)"></a>集束搜索(Beam Search)</h3><p>集束搜索是维特比算法（选择整体分数最高的句子，搜索空间太大）的贪心形式，不能得到全局最优解<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/q5jcia86z1.png" alt="Beam Search"></p>
+<h2 id="注意力机制和Seq2seq模型"><a href="#注意力机制和Seq2seq模型" class="headerlink" title="注意力机制和Seq2seq模型"></a>注意力机制和Seq2seq模型</h2><p>编码器和解码器本质上是两个RNN，其中编码器对输入序列进行分析编码成一个上下文向量(Context vector)，解码器利用这个编码器生成的向量根据具体任务来进行解码，得到一个新的序列。</p>
+<h3 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h3><p>如下图就是一个典型的编码器，最终的上下文向量c可以是最后一个时间步的隐藏状态，也可以是编码器每个<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-03aaa7754bb9992858a05bb9668631a9_r.jpg" alt="编码器"></p>
+<h3 id="解码器"><a href="#解码器" class="headerlink" title="解码器"></a>解码器</h3><p>下图是两种比较常见的Seq2Seq模型的结构，两个图的左半部分都是上面所说的编码器部分，而右半部分就是解码器部分了。图一是直接将编码器的输出作为解码器的初始隐藏状态，然后直接进行解码。图二是直接将编码器得到的上下文向量输入到解码器的每个时间步中，并且每个时间步的上下文向量是相同，换句话说就是解码器每个时间步都使用了相同的上下文向量。这两种情况可能带来的问题是，当需要编码的句子太长的时候，由于上下文向量能够存储信息的容量是有限的，所以可能会导致信息的丢失，此外，解码器每个时间步的上下文向量都是一个相同的对输入序列的表征，对于上面两种问题，基于注意力机制的Seq2Seq模型给了很好的解决办法。<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-77e8a977fc3d43bec8b05633dc52ff9f_r.jpg" alt="图一"><br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-e0fbb46d897400a384873fc100c442db_r.jpg" alt="图二"></p>
+<h3 id="Attention机制的Seq2Seq"><a href="#Attention机制的Seq2Seq" class="headerlink" title="Attention机制的Seq2Seq"></a>Attention机制的Seq2Seq</h3><p>在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，<strong>因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</strong>如机器翻译问题，当要翻译的句子较长时，一个c可能存不下那么多信息，就会造成翻译精度的下降。</p>
+<p>Attention机制通过在每个时间输入不同的c来解决这个问题，下图是带有Attention机制的Decoder：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-8da16d429d33b0f2705e47af98e66579_hd.jpg" alt="Attention机制"></p>
+<p><strong>每一个c会自动去选取与当前所要输出的y最合适的上下文信息。具体来说，我们用$a_{ij}$衡量Encoder中第j阶段的$h_j$和解码时第i阶段的相关性，最终Decoder中第i阶段的输入的上下文信息$c_i$就来自于所有$h_j$对$a_{ij}$的加权和。</strong><br>以机器翻译为例（将中文翻译成英文）：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-d266bf48a1d77e7e4db607978574c9fc_hd-1.jpg" alt="例子"><br>输入的序列是“我爱中国”，因此，Encoder中的h1、h2、h3、h4就可以分别看做是“我”、“爱”、“中”、“国”所代表的信息。在翻译成英语时，第一个上下文c1应该和“我”这个字最相关，因此对应的$a_{11}$就比较大，而相应的$a_{12}$、$a_{13}$、$a_{14}$就比较小。c2应该和“爱”最相关，因此对应的$a_{22}$就比较大。最后的c3和h3、h4最相关，因此 $a_{33}$、$a_{34}$的值就比较大。</p>
+<p>至此，关于Attention模型，我们就只剩最后一个问题了，那就是：这些权重$a_{ij}$是怎么来的？</p>
+<p>事实上，$a_{ij}$同样是从模型中学出的，它实际和Decoder的第i-1阶段的隐状态、Encoder第j个阶段的隐状态有关。</p>
+<p>同样还是拿上面的机器翻译举例，$a_{1j}$的计算（此时箭头就表示对h’和$h_j$同时做变换）：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/v2-5561fa61321f31113043fb9711ee3263_hd.jpg" alt="权重计算"></p>
+<p>基于注意力的Seq2Seq模型可以用下图表示：<br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/H6705460e1a224081a2414397bf26a435H.png" alt="基于注意力的Seq2Seq模型"></p>
+<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><p><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219184857.png" alt="错题一"><br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185309.png" alt="错题二"><br><img src="https://raw.githubusercontent.com/zyl9737/mypicgo/master/img/20200219185405.png" alt="错题三"></p>
 
       
     </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+              -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+       </div>
+    
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>此处弱弱的求打赏qwq</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Emanono 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Emanono 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Emanono
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhengyulong.top/2020/02/19/Pytorch-Day04/" title="Pytorch-Day04">http://zhengyulong.top/2020/02/19/Pytorch-Day04/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Pytorch/" rel="tag"># Pytorch</a>
+          
+            <a href="/tags/机器翻译/" rel="tag"># 机器翻译</a>
+          
+            <a href="/tags/Seq2seq/" rel="tag"># Seq2seq</a>
+          
+            <a href="/tags/Transformer/" rel="tag"># Transformer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/18/Pytorch-Day03/" rel="next" title="Pytorch-Day03">
+                <i class="fa fa-chevron-left"></i> Pytorch-Day03
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -381,6 +655,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -401,8 +682,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -489,6 +779,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器翻译"><span class="nav-number">1.</span> <span class="nav-text">机器翻译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Decoder"><span class="nav-number">1.1.</span> <span class="nav-text">Encoder-Decoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集束搜索-Beam-Search"><span class="nav-number">1.2.</span> <span class="nav-text">集束搜索(Beam Search)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意力机制和Seq2seq模型"><span class="nav-number">2.</span> <span class="nav-text">注意力机制和Seq2seq模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码器"><span class="nav-number">2.1.</span> <span class="nav-text">编码器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解码器"><span class="nav-number">2.2.</span> <span class="nav-text">解码器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention机制的Seq2Seq"><span class="nav-number">2.3.</span> <span class="nav-text">Attention机制的Seq2Seq</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer"><span class="nav-number">3.</span> <span class="nav-text">Transformer</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -941,6 +1247,10 @@ if(canvas.getContext){
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

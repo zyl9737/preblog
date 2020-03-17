@@ -126,26 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[肺炎时期的爱情]]></title>
-    <url>%2F2020%2F01%2F25%2F%E8%82%BA%E7%82%8E%E6%97%B6%E6%9C%9F%E7%9A%84%E7%88%B1%E6%83%85%2F</url>
-    <content type="text"><![CDATA[姐姐我们明天都戴口罩穿他妈的睡衣上街神州大地六亿电子眼总会有一个拍下我们犯罪的证明一张照片存进硬盘大小5.20Mb被写进永不消逝的通报批评福寿与天齐全国人民为我作见证你牵着我过马路的时候我偷偷望你的眼神里有一颗两颗三四颗星星——《肺炎时期的爱情》by: 刻奇人类研究中心_kitsch]]></content>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[First article of the new year]]></title>
-    <url>%2F2020%2F01%2F22%2FFirst-article-of-the-new-year%2F</url>
-    <content type="text"><![CDATA[2020是鼠年，吸鼠霸王！ 2019就这样过去了，总体来说大二上学期应该说是比较颓废的，退了大一加的所有部门和俱乐部什么的（ACM、网安、计工创协、创业部），想要有一些空闲时间偷偷懒，更好地自学，结果却是经常躺在宿舍混吃等死，于是在大二上的最后一个月，我决定还是得做些什么，不能这么腐烂下去了。遂决定加实验室，鼓起勇气发邮件给老师最后成功加入智能网联与先进计算实验室。不巧的是这事还没定下来时正好有个室友的智能车队走了个队友，拉我去接锅。最后机缘巧合加了两实验室。第一个对期刊会议什么的也有了一些期待，里面有一些优秀的人能让我也沉下心来。第二个实验室让我对硬件不再那么抵触，在回家的前几天我也总算不负众望做出了人车跟随的最初式。 回想了一下，发现我是一个不满足的人，我对新的东西是有好奇心的，什么领域我都想接触一下。这也同时造成了我没有一个十分喜欢的东西，做事情总是三分钟热度。经过我多年玩LOL的经验，这样是不行的，最后上王者的一般都是有着几个专精的英雄和位置，全能王是百年难得一见的。 2019刚到来的时候，我发了个说说，说新的一年祝大家越来越好。但这终究只是祝愿。李B说，这个世界会好吗？相信未来吗？我觉得，会好的。我没办法找到我能改变这个世界的切实证据，但是我还是相信。 新的一年希望自己能学到更多的知识，能C为什么要躺呢？]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>新年</tag>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[攻防世界web新手区题解]]></title>
     <url>%2F2019%2F09%2F16%2F%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B%E5%8C%BA%E9%A2%98%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[题目：view_source这道题没啥好说的，f12即可flag：cyberpeace{e07dcafaeeb31df23b4d661dd4da56f9} 题目：get_post这道题我使用的方法是：旧版本火狐+旧版本的hackbar hackbar勾选Post，load URL内容为：http://111.198.29.45:33495/?a=1 ， post data内容为：b=2，然后点击Execute即可看到flag了 flag：cyberpeace{c4e43c9c9d0f729358dd9417219a9da0} 题目:robots这个题考到了Robots协议，也就是爬虫排除标准，于是肯定有个robots.txt文件，直接构造url访问这个文件，看到了禁止爬取：f1ag_1s_h3re.php这个页面，我们直接访问这个页面于是便得到了flag了 flag：cyberpeace{1b59446bc8e566382e01b0c209b899bd} 题目：backup这道题考察的是备份文件漏洞，产生该类漏洞的方式一般又三个： 编辑器自动备份 版本控制系统备份 开发者主动备份 于是我们知道了备份文件：index.php.bak 下载后便得到flag了 flag：cyberpeace{4376485b1a095581d7fb57b8ab3bb924} 题目：cookie Cookie是当主机访问Web服务器时，由 Web 服务器创建的，将信息存储在用户计算机上的文件。一般网络用户习惯用其复数形式 Cookies，指某些网站为了辨别用户身份、进行 Session 跟踪而存储在用户本地终端上的数据，而这些数据通常会经过加密处理。 浏览器按下F12键打开开发者工具，刷新后，在存储一栏，可看到名为look-here的cookie的值为cookie.php 访问http://111.198.29.45:47911/cookie.php，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包 点击查看数据包，在消息头内可发现flag flag：cyberpeace{e865c062128d651191621df4662b3573} 题目：disabled_button这个题对于前端工作者来说绝对的简单的不能再简单了，直接删除掉disabled属性，就可以点击了 flag：cyberpeace{2e978e2dde5d8acdd7ff76f1c426bb29} 题目:simple_js这个题真正的密码部分因该是：\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x2c\x31\x31\x36\x2c\x31\x30\x37\x2c\x34\x39\x2c\x35\x30 先要把这段16进制转换成10进制得到：55,56,54,79,115,69,114,116,107,49,50 然后直接一段python脚本解得flag s=[55,56,54,79,115,69,114,116,107,49,50]for i in s:print(chr(i),end=’’)flag：Cyberpeace{786OsErtk12} 题目：xff_referer直接刷新一下burp截包，然后添加如下两行内容： X-Forwarded-For:123.123.123.123 Referer:https://www.google.com 然后就看到flag了 flag：cyberpeace{63657c0c7f88a39a475f0de726ef109a} 题目：weak_auth打开网页看到标题提示weak auth弱验证，这就没啥好说的了，没看到验证码，burp直接来爆破吧！ 随便输入下用户名和密码,提示要用admin用户登入,然后跳转到了check.php,查看下源代码提示要用字典。 用burpsuite截下登录的数据包,把数据包发送到intruder爆破 设置爆破点为password 加载字典 开始攻击，查看响应包列表，发现密码为123456时，响应包的长度和别的不一样. 于是便得到了flag flag：cyberpeace{04415bd2dac05f0e2cd712bb43c447b2} 题目：webshell这个没啥好说的，菜刀连接上后发现目录下有个flag.txt，打开就看到了flag了 flag：cyberpeace{74fea3cfddba6bfdc6bfba5b38300b08} 题目：command_execution打开网页在标题看到command execution 命令执行，那就没啥好说的了，看看目录下有些啥吧! ping -c 3 3 127.0.0.1 | ls /binbootdevetchomeliblib64mediamntoptprocrootrunrun.shsbinsrvsystmpusrvar习惯性的看看home里有什么 ping -c 3 127.0.0.1 | ls /homeflag.txtping -c 3 3 127.0.0.1 | cat /home/flag.txtcyberpeace{39190fc825ce46b116b6829f0c13d625}于是便得到了flag！ flag：cyberpeace{39190fc825ce46b116b6829f0c13d625} 题目：simple_php这道题在阅读了PHP代码后，发现，要a==0，但a的值又不能为0，因此让a=0+任意非数字字符，而 b=数字就退出， 于是构造：?a=0a&amp;b=12345A便得到完整的flag flag：Cyberpeace{647E37C7627CC3E4019EC69324F66C7C}]]></content>
@@ -213,14 +193,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1055 集体照]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
-    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～ #include&lt;iostream&gt; #include&lt;algorithm&gt; #include&lt;vector&gt; using namespace std; struct node{ string name; int high; }; int cmp(struct node a,struct node b ) { return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name; } int main() { int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) { if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; } return 0; }]]></content>
+    <title><![CDATA[PAT 1054 求平均值]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1054-%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[1054 求平均值 （20 分) 本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。输入格式：输入第一行给出正整数 N（≤100）。随后一行给出 N 个实数，数字间以一个空格分隔。输出格式：对每个非法输入，在一行中输出 ERROR: X is not a legal number，其中 X 是输入。最后在一行中输出结果：The average of K numbers is Y，其中 K 是合法输入的个数，Y 是它们的平均值，精确到小数点后 2 位。如果平均值无法计算，则用 Undefined 替换 Y。如果 K 为 1，则输出 The average of 1 number is Y。输入样例 1：75 -3.2 aaa 9999 2.3.4 7.123 2.35输出样例 1：ERROR: aaa is not a legal numberERROR: 9999 is not a legal numberERROR: 2.3.4 is not a legal numberERROR: 7.123 is not a legal numberThe average of 3 numbers is 1.38输入样例 2：2aaa -9999输出样例 2：ERROR: aaa is not a legal numberERROR: -9999 is not a legal numberThe average of 0 numbers is Undefined&lt;/font&gt; 分析：使用sscanf和sprintf函数～sscanf() – 从一个字符串中读进与指定格式相符的数据sprintf() – 字符串格式化命令，主要功能是把格式化的数据写入某个字符串中 题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cstdio&gt; using namespace std; int main() { int n,cnt=0; char a[50],b[50]; cin&gt;&gt;n; double temp,sum=0.0; for(int i=0;i&lt;n;i++) { scanf(&quot;%s&quot;,a); sscanf(a,&quot;%lf&quot;,&amp;temp);//从7.123中读入7.123道temp中 sprintf(b,&quot;%.2f&quot;,temp);//把temp变为7.12写入b中 int flag=0; for(int j=0;j&lt;strlen(a);j++) if(a[j]!=b[j])flag=1; if(flag||temp&lt;-1000||temp&gt;1000) { printf(&quot;ERROR: %s is not a legal number\n&quot;,a); continue; } else { sum+=temp; cnt++; } } if(cnt==1) printf(&quot;The average of 1 number is %.2f&quot;,sum); else if(cnt&gt;1) printf(&quot;The average of %d numbers is %.2f&quot;,cnt,sum/cnt); else printf(&quot;The average of 0 numbers is Undefined&quot;); return 0; }]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>排序</tag>
+        <tag>字符串处理</tag>
       </tags>
   </entry>
   <entry>
@@ -235,14 +215,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PAT 1054 求平均值]]></title>
-    <url>%2F2019%2F03%2F18%2FPAT-1054-%E6%B1%82%E5%B9%B3%E5%9D%87%E5%80%BC%2F</url>
-    <content type="text"><![CDATA[1054 求平均值 （20 分) 本题的基本要求非常简单：给定 N 个实数，计算它们的平均值。但复杂的是有些输入数据可能是非法的。一个“合法”的输入是 [−1000,1000] 区间内的实数，并且最多精确到小数点后 2 位。当你计算平均值的时候，不能把那些非法的数据算在内。输入格式：输入第一行给出正整数 N（≤100）。随后一行给出 N 个实数，数字间以一个空格分隔。输出格式：对每个非法输入，在一行中输出 ERROR: X is not a legal number，其中 X 是输入。最后在一行中输出结果：The average of K numbers is Y，其中 K 是合法输入的个数，Y 是它们的平均值，精确到小数点后 2 位。如果平均值无法计算，则用 Undefined 替换 Y。如果 K 为 1，则输出 The average of 1 number is Y。输入样例 1：75 -3.2 aaa 9999 2.3.4 7.123 2.35输出样例 1：ERROR: aaa is not a legal numberERROR: 9999 is not a legal numberERROR: 2.3.4 is not a legal numberERROR: 7.123 is not a legal numberThe average of 3 numbers is 1.38输入样例 2：2aaa -9999输出样例 2：ERROR: aaa is not a legal numberERROR: -9999 is not a legal numberThe average of 0 numbers is Undefined&lt;/font&gt; 分析：使用sscanf和sprintf函数～sscanf() – 从一个字符串中读进与指定格式相符的数据sprintf() – 字符串格式化命令，主要功能是把格式化的数据写入某个字符串中 题解： #include&lt;iostream&gt; #include&lt;cstring&gt; #include&lt;cstdio&gt; using namespace std; int main() { int n,cnt=0; char a[50],b[50]; cin&gt;&gt;n; double temp,sum=0.0; for(int i=0;i&lt;n;i++) { scanf(&quot;%s&quot;,a); sscanf(a,&quot;%lf&quot;,&amp;temp);//从7.123中读入7.123道temp中 sprintf(b,&quot;%.2f&quot;,temp);//把temp变为7.12写入b中 int flag=0; for(int j=0;j&lt;strlen(a);j++) if(a[j]!=b[j])flag=1; if(flag||temp&lt;-1000||temp&gt;1000) { printf(&quot;ERROR: %s is not a legal number\n&quot;,a); continue; } else { sum+=temp; cnt++; } } if(cnt==1) printf(&quot;The average of 1 number is %.2f&quot;,sum); else if(cnt&gt;1) printf(&quot;The average of %d numbers is %.2f&quot;,cnt,sum/cnt); else printf(&quot;The average of 0 numbers is Undefined&quot;); return 0; }]]></content>
+    <title><![CDATA[PAT 1055 集体照]]></title>
+    <url>%2F2019%2F03%2F18%2FPAT-1055-%E9%9B%86%E4%BD%93%E7%85%A7%2F</url>
+    <content type="text"><![CDATA[1055 集体照 （25 分)拍集体照时队形很重要，这里对给定的 N 个人 K 排的队形设计排队规则如下：每排人数为 N/K（向下取整），多出来的人全部站在最后一排；后排所有人的个子都不比前排任何人矮；每排中最高者站中间（中间位置为 m/2+1，其中 m 为该排人数，除法向下取整）；每排其他人以中间人为轴，按身高非增序，先右后左交替入队站在中间人的两侧（例如5人身高为190、188、186、175、170，则队形为175、188、190、186、170。这里假设你面对拍照者，所以你的左边是中间人的右边）；若多人身高相同，则按名字的字典序升序排列。这里保证无重名。现给定一组拍照人，请编写程序输出他们的队形。输入格式：每个输入包含 1 个测试用例。每个测试用例第 1 行给出两个正整数 N（≤10^4​总人数）和 K（≤10^4，总排数）。随后 N 行，每行给出一个人的名字（不包含空格、长度不超过 8 个英文字母）和身高（[30, 300] 区间内的整数）。输出格式：输出拍照的队形。即K排人名，其间以空格分隔，行末不得有多余空格。注意：假设你面对拍照者，后排的人输出在上方，前排输出在下方。输入样例：10 3Tom 188Mike 170Eva 168Tim 160Joe 190Ann 168Bob 175Nick 186Amy 160John 159输出样例：Bob Tom Joe NickAnn Mike EvaTim Amy John 分析：拍照的最后一行是输出的第一行，人数是m=n-n/k*(k-1),其他行数均为m=n/k，用结构体+vector将身高降序排列，注意身高相同名字按升序排列，用while循环排列每一行，将每一行的排列结果的姓名储存在ans数组中，最中间一个学生应该排在m/2的下标位置，即ans[m / 2] = stu[t].name；然后排左边一列，ans数组的下标 j 从m/2-1开始，一直往左j–，而对于stu的下标 i，是从t+1开始，每次隔一个人选取（即i = i+2，因为另一些人的名字是给右边的），每次把stu[i]的name赋值给ans[j–]；排右边的队伍同理，ans数组的下标 j 从m/2 + 1开始，一直往右j++，stu的下标 i，从t+2开始，每次隔一个人选取（i = i+2），每次把stu[i]的name赋值给ans[j++]，然后输出当前已经排好的ans数组～每一次排完一列row-1，直到row等于0时退出循环表示已经排列并输出所有的行～ #include&lt;iostream&gt; #include&lt;algorithm&gt; #include&lt;vector&gt; using namespace std; struct node{ string name; int high; }; int cmp(struct node a,struct node b ) { return a.high!=b.high?a.high&gt;b.high:a.name&lt;b.name; } int main() { int n,k,m; cin&gt;&gt;n&gt;&gt;k; vector&lt;node&gt;stu(n); for(int i=0;i&lt;n;i++) cin&gt;&gt;stu[i].name&gt;&gt;stu[i].high; sort(stu.begin(),stu.end(),cmp); int t=0,row=k; while(row) { if(row==k) m=n-n/k*(k-1); else m=n/k; vector&lt;string&gt;ans(m); ans[m/2]=stu[t].name; //处理左边一列 int j=m/2-1; for(int i=t+1;i&lt;t+m;i=i+2) ans[j--]=stu[i].name; //处理右边一列 j=m/2+1; for(int i=t+2;i&lt;t+m;i=i+2) ans[j++]=stu[i].name; cout&lt;&lt;ans[0]; for(int i=1;i&lt;m;i++) cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i]; cout&lt;&lt;endl; t=t+m;row--; } return 0; }]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
-        <tag>字符串处理</tag>
+        <tag>排序</tag>
       </tags>
   </entry>
   <entry>

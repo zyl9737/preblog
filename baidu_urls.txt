@@ -14,10 +14,10 @@ https://zhengyulong.top/2019/07/04/V2ray服务器搭建科学上网/
 https://zhengyulong.top/2019/06/30/比特币与区块链入门/
 https://zhengyulong.top/2019/06/28/Hexo-Next如何在文章摘要展示图片/
 https://zhengyulong.top/2019/06/20/读书笔记及一些杂谈/
-https://zhengyulong.top/2019/03/18/PAT-1055-集体照/
-https://zhengyulong.top/2019/03/18/PAT-1057-数壹零/
 https://zhengyulong.top/2019/03/18/PAT-1054-求平均值/
 https://zhengyulong.top/2019/03/18/PAT-1035-插入与归并/
+https://zhengyulong.top/2019/03/18/PAT-1057-数壹零/
+https://zhengyulong.top/2019/03/18/PAT-1055-集体照/
 https://zhengyulong.top/2019/03/18/Markdown语法说明/
 https://zhengyulong.top/2019/01/02/C-STL-lower-bound-upper-bound/
 https://zhengyulong.top/2018/12/18/读书笔记/

@@ -129,7 +129,7 @@
 <meta property="og:description" content="边缘智能的研究仍处于起步阶段，计算机系统和人工智能社区都迫切需要一个专门的地方来交流边缘智能的最新进展。为了这个目的，本文对边缘智能的最新研究成果进行了全面调查。首先回顾了在网络边缘运行的人工智能应用程序的背景和动机，然后提供了了一个在网络边缘的深度学习模型训练/推理的总体架构、框架和出现的关键技术，最终，讨论了在边缘智能上未来的研究机遇。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2020/05/21/ZbdYEaotXxcpIsu.png">
-<meta property="og:updated_time" content="2020-05-21T12:49:49.404Z">
+<meta property="og:updated_time" content="2020-05-21T13:38:00.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Edge Intelligencce:边缘智能">
 <meta name="twitter:description" content="边缘智能的研究仍处于起步阶段，计算机系统和人工智能社区都迫切需要一个专门的地方来交流边缘智能的最新进展。为了这个目的，本文对边缘智能的最新研究成果进行了全面调查。首先回顾了在网络边缘运行的人工智能应用程序的背景和动机，然后提供了了一个在网络边缘的深度学习模型训练/推理的总体架构、框架和出现的关键技术，最终，讨论了在边缘智能上未来的研究机遇。">
@@ -487,7 +487,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://i.loli.net/2020/05/21/ZbdYEaotXxcpIsu.png" rel="gallery_ckagrvocy0037hgti6hylwi8a" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://i.loli.net/2020/05/21/ZbdYEaotXxcpIsu.png" rel="gallery_ckagtm82s003824tio8ml6mp8" itemscope="" itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://i.loli.net/2020/05/21/ZbdYEaotXxcpIsu.png" itemprop="contentUrl">
               </a>
             
@@ -504,12 +504,17 @@
 <h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>边缘节点的大小可以不同，从信用卡大小的计算机到带有多个服务器架构的微型数据中心，边缘计算强调的最重要特征是从物理上接近信息生成源。从本质上讲，与传统的基于云的计算方式和信息生成源的物理接近性带来了几个好处，包括低延迟、能量高效、隐私保护、带宽占用减少、及时性和环境敏感性。</p>
 <h2 id="人工智能技术："><a href="#人工智能技术：" class="headerlink" title="人工智能技术："></a>人工智能技术：</h2><ol>
 <li><p>卷积神经网络（CNN）:CNN通常应用于计算机视觉方向，给定一系列来自真实世界的图像或视频，在CNN的利用下，AI系统学会去自动提取这些输入的特征来完成一个特定任务，如图像分类、人脸识别、图像语义分割。</p>
+<p><img src="https://i.loli.net/2020/05/21/NKupXaFtYknAWfV.png" alt=""></p>
 </li>
 <li><p>循环神经网络（RNN)：对于顺序输入数据，RNNs被提出来解决时间序列问题。RNN的输入由当前输入和先前样本组成。一个RNN的每个神经元拥有一个内存来保存先前样本计算信息。RNN的训练过程基于时间的反向传播方法（BPTT），长短期记忆（LSTM）是RNNs的一个拓展版本。LSTM的每个神经元称作记忆单元，其包括一个遗忘门、输入门和输出门。这些门被用来控制对记忆单元的访问。这些门是不同的神经网络，用来决定哪些信息在记忆门中被允许。由于其具有处理输入长度不固定的数据优势，循环神经网络已经被广泛应用于自然语言处理。</p>
+<p><img src="https://i.loli.net/2020/05/21/BcnPsKxk7qL5dTU.png" alt=""></p>
+<p><img src="https://i.loli.net/2020/05/21/jpLoXw6uG71bOm2.png" alt=""></p>
 </li>
 <li><p>生成对抗网络（GAN）：GANs有两个主要组成部分，被命名为生成网络和鉴别网络。生成器主要负责从真实数据的训练集中学习数据分布后，来生成新数据。鉴别器主要负责将真实数据和从生成器中生成的虚假数据进行分类。GAN通常被应用于图像生成、转换、组合、分辨和其它应用程序。</p>
+<p><img src="https://i.loli.net/2020/05/21/vVAFkq43Ny1UGWm.png" alt=""></p>
 </li>
 <li><p>深度强化学习（DRL)：DRL由DNNs和强化学习（RL）组成，DRL的目标在于建立一个智能agent，来执行有效的策略去最大化带有控制动作的长期任务鉴赏。DRL的典型应用是去解决不同的调度问题，例如游戏中的决策问题，视频传输的比例选择等。在DRL方法中，强化学习从来自环境的状态函数中寻找动作的最优策略，DNN则负责表示大量状态并近似动作值，来评估得到状态下的动作质量。奖赏是一个函数，用来表示预定义环境和一个动作性能的距离。通过连续的学习，DRL模型的agent可以被用来处理不同的任务。</p>
+<p><img src="https://i.loli.net/2020/05/21/j9UbRdW3gl7kMhD.png" alt=""></p>
 <p><em>（DANE是一种经典的分布式优化方法，DAEN是深度自动编码器网络</em></p>
 <p><em>构建深度神经网络存在的历史难题：梯度消失问题</em>）</p>
 </li>
@@ -524,6 +529,7 @@
 <li><p>边缘智能的范围：我们认为边缘智能应该是充分利用终端设备、边缘节点和云数据中心层次结构中可用数据和资源的范例，从而优化DNN模型的整体训练和推理性能。<strong>这表明边缘智能并不一定意味着DNN模型完全在边缘训练或推理，而是可以通过数据卸载以cloud-edge-device协作的方式来工作。</strong></p>
 </li>
 <li><p>边缘智能的等级：根据数据卸载的数量和路径长度，我们将边缘智能分成6个等级。云智能（完全在云中训练和推理DNN模型）、Level-1（Cloud-Edge协作推理和Cloud训练）、Level-2（In-Edge协作推理和Cloud训练）、Level-3（On-Device推理和Cloud训练）、Level-4（Cloud-Edge协作训练和推理）、Level-5（In-Edge训练和推理）、Level-6（On-Device训练和推理）。当边缘智能的等级越高，数据卸载的数量和路径长度会减少，其传输延迟也相应减少，数据隐私增加，网络带宽成本减少。然而，这是通过增加计算延迟和能耗的代价来实现的。（<em>一般通信资源和计算资源的消耗是相互平衡的，一方减少会导致另一方的增加</em>）</p>
+<p><img src="https://i.loli.net/2020/05/21/6UnbCkqOym4xBSM.png" alt=""></p>
 </li>
 </ol>
 <h2 id="边缘智能模型训练"><a href="#边缘智能模型训练" class="headerlink" title="边缘智能模型训练"></a>边缘智能模型训练</h2><ol>
@@ -531,6 +537,7 @@
 <p>（1）集中式：DNN模型在Cloud数据中心训练；</p>
 <p>（2）分散式：每个计算节点使用它的本地数据在本地训练它自己的DNN模型，并通过共享本地训练更新来获得全局DNN模型；</p>
 <p>（3）混合式：集中了集中式和分散式模块，边缘服务器可以通过分散式更新来训练DNN模型，或者使用云数据中心来集中式训练。</p>
+<p><img src="https://i.loli.net/2020/05/21/sXWv4GzqAt7lycO.png" alt=""></p>
 </li>
 <li><p>关键性能指标：</p>
 <p>（1）Training Loss（训练损失）：表示训练好的DNN模型与训练数据的匹配度；</p>
@@ -558,6 +565,7 @@
 <p>（2）Device-based（移动设备从边缘服务器获取DNN模型，并在本地执行模型推理）；</p>
 <p>（3）Edge-device（设备执行DNN模型到一个特定层后将中间数据发送到边缘服务器，边缘服务器将执行剩余层并将预测结果发送到设备上）；</p>
 <p>（4）Edge-cloud（设备主要负责输入数据收集，DNN模型则在边缘和云上执行）。</p>
+<p><img src="https://i.loli.net/2020/05/21/6VGq7CbjMxHruSi.png" alt=""></p>
 <ol>
 <li>关键性能指标：</li>
 </ol>
@@ -571,6 +579,7 @@
 <li><p>支持技术：</p>
 <p>（1）Model Compression（模型压缩）：权重剪枝和量化，来减少内存和计算；</p>
 <p>（2）Model Partition（模型划分）：计算卸载到边缘服务器或移动设备，延迟和能量优化；</p>
+<p><img src="https://i.loli.net/2020/05/21/iRlEM4jVnSqeN9T.png" alt=""></p>
 <p>（3）Model Early-Exit（模型前期退出）：部分DNNs模型推理；</p>
 <p>（4）Edge Caching（边缘缓存）：对相同任务先前结果重用的快速响应；</p>
 <p>（5）Input Filtering（输入过滤）：输入差异检测；</p>

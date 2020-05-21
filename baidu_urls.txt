@@ -1,3 +1,4 @@
+https://zhengyulong.top/2020/05/21/Edge-Intelligencce-边缘智能/
 https://zhengyulong.top/2020/05/15/翻译-关于无线体域网支持远程医疗监控技术的调研/
 https://zhengyulong.top/2020/05/15/联邦学习FAQ/
 https://zhengyulong.top/2020/05/15/联邦学习、边缘计算、WBAN结合的一些讨论/
@@ -16,10 +17,10 @@ https://zhengyulong.top/2019/08/08/计算机漏洞安全相关的概念/
 https://zhengyulong.top/2019/07/04/V2ray服务器搭建科学上网/
 https://zhengyulong.top/2019/06/30/比特币与区块链入门/
 https://zhengyulong.top/2019/06/28/Hexo-Next如何在文章摘要展示图片/
-https://zhengyulong.top/2019/03/18/PAT-1054-求平均值/
-https://zhengyulong.top/2019/03/18/PAT-1035-插入与归并/
 https://zhengyulong.top/2019/03/18/PAT-1057-数壹零/
+https://zhengyulong.top/2019/03/18/PAT-1054-求平均值/
 https://zhengyulong.top/2019/03/18/PAT-1055-集体照/
+https://zhengyulong.top/2019/03/18/PAT-1035-插入与归并/
 https://zhengyulong.top/2019/03/18/Markdown语法说明/
 https://zhengyulong.top/2019/01/02/C-STL-lower-bound-upper-bound/
 https://zhengyulong.top/2018/12/18/读书笔记/
